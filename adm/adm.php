@@ -12,13 +12,12 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <h2 class="logo">Editora</h2>
-
     <nav>
       <ul>
-        <li class="active">Dashboard</li>
-        <li>Editora</li>
-        <li>Revista Eletrônica</li>
-        <li>Agência de Concursos</li>
+        <li class="active"><a href="adm.php">Dashboard</a></li>
+        <li><a href="editora_adm.php">Editora</a></li>
+        <li><a href="re_adm.php">Revista Eletrônica</a></li>
+        <li><a href="a_concurso_adm.php">Agência de Concursos</a></li>
         <li>Publicações</li>
         <li>Mensagens</li>
         <li>Usuários</li>
