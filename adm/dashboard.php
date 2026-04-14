@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Painel Administrativo</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css_adm\style.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <h2 class="logo">Editora</h2>
     <nav>
       <ul>
-        <li class="active"><a href="adm.php">Dashboard</a></li>
+        <li class="active"><a href="dashboard.php">Dashboard</a></li>
         <li><a href="editora_adm.php">Editora</a></li>
         <li><a href="re_adm.php">Revista Eletrônica</a></li>
         <li><a href="a_concurso_adm.php">Agência de Concursos</a></li>
@@ -22,7 +22,7 @@
         <li>Mensagens</li>
         <li>Usuários</li>
         <li>Configurações</li>
-        <li>Sair</li>
+        <li><a href="tcc/index.php">Sair</a></li>
       </ul>
     </nav>
   </aside>

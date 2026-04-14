@@ -1,0 +1,16 @@
+body {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.card {
+  border-radius: 15px;
+}

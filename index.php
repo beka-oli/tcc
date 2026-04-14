@@ -168,6 +168,7 @@
             <li class="nav-item"><a class="nav-link">Serviços</a></li>
             <li class="nav-item"><a class="nav-link">Publicações</a></li>
             <li class="nav-item"><a class="nav-link">Contato</a></li>
+            <li class="nav-item"><a class="nav-link" href="adm\login.php">Adm</a></li>
           </ul>
         </div>
       </div>

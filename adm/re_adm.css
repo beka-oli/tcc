@@ -1,0 +1,13 @@
+/* STATUS ARTIGOS */
+.status.aprovado {
+  background: #28a745;
+}
+
+.status.avaliacao {
+  background: #ffc107;
+  color: #000;
+}
+
+.status.rejeitado {
+  background: #dc3545;
+}
