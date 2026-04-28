@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Editora</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css_adm/editora_adm.css">
 </head>
 <body>
 
@@ -11,13 +11,13 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h2 class="logo">Editora</h2>
+    <h2 class="logo">ADM</h2>
 
     <ul>
-      <li><a href="adm.php">Dashboard</a></li>
-      <li class="active"><a href="editora_adm.php">Editora</a></li>
-      <li><a href="re_adm.php">Revista Eletrônica</a></li>
-      <li><a href="a_concurso_adm.php">Agência de Concursos</a></li>
+      <li><a href="dashboard.php" style="text-decoration: none; color: white;">Dashboard</a></li>
+      <li class="active"<a href="editora_adm.php"> style="text-decoration: none; color: white;">Editora</a></li>
+      <li><a href="re_adm.php" style="text-decoration: none; color: white;">Revista Eletrônica</a></li>
+      <li><a href="a_concurso_adm.php" style="text-decoration: none; color: white;">Agência de Concursos</a></li>
       <li>Publicações</li>
       <li>Mensagens</li>
       <li>Usuários</li>

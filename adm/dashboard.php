@@ -13,16 +13,16 @@
   <aside class="sidebar">
     <h2 class="logo">ADM</h2>
     <nav>
-      <ul style="text-decoration: none;">
-        <li class="active"><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="editora_adm.php">Editora</a></li>
-        <li><a href="re_adm.php">Revista Eletrônica</a></li>
-        <li><a href="a_concurso_adm.php">Agência de Concursos</a></li>
+<ul>
+        <li class="active"><a href="dashboard.php" style="text-decoration: none; color: white;">Dashboard</a></li>
+        <li><a href="editora_adm.php" style="text-decoration: none; color: white;">Editora</a></li>
+        <li><a href="re_adm.php" style="text-decoration: none; color: white;">Revista Eletrônica</a></li>
+        <li><a href="a_concurso_adm.php" style="text-decoration: none; color: white;">Agência de Concursos</a></li>
         <li>Publicações</li>
         <li>Mensagens</li>
         <li>Usuários</li>
         <li>Configurações</li>
-        <li><a href="tcc/index.php">Sair</a></li>
+        <li><a href="tcc/index.php" style="text-decoration: none; color: white;">Sair</a></li>
       </ul>
     </nav>
   </aside>
