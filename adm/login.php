@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="login-container">
   <div class="card shadow p-4">
-    <h3 class="text-center mb-3">📘 Login Editora</h3>
+    <h3 class="text-center mb-3"> Login Editora</h3>
 
     <?php if ($erro): ?>
       <div class="alert alert-danger"><?php echo $erro; ?></div>
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="senha" class="form-control" required>
       </div>
 
-      <button class="btn btn-primary w-100">Entrar</button>
+      <button style="background-color: purple; color: white;">Entrar</button>
     </form>
   </div>
 </div>

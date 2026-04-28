@@ -11,9 +11,9 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h2 class="logo">Editora</h2>
+    <h2 class="logo">ADM</h2>
     <nav>
-      <ul>
+      <ul style="text-decoration: none;">
         <li class="active"><a href="dashboard.php">Dashboard</a></li>
         <li><a href="editora_adm.php">Editora</a></li>
         <li><a href="re_adm.php">Revista Eletrônica</a></li>

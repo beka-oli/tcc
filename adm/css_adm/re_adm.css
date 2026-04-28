@@ -1,127 +1,157 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Revista Eletrônica</title>
-  <link rel="stylesheet" href="css/re_adm.css">
-</head>
-<body>
 
-<div class="container">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h2 class="logo">Editora</h2>
+body {
+  background: #f4f2f8;
+}
 
-    <ul>
-      <li>Dashboard</li>
-      <li>Editora</li>
-      <li class="active">Revista Eletrônica</li>
-      <li>Agência de Concursos</li>
-      <li>Publicações</li>
-      <li>Mensagens</li>
-      <li>Usuários</li>
-      <li>Configurações</li>
-      <li>Sair</li>
-    </ul>
-  </aside>
+/* LAYOUT */
+.container {
+  display: flex;
+}
 
-  <!-- MAIN -->
-  <main class="main">
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, #5a2ea6, #3b0d6b);
+  color: #fff;
+  padding: 20px;
+}
 
-    <!-- TOPBAR -->
-    <header class="topbar">
-      <h1>Revista Eletrônica</h1>
-      <button class="btn">+ Novo Artigo</button>
-    </header>
+.logo {
+  margin-bottom: 30px;
+}
 
-    <!-- CARDS RESUMO -->
-    <section class="cards">
-      <div class="card">
-        <h3>Artigos Publicados</h3>
-        <span>38</span>
-      </div>
+.sidebar ul {
+  list-style: none;
+  text-decoration: none;
+}
 
-      <div class="card">
-        <h3>Em Avaliação</h3>
-        <span>12</span>
-      </div>
+.sidebar li {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  list-style: none;
+  text-decoration: none;
+}
 
-      <div class="card">
-        <h3>Rejeitados</h3>
-        <span>5</span>
-      </div>
+.sidebar li:hover,
+.sidebar .active {
+  background: rgba(255, 255, 255, 0.2);
+}
 
-      <div class="card">
-        <h3>Aprovados</h3>
-        <span>21</span>
-      </div>
-    </section>
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+}
 
-    <!-- TABELA -->
-    <section class="table-section">
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-      <div class="table-header">
-        <h2>Gerenciar Artigos</h2>
-        <input type="text" placeholder="Buscar artigo...">
-      </div>
+.btn {
+  background: #6a3dc9;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-      <table>
-        <thead>
-          <tr>
-            <th>Título</th>
-            <th>Autor</th>
-            <th>Área</th>
-            <th>Data</th>
-            <th>Status</th>
-            <th>Opções</th>
-          </tr>
-        </thead>
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
 
-        <tbody>
-          <tr>
-            <td>Educação no Brasil</td>
-            <td>João Silva</td>
-            <td>Educação</td>
-            <td>10/03/2024</td>
-            <td><span class="status aprovado">Aprovado</span></td>
-            <td>
-              <button class="btn-sm">Ver</button>
-              <button class="btn-sm">Editar</button>
-            </td>
-          </tr>
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-          <tr>
-            <td>Tecnologia na Escola</td>
-            <td>Ana Souza</td>
-            <td>Tecnologia</td>
-            <td>02/02/2024</td>
-            <td><span class="status avaliacao">Em Avaliação</span></td>
-            <td>
-              <button class="btn-sm">Ver</button>
-              <button class="btn-sm">Editar</button>
-            </td>
-          </tr>
+.card h3 {
+  font-size: 14px;
+  color: #777;
+}
 
-          <tr>
-            <td>Metodologias Ativas</td>
-            <td>Carlos Lima</td>
-            <td>Pedagogia</td>
-            <td>15/01/2024</td>
-            <td><span class="status rejeitado">Rejeitado</span></td>
-            <td>
-              <button class="btn-sm">Ver</button>
-              <button class="btn-sm">Editar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+.card span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #5a2ea6;
+}
 
-    </section>
+/* TABELA */
+.table-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
 
-  </main>
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
 
-</div>
+.table-header input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
 
-</body>
-</html>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  color: #555;
+  font-size: 14px;
+}
+
+tr {
+  border-bottom: 1px solid #eee;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  border: none;
+  background: #6a3dc9;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* STATUS ARTIGOS */
+.status.aprovado {
+  background: #28a745;
+}
+
+.status.avaliacao {
+  background: #ffc107;
+  color: #000;
+}
+
+.status.rejeitado {
+  background: #dc3545;
+}

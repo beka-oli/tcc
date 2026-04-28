@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  background: linear-gradient(to right, #67012a, #7b1fa2);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -14,3 +14,17 @@ body {
 .card {
   border-radius: 15px;
 }
+button {
+ background-color: purple; /* Cor de fundo do botão */
+ color: white; /* Cor do texto */
+ border: none; /* Remove bordas padrão */
+ border-radius: 15px; /* Bordas arredondadas */
+ padding: 10px 20px; /* Espaçamento interno */
+ font-size: 16px; /* Tamanho da fonte */
+ cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+ transition: background-color 0.3s; /* Efeito de transição */
+}
+
+button:hover {
+ background-color: darkviolet; /* Cor ao passar o mouse */
+ }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Revista Eletrônica</title>
-  <link rel="stylesheet" href="css/re_adm.css">
+  <link rel="stylesheet" href="css_adm/re_adm.css">
 </head>
 <body>
 
@@ -14,10 +14,10 @@
     <h2 class="logo">Editora</h2>
 
     <ul>
-      <li>Dashboard</li>
-      <li>Editora</li>
-      <li class="active">Revista Eletrônica</li>
-      <li>Agência de Concursos</li>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="editora_adm.php">Editora</a></li>
+        <li class="active"><a href="re_adm.php">Revista Eletrônica</a></li>
+        <li><a href="a_concurso_adm.php">Agência de Concursos</a></li>
       <li>Publicações</li>
       <li>Mensagens</li>
       <li>Usuários</li>
