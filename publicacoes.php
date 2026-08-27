@@ -175,7 +175,7 @@
 
         .page-header {
 
-            text-align: center;
+            text-align: left;
 
             padding: 90px 0;
 
@@ -197,6 +197,13 @@
                     #eadcf1,
                     #f7e8f0
                 );
+
+        }
+
+
+        .page-header .container {
+
+            text-align: left;
 
         }
 
@@ -257,7 +264,7 @@
 
             max-width: 600px;
 
-            margin: auto;
+            margin: 0;
 
             line-height: 1.8;
 
@@ -450,6 +457,35 @@
         }
 
 
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media(max-width:768px) {
+
+            .page-header {
+
+                padding: 65px 0;
+
+            }
+
+
+            .page-header h1 {
+
+                font-size: 45px;
+
+            }
+
+
+            .publications {
+
+                padding: 60px 0;
+
+            }
+
+        }
+
+
     </style>
 
 </head>
@@ -458,7 +494,9 @@
 <body>
 
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <nav class="navbar-custom">
 
@@ -526,11 +564,17 @@
                     </a>
 
 
+                    <!-- ADMIN COM CADEADO -->
+
                     <a
                         href="/tcc/login/"
                         class="nav-link nav-admin"
                     >
+
+                        <i class="fa-solid fa-lock me-1"></i>
+
                         Admin
+
                     </a>
 
 
@@ -544,7 +588,9 @@
 
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <section class="page-header">
 
@@ -579,7 +625,9 @@
 
 
 
-    <!-- PUBLICAÇÕES -->
+    <!-- =========================
+         PUBLICAÇÕES
+    ========================= -->
 
     <section class="publications">
 
@@ -588,7 +636,7 @@
             <div class="row g-4">
 
 
-                <!-- PUBLICAÇÃO 1 -->
+                <!-- PUBLICAÇÃO - EDITORA -->
 
                 <div class="col-lg-4">
 
@@ -639,109 +687,6 @@
                 </div>
 
 
-
-                <!-- PUBLICAÇÃO 2 -->
-
-                <div class="col-lg-4">
-
-                    <div class="publication-card">
-
-
-                        <div class="publication-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&fit=crop&w=900&q=85"
-                                alt="Pesquisa científica"
-                            >
-
-                        </div>
-
-
-                        <div class="publication-content">
-
-
-                            <span class="tag">
-
-                                Ciência
-
-                            </span>
-
-
-                            <h3>
-
-                                Produção científica
-
-                            </h3>
-
-
-                            <p>
-
-                                Pesquisas e produções voltadas
-                                ao desenvolvimento e compartilhamento
-                                científico.
-
-                            </p>
-
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PUBLICAÇÃO 3 -->
-
-                <div class="col-lg-4">
-
-                    <div class="publication-card">
-
-
-                        <div class="publication-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
-                                alt="Educação"
-                            >
-
-                        </div>
-
-
-                        <div class="publication-content">
-
-
-                            <span class="tag">
-
-                                Educação
-
-                            </span>
-
-
-                            <h3>
-
-                                Formação e conhecimento
-
-                            </h3>
-
-
-                            <p>
-
-                                Conteúdos voltados ao desenvolvimento
-                                educacional, profissional e cultural.
-
-                            </p>
-
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
             </div>
 
         </div>
@@ -750,71 +695,13 @@
 
 
 
-    <!-- FOOTER -->
-
-    <footer class="footer-custom">
-
-        <div class="container">
-
-
-            <div class="row">
-
-
-                <div class="col-lg-7">
-
-                    <h4>
-
-                        Associação Científica Medeia
-
-                    </h4>
-
-
-                    <p>
-
-                        Ciência, educação,
-                        cultura e conhecimento.
-
-                    </p>
-
-                </div>
-
-
-                <div class="col-lg-5">
-
-                    <h4>
-
-                        Contato
-
-                    </h4>
-
-
-                    <p>
-
-                        <i class="fas fa-envelope me-2"></i>
-
-                        associacaocientificamedeia@gmail.com
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © 2026 Associação Científica Medeia.
-                Todos os direitos reservados.
-
-            </div>
-
-
-        </div>
-
-    </footer>
+  
 
 
 </body>
 
 </html>
+
+ <!--------------- FOOTER ---------------->
+    <?php include 'includes_site/footer.php'?>
+ <!--------------------------------------->

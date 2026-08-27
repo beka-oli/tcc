@@ -14,58 +14,47 @@
         Contato | Associação Científica Medeia
     </title>
 
+    <!-- BOOTSTRAP -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
+    <!-- GOOGLE FONTS -->
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet"
     >
 
+    <!-- FONT AWESOME -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     >
 
-
     <style>
-
 
         /* =========================
            GERAL
         ========================= */
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
 
         body {
-
             font-family: "Inter", sans-serif;
-
             background: #f8f2f9;
-
             color: #35152f;
-
         }
 
-
         a {
-
             text-decoration: none;
-
         }
 
 
@@ -89,6 +78,9 @@
             box-shadow:
                 0 5px 25px rgba(60, 10, 55, 0.18);
 
+            position: relative;
+
+            z-index: 10;
         }
 
 
@@ -105,7 +97,6 @@
             font-size: 20px;
 
             font-weight: 800;
-
         }
 
 
@@ -132,7 +123,6 @@
                     #8e2a8f,
                     #c04a91
                 );
-
         }
 
 
@@ -149,7 +139,6 @@
             border-radius: 9px;
 
             transition: .3s;
-
         }
 
 
@@ -158,6 +147,7 @@
             background:
                 rgba(255,255,255,.10);
 
+            color: white !important;
         }
 
 
@@ -165,7 +155,6 @@
 
             background:
                 rgba(255,255,255,.12);
-
         }
 
 
@@ -175,9 +164,9 @@
 
         .page-header {
 
-            padding: 90px 0;
+            text-align: left;
 
-            text-align: center;
+            padding: 90px 0;
 
             position: relative;
 
@@ -197,7 +186,12 @@
                     #eadcf1,
                     #f7e8f0
                 );
+        }
 
+
+        .page-header .container {
+
+            text-align: left;
         }
 
 
@@ -219,7 +213,6 @@
             left: 7%;
 
             top: -60px;
-
         }
 
 
@@ -234,7 +227,6 @@
             letter-spacing: 2px;
 
             text-transform: uppercase;
-
         }
 
 
@@ -247,7 +239,6 @@
             font-size: 58px;
 
             margin: 10px 0;
-
         }
 
 
@@ -255,12 +246,11 @@
 
             max-width: 620px;
 
-            margin: auto;
+            margin: 0;
 
             color: #706375;
 
             line-height: 1.8;
-
         }
 
 
@@ -271,7 +261,6 @@
         .contact {
 
             padding: 90px 0;
-
         }
 
 
@@ -287,7 +276,6 @@
 
             box-shadow:
                 0 20px 50px rgba(70,25,80,.09);
-
         }
 
 
@@ -300,7 +288,6 @@
             font-size: 40px;
 
             margin-bottom: 18px;
-
         }
 
 
@@ -313,7 +300,6 @@
             line-height: 1.8;
 
             margin-bottom: 35px;
-
         }
 
 
@@ -323,8 +309,7 @@
 
             gap: 14px;
 
-            margin-bottom: 23px;
-
+            margin-bottom: 25px;
         }
 
 
@@ -353,7 +338,6 @@
                     #eadcf0,
                     #f5dfe9
                 );
-
         }
 
 
@@ -366,7 +350,6 @@
             font-size: 13px;
 
             margin-bottom: 4px;
-
         }
 
 
@@ -377,15 +360,16 @@
             font-size: 13px;
 
             line-height: 1.6;
-
         }
 
 
         /* =========================
-           FORMULÁRIO
+           CARDS
         ========================= */
 
-        .form-box {
+        .contact-card {
+
+            height: 100%;
 
             padding: 30px;
 
@@ -401,67 +385,94 @@
 
             border: 1px solid #e5d6ea;
 
+            transition: .3s;
         }
 
 
-        .form-label {
+        .contact-card:hover {
 
-            color: #52345b;
+            transform: translateY(-4px);
 
-            font-size: 12px;
-
-            font-weight: 700;
-
-            margin-bottom: 7px;
-
+            box-shadow:
+                0 12px 30px rgba(70,25,80,.10);
         }
 
 
-        .form-control {
+        .contact-card-icon {
 
-            border: 1px solid #dac9df;
+            width: 52px;
 
-            border-radius: 10px;
+            height: 52px;
 
-            padding: 13px;
+            border-radius: 14px;
 
-            font-size: 13px;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #762476;
 
             background: white;
 
+            margin-bottom: 18px;
+
+            font-size: 20px;
         }
 
 
-        .form-control:focus {
+        .contact-card h3 {
 
-            border-color: #873c91;
+            color: #42162f;
 
-            box-shadow:
-                0 0 0 4px rgba(135,60,145,.10);
+            font-size: 17px;
 
+            font-weight: 700;
+
+            margin-bottom: 10px;
         }
 
 
-        textarea {
+        .contact-card p {
 
-            resize: vertical;
+            color: #706575;
 
-            min-height: 140px;
+            font-size: 13px;
 
+            line-height: 1.8;
+
+            margin-bottom: 18px;
         }
 
 
-        .btn-send {
+        .contact-card p strong {
 
-            width: 100%;
+            color: #42162f;
 
-            border: none;
+            font-size: 15px;
+        }
 
-            padding: 14px;
 
-            border-radius: 10px;
+        /* =========================
+           BOTÕES
+        ========================= */
+
+        .contact-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 16px;
+
+            border-radius: 9px;
 
             color: white;
+
+            font-size: 12px;
 
             font-weight: 700;
 
@@ -474,97 +485,92 @@
                 );
 
             transition: .3s;
-
         }
 
 
-        .btn-send:hover {
+        .contact-btn:hover {
+
+            color: white;
 
             transform: translateY(-2px);
 
             box-shadow:
-                0 12px 25px rgba(80,25,90,.18);
-
+                0 8px 18px rgba(80,25,90,.18);
         }
 
 
         /* =========================
-           FOOTER
+           ATENDIMENTO
         ========================= */
 
-        .footer-custom {
+        .service-info {
 
-            background:
+            margin-top: 35px;
 
-                linear-gradient(
-                    90deg,
-                    #67012a,
-                    #7b1f70,
-                    #7b1fa2
-                );
+            padding: 30px;
 
-            color: white;
+            border-radius: 20px;
 
-            padding: 45px 0 20px;
+            background: #ffffff;
 
+            border: 1px solid #e5d7ea;
         }
 
 
-        .footer-custom h4 {
+        .service-info h3 {
 
-            font-size: 19px;
+            font-family: "Playfair Display", serif;
 
-            font-weight: 700;
+            color: #42162f;
 
+            font-size: 27px;
+
+            margin-bottom: 12px;
         }
 
 
-        .footer-custom p {
+        .service-info p {
 
-            color: #f5eaf5;
+            color: #706575;
 
             font-size: 13px;
 
             line-height: 1.8;
 
+            margin-bottom: 0;
         }
 
 
-        .footer-bottom {
-
-            margin-top: 30px;
-
-            padding-top: 18px;
-
-            border-top:
-                1px solid rgba(255,255,255,.15);
-
-            text-align: center;
-
-            font-size: 12px;
-
-            opacity: .8;
-
-        }
-
+        /* =========================
+           RESPONSIVO
+        ========================= */
 
         @media(max-width:768px) {
 
             .contact-box {
 
                 padding: 25px;
-
             }
 
 
-            .form-box {
+            .page-header {
 
-                margin-top: 35px;
+                padding: 65px 0;
+            }
 
+
+            .page-header h1 {
+
+                font-size: 45px;
+            }
+
+
+            .contact {
+
+                padding: 60px 0;
             }
 
         }
-
 
     </style>
 
@@ -574,7 +580,9 @@
 <body>
 
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <nav class="navbar-custom">
 
@@ -582,6 +590,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
 
+
+                <!-- LOGO -->
 
                 <a
                     href="/tcc/"
@@ -598,6 +608,8 @@
 
                 </a>
 
+
+                <!-- MENU -->
 
                 <div class="d-flex">
 
@@ -642,11 +654,17 @@
                     </a>
 
 
+                    <!-- ADMIN -->
+
                     <a
-                        href="/tcc/login.php/"
+                        href="/tcc/login/"
                         class="nav-link nav-admin"
                     >
+
+                        <i class="fa-solid fa-lock me-1"></i>
+
                         Admin
+
                     </a>
 
 
@@ -660,35 +678,27 @@
 
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <section class="page-header">
 
         <div class="container">
 
-
             <small>
-
                 Fale conosco
-
             </small>
 
-
             <h1>
-
                 Contato
-
             </h1>
 
-
             <p>
-
                 Entre em contato com a Associação
-                Científica Medeia. Estamos disponíveis
-                para receber sua mensagem.
-
+                Científica Medeia através dos nossos
+                canais oficiais de comunicação.
             </p>
-
 
         </div>
 
@@ -696,7 +706,9 @@
 
 
 
-    <!-- CONTATO -->
+    <!-- =========================
+         CONTATO
+    ========================= -->
 
     <section class="contact">
 
@@ -704,39 +716,33 @@
 
             <div class="contact-box">
 
-
                 <div class="row align-items-center">
 
 
-                    <!-- INFORMAÇÕES -->
+                    <!-- =========================
+                         INFORMAÇÕES PRINCIPAIS
+                    ========================= -->
 
                     <div class="col-lg-5">
 
-
                         <div class="contact-info">
 
-
                             <h2>
-
-                                Vamos conversar?
-
+                                Fale conosco
                             </h2>
 
-
                             <p>
-
-                                Entre em contato conosco através
-                                dos nossos canais de comunicação
-                                ou envie uma mensagem.
-
+                                A Associação Científica Medeia
+                                disponibiliza canais oficiais para
+                                informações, esclarecimentos e
+                                assuntos relacionados às suas
+                                atividades.
                             </p>
-
 
 
                             <!-- ENDEREÇO -->
 
                             <div class="contact-item">
-
 
                                 <div class="contact-icon">
 
@@ -744,15 +750,11 @@
 
                                 </div>
 
-
                                 <div>
 
                                     <strong>
-
                                         Endereço
-
                                     </strong>
-
 
                                     <span>
 
@@ -766,15 +768,12 @@
 
                                 </div>
 
-
                             </div>
-
 
 
                             <!-- TELEFONE -->
 
                             <div class="contact-item">
-
 
                                 <div class="contact-icon">
 
@@ -782,33 +781,24 @@
 
                                 </div>
 
-
                                 <div>
 
                                     <strong>
-
                                         Telefone
-
                                     </strong>
 
-
                                     <span>
-
                                         (55) 99101-2088
-
                                     </span>
 
                                 </div>
 
-
                             </div>
-
 
 
                             <!-- E-MAIL -->
 
                             <div class="contact-item">
-
 
                                 <div class="contact-icon">
 
@@ -816,166 +806,235 @@
 
                                 </div>
 
+                                <div>
+
+                                    <strong>
+                                        E-mail
+                                    </strong>
+
+                                    <span>
+                                        associacaocientificamedeia@gmail.com
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- HORÁRIO -->
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+
+                                    <i class="fa-solid fa-clock"></i>
+
+                                </div>
 
                                 <div>
 
                                     <strong>
-
-                                        E-mail
-
+                                        Horário de atendimento
                                     </strong>
-
 
                                     <span>
 
-                                        associacaocientificamedeia@gmail.com
+                                        Segunda a sexta-feira
+
+                                        <br>
+
+                                        08h às 18h
 
                                     </span>
 
                                 </div>
 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         CARDS
+                    ========================= -->
+
+                    <div class="col-lg-7">
+
+                        <div class="row g-3">
+
+
+                            <!-- TELEFONE -->
+
+                            <div class="col-md-6">
+
+                                <div class="contact-card">
+
+                                    <div class="contact-card-icon">
+
+                                        <i class="fa-solid fa-phone"></i>
+
+                                    </div>
+
+                                    <h3>
+                                        Telefone oficial
+                                    </h3>
+
+                                    <p>
+
+                                        Entre em contato com a
+                                        Associação Científica Medeia
+                                        pelo telefone:
+
+                                        <br><br>
+
+                                        <strong>
+                                            (55) 99101-2088
+                                        </strong>
+
+                                    </p>
+
+                                    <a
+                                        href="tel:+5555991012088"
+                                        class="contact-btn"
+                                    >
+
+                                        <i class="fa-solid fa-phone"></i>
+
+                                        Ligar para a Associação
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- E-MAIL -->
+
+                            <div class="col-md-6">
+
+                                <div class="contact-card">
+
+                                    <div class="contact-card-icon">
+
+                                        <i class="fa-solid fa-envelope"></i>
+
+                                    </div>
+
+                                    <h3>
+                                        E-mail
+                                    </h3>
+
+                                    <p>
+
+                                        Para informações e
+                                        assuntos institucionais,
+                                        utilize nosso e-mail oficial.
+
+                                    </p>
+
+                                    <a
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=associacaocientificamedeia@gmail.com"
+                                        target="_blank"
+                                        class="contact-btn"
+                                    >
+
+                                        <i class="fa-solid fa-envelope"></i>
+
+                                        Enviar e-mail
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- LOCALIZAÇÃO -->
+
+                            <div class="col-md-6">
+
+                                <div class="contact-card">
+
+                                    <div class="contact-card-icon">
+
+                                        <i class="fa-solid fa-map-location-dot"></i>
+
+                                    </div>
+
+                                    <h3>
+                                        Localização
+                                    </h3>
+
+                                    <p>
+
+                                        Av. 20 de Dezembro,
+                                        539 – Centro,
+                                        Cerro Grande - RS.
+
+                                    </p>
+
+                                    <a
+                                        href="https://www.google.com/maps/search/?api=1&query=Av.%2020%20de%20Dezembro%2C%20539%2C%20Cerro%20Grande%20-%20RS"
+                                        target="_blank"
+                                        class="contact-btn"
+                                    >
+
+                                        <i class="fa-solid fa-location-arrow"></i>
+
+                                        Ver localização
+
+                                    </a>
+
+                                </div>
 
                             </div>
 
 
                         </div>
 
-                    </div>
 
 
+                        <!-- =========================
+                             ASSUNTOS
+                        ========================= -->
 
-                    <!-- FORMULÁRIO -->
+                        <div class="service-info">
 
-                    <div class="col-lg-7">
+                            <h3>
+                                Como podemos ajudar?
+                            </h3>
 
+                            <p>
 
-                        <div class="form-box">
+                                Para informações sobre a Associação
+                                Científica Medeia, projetos, atividades,
+                                publicações, serviços e assuntos
+                                institucionais, utilize os canais de
+                                contato apresentados nesta página.
 
+                                <br><br>
 
-                            <form>
+                                Para conhecer melhor nosso trabalho,
+                                consulte também as páginas
+                                <strong>Sobre</strong>,
+                                <strong>Serviços</strong> e
+                                <strong>Publicações</strong>
+                                disponíveis no site.
 
-
-                                <!-- NOME -->
-
-                                <div class="mb-3">
-
-
-                                    <label class="form-label">
-
-                                        Nome
-
-                                    </label>
-
-
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Digite seu nome"
-                                        required
-                                    >
-
-
-                                </div>
-
-
-
-                                <!-- E-MAIL -->
-
-                                <div class="mb-3">
-
-
-                                    <label class="form-label">
-
-                                        E-mail
-
-                                    </label>
-
-
-                                    <input
-                                        type="email"
-                                        class="form-control"
-                                        placeholder="seuemail@email.com"
-                                        required
-                                    >
-
-
-                                </div>
-
-
-
-                                <!-- ASSUNTO -->
-
-                                <div class="mb-3">
-
-
-                                    <label class="form-label">
-
-                                        Assunto
-
-                                    </label>
-
-
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Assunto da mensagem"
-                                        required
-                                    >
-
-
-                                </div>
-
-
-
-                                <!-- MENSAGEM -->
-
-                                <div class="mb-4">
-
-
-                                    <label class="form-label">
-
-                                        Mensagem
-
-                                    </label>
-
-
-                                    <textarea
-                                        class="form-control"
-                                        placeholder="Digite sua mensagem..."
-                                        required
-                                    ></textarea>
-
-
-                                </div>
-
-
-
-                                <!-- BOTÃO -->
-
-                                <button
-                                    type="submit"
-                                    class="btn-send"
-                                >
-
-                                    <i
-                                        class="fa-solid fa-paper-plane me-2"
-                                    ></i>
-
-                                    Enviar mensagem
-
-                                </button>
-
-
-                            </form>
-
+                            </p>
 
                         </div>
 
+
                     </div>
 
-
                 </div>
-
 
             </div>
 
@@ -984,72 +1043,9 @@
     </section>
 
 
-
-    <!-- FOOTER -->
-
-    <footer class="footer-custom">
-
-        <div class="container">
-
-
-            <div class="row">
-
-
-                <div class="col-lg-7">
-
-                    <h4>
-
-                        Associação Científica Medeia
-
-                    </h4>
-
-
-                    <p>
-
-                        Ciência, educação,
-                        cultura e conhecimento.
-
-                    </p>
-
-                </div>
-
-
-                <div class="col-lg-5">
-
-                    <h4>
-
-                        Contato
-
-                    </h4>
-
-
-                    <p>
-
-                        <i class="fas fa-envelope me-2"></i>
-
-                        associacaocientificamedeia@gmail.com
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © 2026 Associação Científica Medeia.
-                Todos os direitos reservados.
-
-            </div>
-
-
-        </div>
-
-    </footer>
-
-
 </body>
 
 </html>
+<!--------------- FOOTER ---------------->
+    <?php include 'includes_site/footer.php'?>
+ <!--------------------------------------->

@@ -65,7 +65,9 @@
         }
 
 
-        /* NAVBAR */
+        /* =========================
+           NAVBAR
+        ========================= */
 
         .navbar-custom {
 
@@ -163,11 +165,13 @@
         }
 
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         .page-header {
 
-            text-align: center;
+            text-align: left;
 
             padding: 90px 0;
 
@@ -193,24 +197,9 @@
         }
 
 
-        .page-header::after {
+        .page-header .container {
 
-            content: "";
-
-            position: absolute;
-
-            width: 140px;
-
-            height: 140px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(192,74,145,.07);
-
-            right: 8%;
-
-            bottom: -65px;
+            text-align: left;
 
         }
 
@@ -249,14 +238,38 @@
 
             max-width: 600px;
 
-            margin: auto;
+            margin: 0;
 
             line-height: 1.8;
 
         }
 
 
-        /* SERVIÇOS */
+        .page-header::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 140px;
+
+            height: 140px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(192,74,145,.07);
+
+            right: 8%;
+
+            bottom: -65px;
+
+        }
+
+
+        /* =========================
+           SERVIÇOS
+        ========================= */
 
         .services {
 
@@ -376,7 +389,9 @@
         }
 
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         .footer-custom {
 
@@ -436,6 +451,35 @@
         }
 
 
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media(max-width:768px) {
+
+            .page-header {
+
+                padding: 65px 0;
+
+            }
+
+
+            .page-header h1 {
+
+                font-size: 45px;
+
+            }
+
+
+            .services {
+
+                padding: 60px 0;
+
+            }
+
+        }
+
+
     </style>
 
 </head>
@@ -444,7 +488,9 @@
 <body>
 
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <nav class="navbar-custom">
 
@@ -512,11 +558,17 @@
                     </a>
 
 
+                    <!-- ADMIN COM CADEADO -->
+
                     <a
                         href="/tcc/login/"
                         class="nav-link nav-admin"
                     >
+
+                        <i class="fa-solid fa-lock me-1"></i>
+
                         Admin
+
                     </a>
 
 
@@ -530,7 +582,9 @@
 
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <section class="page-header">
 
@@ -565,7 +619,9 @@
 
 
 
-    <!-- SERVIÇOS -->
+    <!-- =========================
+         SERVIÇOS
+    ========================= -->
 
     <section class="services">
 
@@ -727,71 +783,13 @@
 
 
 
-    <!-- FOOTER -->
-
-    <footer class="footer-custom">
-
-        <div class="container">
-
-
-            <div class="row">
-
-
-                <div class="col-lg-7">
-
-                    <h4>
-
-                        Associação Científica Medeia
-
-                    </h4>
-
-
-                    <p>
-
-                        Ciência, educação,
-                        cultura e conhecimento.
-
-                    </p>
-
-                </div>
-
-
-                <div class="col-lg-5">
-
-                    <h4>
-
-                        Contato
-
-                    </h4>
-
-
-                    <p>
-
-                        <i class="fas fa-envelope me-2"></i>
-
-                        associacaocientificamedeia@gmail.com
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © 2026 Associação Científica Medeia.
-                Todos os direitos reservados.
-
-            </div>
-
-
-        </div>
-
-    </footer>
+ 
 
 
 </body>
 
 </html>
+
+ <!--------------- FOOTER ---------------->
+    <?php include 'includes_site/footer.php'?>
+ <!--------------------------------------->

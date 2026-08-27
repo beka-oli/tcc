@@ -412,6 +412,10 @@
         }
 
 
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
         @media(max-width:768px) {
 
             .about-content {
@@ -440,7 +444,9 @@
 <body>
 
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
     <nav class="navbar-custom">
 
@@ -508,11 +514,17 @@
                     </a>
 
 
+                    <!-- ADMIN COM CADEADO -->
+
                     <a
                         href="/tcc/login/"
                         class="nav-link nav-admin"
                     >
+
+                        <i class="fa-solid fa-lock me-1"></i>
+
                         Admin
+
                     </a>
 
 
@@ -526,7 +538,9 @@
 
 
 
-    <!-- CABEÇALHO -->
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
 
     <section class="page-header">
 
@@ -562,7 +576,9 @@
 
 
 
-    <!-- SOBRE -->
+    <!-- =========================
+         SOBRE
+    ========================= -->
 
     <section class="about">
 
@@ -669,70 +685,13 @@
 
 
 
-    <!-- FOOTER -->
-
-    <footer class="footer-custom">
-
-        <div class="container">
-
-
-            <div class="row">
-
-
-                <div class="col-lg-7">
-
-                    <h4>
-
-                        Associação Científica Medeia
-
-                    </h4>
-
-
-                    <p>
-
-                        Ciência, educação, cultura e conhecimento.
-
-                    </p>
-
-                </div>
-
-
-                <div class="col-lg-5">
-
-                    <h4>
-
-                        Contato
-
-                    </h4>
-
-
-                    <p>
-
-                        <i class="fas fa-envelope me-2"></i>
-
-                        associacaocientificamedeia@gmail.com
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                © 2026 Associação Científica Medeia.
-                Todos os direitos reservados.
-
-            </div>
-
-
-        </div>
-
-    </footer>
+    
 
 
 </body>
 
 </html>
+
+ <!--------------- FOOTER ---------------->
+    <?php include 'includes_site/footer.php'?>
+ <!--------------------------------------->
