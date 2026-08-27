@@ -1,325 +1,875 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Associação Científica Medeia</title>
 
-    <!-- CSS -->
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Início | Associação Científica Medeia
+    </title>
+
+
+    <!-- BOOTSTRAP -->
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    />
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
 
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #f5f1fa;
-      }
 
-      /* NAVBAR */
-      .navbar {
-        background: #fff;
-        padding: 15px 0;
-      }
 
-      .navbar .nav-link {
-        color: #5c2c83;
-        font-weight: 500;
-      }
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
 
-      /* HERO */
-      .hero {
-        background: linear-gradient(120deg, #f3edf9, #ffffff);
-        padding: 100px 0;
-      }
+        * {
 
-      .hero h1 {
-        color: #5c2c83;
-        font-weight: 700;
-      }
+            margin: 0;
 
-      .hero h5 {
-        color: #6d5c7d;
-        margin: 15px 0;
-      }
+            padding: 0;
 
-      .hero p {
-        color: #6f6f6f;
-        max-width: 500px;
-      }
+            box-sizing: border-box;
 
-      .btn-main {
-        background: #c62839;
-        color: #fff;
-        border-radius: 10px;
-        padding: 12px 28px;
-        font-weight: 600;
-      }
+        }
 
-      /* SERVIÇOS */
-      .section-title {
-        text-align: center;
-        margin: 70px 0 40px;
-        color: #5c2c83;
-        font-weight: 700;
-      }
 
-      .card {
-        border: none;
-        border-radius: 20px;
-        padding: 25px;
-        text-align: center;
-        background: #fff;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      }
+        body {
 
-      .card i {
-        font-size: 40px;
-        color: #5c2c83;
-        margin-bottom: 15px;
-      }
+            font-family: "Inter", sans-serif;
 
-      .card h5 {
-        color: #5c2c83;
-        font-weight: 600;
-      }
+            background: #f8f2f9;
 
-      .card p {
-        color: #777;
-      }
+            color: #35152f;
 
-      /* SOBRE */
-      .about {
-        padding: 80px 0;
-      }
+        }
 
-      .about h3 {
-        color: #5c2c83;
-        font-weight: 700;
-      }
 
-      .about p {
-        color: #666;
-      }
+        a {
 
-      /* CONTATO */
-      .contact {
-        padding: 80px 0;
-      }
+            text-decoration: none;
 
-      .contact h4 {
-        color: #5c2c83;
-        font-weight: 700;
-      }
+        }
 
-      .form-control {
-        border-radius: 12px;
-        padding: 12px;
-      }
 
-      .btn-send {
-        background: linear-gradient(to right, #c62839, #7b1fa2);
-        color: #fff;
-        border-radius: 12px;
-        padding: 12px;
-        font-weight: 600;
-      }
+        /* =========================
+           NAVBAR
+        ========================= */
 
-      /* FOOTER */
-      .footer {
-        background: #4b1f73;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-      }
+        .navbar-custom {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #67012a,
+                    #70145c,
+                    #7b1fa2
+                );
+
+            padding: 16px 0;
+
+            box-shadow:
+                0 5px 25px rgba(60, 10, 55, 0.18);
+
+            position: relative;
+
+            z-index: 10;
+
+        }
+
+
+        .navbar-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color: #ffffff !important;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+        }
+
+
+        .logo {
+
+            width: 44px;
+
+            height: 44px;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #ffffff;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #8e2a8f,
+                    #c04a91
+                );
+
+        }
+
+
+        .nav-link {
+
+            color: #f8edf8 !important;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            padding: 10px 14px !important;
+
+            border-radius: 9px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .nav-link:hover {
+
+            background: rgba(255, 255, 255, 0.10);
+
+            color: #ffffff !important;
+
+        }
+
+
+        .nav-admin {
+
+            background: rgba(255, 255, 255, 0.12);
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: calc(100vh - 76px);
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(192, 74, 145, 0.16),
+                    transparent 24%
+                ),
+
+                linear-gradient(
+                    120deg,
+                    #faf6fb,
+                    #eee0f3 50%,
+                    #f7e8f0
+                );
+
+        }
+
+
+        /* BOLHA 1 */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 230px;
+
+            height: 230px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(123, 31, 162, 0.07);
+
+            top: -100px;
+
+            right: 13%;
+
+        }
+
+
+        /* BOLHA 2 */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+
+            height: 130px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(103, 1, 42, 0.06);
+
+            bottom: 30px;
+
+            left: 5%;
+
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .hero-label {
+
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            background: #ead7ed;
+
+            color: #70205f;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero h1 {
+
+            font-family: "Playfair Display", serif;
+
+            color: #42162f;
+
+            font-size: clamp(45px, 6vw, 70px);
+
+            line-height: 1.08;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero h1 span {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #67012a,
+                    #7b1fa2,
+                    #c04a91
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+
+        .hero h4 {
+
+            color: #6b3266;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero p {
+
+            max-width: 560px;
+
+            color: #6f626e;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
+        .btn-main {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 25px;
+
+            border-radius: 11px;
+
+            color: #ffffff;
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #67012a,
+                    #7b1fa2
+                );
+
+            box-shadow:
+                0 12px 28px rgba(103, 1, 42, 0.20);
+
+            transition: 0.3s;
+
+        }
+
+
+        .btn-main:hover {
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 17px 32px rgba(103, 1, 42, 0.28);
+
+        }
+
+
+        /* =========================
+           IMAGEM
+        ========================= */
+
+        .hero-image-area {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .hero-image {
+
+            width: 100%;
+
+            height: 470px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 25px 55px rgba(60, 15, 60, 0.18);
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer-custom {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #67012a,
+                    #7b1f70,
+                    #7b1fa2
+                );
+
+            color: #ffffff;
+
+            padding: 55px 0 22px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .footer-custom::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            top: -120px;
+
+            right: -60px;
+
+        }
+
+
+        .footer-custom::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 160px;
+
+            height: 160px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            bottom: -90px;
+
+            left: -50px;
+
+        }
+
+
+        .footer-custom .container {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .footer-custom h4 {
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .footer-custom p {
+
+            color: #f5eaf5;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.15);
+
+            margin-top: 35px;
+
+            padding-top: 18px;
+
+            text-align: center;
+
+            font-size: 12px;
+
+            opacity: 0.8;
+
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .desktop-menu {
+
+                display: none;
+
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .hero {
+
+                padding: 70px 0;
+
+            }
+
+
+            .hero-image {
+
+                height: 350px;
+
+                margin-top: 40px;
+
+            }
+
+        }
+
+
     </style>
-  </head>
 
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" style="color: #c62839">
-          AC Medeia
-        </a>
+</head>
 
-        <button
-          class="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link">Início</a></li>
-            <li class="nav-item"><a class="nav-link">Sobre</a></li>
-            <li class="nav-item"><a class="nav-link">Serviços</a></li>
-            <li class="nav-item"><a class="nav-link">Publicações</a></li>
-            <li class="nav-item"><a class="nav-link">Contato</a></li>
-            <li class="nav-item"><a class="nav-link" href="login/index.php">Adm</a></li>
-          </ul>
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar-custom">
+
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+
+                <a
+                    href="/tcc/"
+                    class="navbar-brand"
+                >
+
+                    <div class="logo">
+
+                        <i class="#"></i>
+
+                    </div>
+
+                    AC Medeia
+
+                </a>
+
+
+                <div class="desktop-menu d-flex">
+
+
+                    <a
+                        href="/tcc/"
+                        class="nav-link"
+                    >
+                        Início
+                    </a>
+
+
+                    <a
+                        href="/tcc/sobre.php/"
+                        class="nav-link"
+                    >
+                        Sobre
+                    </a>
+
+
+                    <a
+                        href="/tcc/servicos.php/"
+                        class="nav-link"
+                    >
+                        Serviços
+                    </a>
+
+
+                    <a
+                        href="/tcc/publicacoes.php/"
+                        class="nav-link"
+                    >
+                        Publicações
+                    </a>
+
+
+                    <a
+                        href="/tcc/contato.php/"
+                        class="nav-link"
+                    >
+                        Contato
+                    </a>
+
+
+                    <a
+                        href="/tcc/login/"
+                        class="nav-link nav-admin"
+                    >
+
+                        <i class="fa-solid fa-lock me-1"></i>
+
+                        Admin
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
     </nav>
 
-    <!-- HERO -->
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <section class="hero">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h1>Associação Científica Medeia</h1>
-            <h5>Caráter cultural, pedagógico e midiático</h5>
-            <p>
-              Objetivamos promover a ciência, atividades de formação,
-              publicações e ações de concursos públicos e privados.
-            </p>
-            <button class="btn btn-main mt-3">Saiba Mais</button>
-          </div>
 
-          <div class="col-md-6 text-center">
-            <img
-              src="https://images.unsplash.com/photo-1581090700227-1e8a9f3c9c3a"
-              class="img-fluid"
-              style="max-height: 400px; opacity: 0.9"
-            />
-          </div>
+        <div class="container">
+
+            <div class="row align-items-center">
+
+
+                <div class="col-lg-6 hero-content">
+
+
+                    <span class="hero-label">
+
+                        Conhecimento que transforma
+
+                    </span>
+
+
+                    <h1>
+
+                        Ciência,
+
+                        <span>cultura</span>
+
+                        e educação.
+
+                    </h1>
+
+
+                    <h4>
+
+                        Associação Científica Medeia
+
+                    </h4>
+
+
+                    <p>
+
+                        Uma organização dedicada à promoção
+                        da ciência, educação, formação,
+                        produção de conhecimento, publicações
+                        e desenvolvimento de projetos
+                        culturais e pedagógicos.
+
+                    </p>
+
+
+
+
+                </div>
+
+
+
+                <div class="col-lg-6">
+
+
+                    <div class="hero-image-area">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=85"
+                            class="hero-image"
+                            alt="Pesquisa científica"
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
         </div>
-      </div>
+
     </section>
 
-    <!-- SERVIÇOS -->
-    <h2 class="section-title">Nossos Serviços</h2>
 
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card">
-            <i class="fa-solid fa-book-open"></i>
-            <h5>Editora</h5>
-            <p>Publicação de livros e materiais acadêmicos.</p>
-          </div>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer-custom">
+
+        <div class="container">
+
+
+            <div class="row gy-4">
+
+
+                <div class="col-lg-6">
+
+                    <h4>
+
+                        Associação Científica Medeia
+
+                    </h4>
+
+
+                    <p>
+
+                        Promovendo o desenvolvimento
+                        científico, a inovação, a pesquisa
+                        e a disseminação do conhecimento.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="col-lg-3">
+
+                    <h4>
+
+                        Institucional
+
+                    </h4>
+
+
+                    <p>
+
+                        Início<br>
+                        Sobre<br>
+                        Serviços<br>
+                        Publicações
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="col-lg-3">
+
+                    <h4>
+
+                        Contato
+
+                    </h4>
+
+
+                    <p>
+
+                        <i class="fas fa-envelope me-2"></i>
+
+                        associacaocientificamedeia@gmail.com
+
+                    </p>
+
+
+                    <p>
+
+                        <i class="fas fa-phone me-2"></i>
+
+                        (55) 99101-2088
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                © 2026 Associação Científica Medeia.
+                Todos os direitos reservados.
+
+            </div>
+
+
         </div>
 
-        <div class="col-md-3">
-          <div class="card">
-            <i class="fa-solid fa-laptop"></i>
-            <h5>Revista Eletrônica</h5>
-            <p>Revista científica online com artigos inéditos.</p>
-          </div>
-        </div>
+    </footer>
 
-        <div class="col-md-3">
-          <div class="card">
-            <i class="fa-solid fa-clipboard-list"></i>
-            <h5>Agência de Concursos</h5>
-            <p>
-              Organização e realização de concursos públicos e privados.
-            </p>
-          </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h5>Assessoria Pedagógica</h5>
-            <p>Consultoria em projetos educacionais e científicos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+</body>
 
-    <!-- SOBRE -->
-    <section class="about">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h3>Quem Somos</h3>
-            <p>
-              A Associação Científica Medeia é uma organização de caráter
-              cultural, pedagógico e midiático, dedicada à promoção da ciência,
-              atividades de formação, publicações e ações de concursos públicos
-              e privados.
-            </p>
-          </div>
-
-          <div class="col-md-6">
-            <img
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-              class="img-fluid rounded"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h4>Contato</h4>
-            <p>
-              Av. 20 de Dezembro, 539 – Centro<br />
-              Cerro Grande - RS - 93340-000
-            </p>
-            <p>(55) 99101-2088</p>
-            <p>associacaocientificamedeia@gmail.com</p>
-          </div>
-
-          <div class="col-md-6">
-            <form>
-              <input
-                type="text"
-                class="form-control mb-3"
-                placeholder="Nome"
-              />
-
-              <input
-                type="email"
-                class="form-control mb-3"
-                placeholder="E-mail"
-              />
-
-              <input
-                type="text"
-                class="form-control mb-3"
-                placeholder="Assunto"
-              />
-
-              <textarea
-                class="form-control mb-3"
-                rows="4"
-                placeholder="Mensagem"
-              ></textarea>
-
-              <button class="btn btn-send w-100">
-                Enviar Mensagem
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>
-        © 2024 Associação Científica Medeia. Todos os direitos reservados.
-      </p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
 </html>
