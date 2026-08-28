@@ -11,7 +11,7 @@
     >
 
     <title>
-        Início | Associação Científica Medeia
+        Inicio | Associação Científica Medeia
     </title>
 
 
