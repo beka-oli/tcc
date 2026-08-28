@@ -23,7 +23,7 @@
                     <strong>Revistas Científicas</strong>
                     <a href="form_revista.php">Revistas</a>
                     <a href="form_livros.php">Livros</a>
-                    <a href="form_edicao.php">Edições</a>
+                    <a href="form_TA.php">Trabalhos Acadêmicos</a>
                     <a href="form_artigo.php">Artigos</a>
                     <a href="form_autor.php">Autores</a>
                     <hr>
