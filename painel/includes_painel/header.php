@@ -25,12 +25,11 @@
                     <a href="form_livros.php">Livros</a>
                     <a href="form_TA.php">Trabalhos Acadêmicos</a>
                     <a href="form_artigo.php">Artigos</a>
-                    <a href="form_autor.php">Autores</a>
+                    <a href="form_autores.php">Autores</a>
                     <hr>
                     <strong>Concursos</strong>
                     <a href="form_concurso.php">Concursos</a>
-                    <a href="inscricoes.php">Inscrições</a>
-                    <a href="resultados.php">Resultados</a>
+                    <a href="form_inscricoes.php">Inscrições</a>
                 </div>
             </div>
 
@@ -44,7 +43,7 @@
                     <strong>Listagens</strong>
                     <a href="lista_revistas.php">Revistas</a>
                     <a href="lista_livros.php">Livros</a>
-                    <a href="lista_edicoes.php">Edições</a>
+                    <a href="lista_TA.php">Trabalhos Acadêmicos</a>
                     <a href="lista_artigos.php">Artigos</a>
                     <a href="lista_autores.php">Autores</a>
                     <hr>
