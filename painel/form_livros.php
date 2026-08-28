@@ -1,636 +1,220 @@
+<?php
+include('verifica_login.php');
+include('conexao.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $campos = [
+        'titulo','isbn','autor','editora','ano_publicacao','paginas',
+        'edicao','categoria','idioma','sinopse','data_cadastro',
+        'status','destaque'
+    ];
+
+    foreach ($campos as $c)
+        $$c = mysqli_real_escape_string($conexao, $_POST[$c] ?? '');
+
+    $status = $status ?: 'Disponível';
+    $destaque = $destaque ?: '0';
+
+    if (!$titulo || !$autor || !$ano_publicacao || !$categoria || !$idioma) {
+        echo "<script>alert('Preencha todos os campos obrigatórios!');history.back();</script>";
+        exit;
+    }
+
+    if ($isbn) {
+        $check = mysqli_query($conexao,
+            "SELECT id_livro FROM livros WHERE isbn='$isbn' LIMIT 1"
+        );
+
+        if (!$check) {
+            echo "<script>alert('Erro ao verificar o livro no banco de dados!');history.back();</script>";
+            exit;
+        }
+
+        if (mysqli_num_rows($check)) {
+            echo "<script>alert('Já existe um livro cadastrado com este ISBN!');history.back();</script>";
+            exit;
+        }
+    }
+
+    $sql = "INSERT INTO livros
+    (titulo,isbn,autor,editora,ano_publicacao,paginas,edicao,categoria,
+    idioma,sinopse,data_cadastro,status,destaque,dt_cad_livro)
+    VALUES
+    ('$titulo','$isbn','$autor','$editora','$ano_publicacao','$paginas',
+    '$edicao','$categoria','$idioma','$sinopse','$data_cadastro',
+    '$status','$destaque',NOW())";
+
+    if (mysqli_query($conexao, $sql)) {
+        echo "<script>alert('Livro cadastrado com sucesso!');location='cad_livro.php';</script>";
+        exit;
+    }
+
+    echo "<script>alert('Erro ao cadastrar o livro!');history.back();</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Cadastro de Livro</title>
-
-    <!--------------- HEAD ---------------->
-    <?php include 'includes_painel/head.php'?>
-    <!------------------------------------->
-
+    <?php include 'includes_painel/head.php'; ?>
 </head>
 
 <body>
 
-    <!--------------- HEADER ---------------->
-    <?php include 'includes_painel/header.php'?>
-    <!--------------------------------------->
+<?php include 'includes_painel/header.php'; ?>
 
-    <br><br>
+<form action="cad_livro.php" method="POST">
 
-    <form id="formID" name="formID" action="cad_livro.php" method="POST">
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-book"></i> Dados do Livro
+    </div>
 
-        <!-- ==========================================
-             DADOS DO LIVRO
-        =========================================== -->
+    <div class="card-body row">
 
-        <div class="card shadow-sm mb-4">
-
-            <div class="card-header">
-
-                <h5 class="mb-0">
-                    <i class="fas fa-book me-2"></i>
-                    Dados do Livro
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="row">
-
-                    <!-- Título -->
-                    <div class="col-md-8 mb-3">
-
-                        <label for="titulo" class="form-label">
-                            Título do Livro
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="titulo"
-                            name="titulo"
-                            placeholder="Digite o título do livro"
-                            maxlength="255"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- ISBN -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="isbn" class="form-label">
-                            ISBN
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="isbn"
-                            name="isbn"
-                            placeholder="Ex.: 978-85-12345-67-8"
-                            maxlength="20"
-                        >
-
-                    </div>
-
-
-                    <!-- Autor -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="autor" class="form-label">
-                            Autor
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="autor"
-                            name="autor"
-                            placeholder="Nome do autor"
-                            maxlength="255"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- Editora -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="editora" class="form-label">
-                            Editora
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="editora"
-                            name="editora"
-                            placeholder="Nome da editora"
-                            maxlength="255"
-                        >
-
-                    </div>
-
-
-                    <!-- Ano de publicação -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="ano_publicacao" class="form-label">
-                            Ano de Publicação
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="ano_publicacao"
-                            name="ano_publicacao"
-                            placeholder="Ex.: 2026"
-                            min="1000"
-                            max="2100"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- Número de páginas -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="paginas" class="form-label">
-                            Número de Páginas
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="paginas"
-                            name="paginas"
-                            placeholder="Ex.: 320"
-                            min="1"
-                        >
-
-                    </div>
-
-
-                    <!-- Edição -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="edicao" class="form-label">
-                            Edição
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="edicao"
-                            name="edicao"
-                            placeholder="Ex.: 1"
-                            min="1"
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="col-md-8">
+            <label>Título</label>
+            <input class="form-control" name="titulo"
+                   placeholder="Digite o título do livro"
+                   maxlength="255" required>
         </div>
 
-
-        <!-- ==========================================
-             CLASSIFICAÇÃO
-        =========================================== -->
-
-        <div class="card shadow-sm mb-4">
-
-            <div class="card-header">
-
-                <h5 class="mb-0">
-                    <i class="fas fa-tags me-2"></i>
-                    Classificação
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="row">
-
-                    <!-- Categoria -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="categoria" class="form-label">
-                            Categoria
-                        </label>
-
-                        <select
-                            class="form-select"
-                            id="categoria"
-                            name="categoria"
-                            required
-                        >
-
-                            <option value="">
-                                Selecione a categoria
-                            </option>
-
-                            <option value="Romance">
-                                Romance
-                            </option>
-
-                            <option value="Ficção">
-                                Ficção
-                            </option>
-
-                            <option value="Fantasia">
-                                Fantasia
-                            </option>
-
-                            <option value="Aventura">
-                                Aventura
-                            </option>
-
-                            <option value="Terror">
-                                Terror
-                            </option>
-
-                            <option value="Biografia">
-                                Biografia
-                            </option>
-
-                            <option value="História">
-                                História
-                            </option>
-
-                            <option value="Didático">
-                                Didático
-                            </option>
-
-                            <option value="Outros">
-                                Outros
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- Idioma -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="idioma" class="form-label">
-                            Idioma
-                        </label>
-
-                        <select
-                            class="form-select"
-                            id="idioma"
-                            name="idioma"
-                            required
-                        >
-
-                            <option value="">
-                                Selecione o idioma
-                            </option>
-
-                            <option value="Português">
-                                Português
-                            </option>
-
-                            <option value="Inglês">
-                                Inglês
-                            </option>
-
-                            <option value="Espanhol">
-                                Espanhol
-                            </option>
-
-                            <option value="Francês">
-                                Francês
-                            </option>
-
-                            <option value="Outro">
-                                Outro
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- Sinopse -->
-                    <div class="col-md-12 mb-3">
-
-                        <label for="sinopse" class="form-label">
-                            Sinopse
-                        </label>
-
-                        <textarea
-                            class="form-control"
-                            id="sinopse"
-                            name="sinopse"
-                            rows="5"
-                            placeholder="Digite uma breve descrição do livro"
-                        ></textarea>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="col-md-4">
+            <label>ISBN</label>
+            <input class="form-control" name="isbn"
+                   placeholder="Ex.: 978-85-00000-00-0"
+                   maxlength="20">
         </div>
 
-
-        <!-- ==========================================
-             PUBLICAÇÃO
-        =========================================== -->
-
-        <div class="card shadow-sm mb-4">
-
-            <div class="card-header">
-
-                <h5 class="mb-0">
-                    <i class="fas fa-calendar-alt me-2"></i>
-                    Publicação
-                </h5>
-
-            </div>
-
-            <div class="card-body">
-
-                <div class="row">
-
-                    <!-- Data de cadastro -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="data_cadastro" class="form-label">
-                            Data de Cadastro
-                        </label>
-
-                        <input
-                            type="date"
-                            class="form-control"
-                            id="data_cadastro"
-                            name="data_cadastro"
-                        >
-
-                    </div>
-
-
-                    <!-- Status -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="status" class="form-label">
-                            Status
-                        </label>
-
-                        <select
-                            class="form-select"
-                            id="status"
-                            name="status"
-                            required
-                        >
-
-                            <option value="Disponível">
-                                Disponível
-                            </option>
-
-                            <option value="Indisponível">
-                                Indisponível
-                            </option>
-
-                            <option value="Em manutenção">
-                                Em manutenção
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- Destaque -->
-                    <div class="col-md-4 mb-3">
-
-                        <label for="destaque" class="form-label">
-                            Destaque
-                        </label>
-
-                        <select
-                            class="form-select"
-                            id="destaque"
-                            name="destaque"
-                            required
-                        >
-
-                            <option value="0">
-                                Não
-                            </option>
-
-                            <option value="1">
-                                Sim
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="col-md-6">
+            <label>Autor</label>
+            <input class="form-control" name="autor"
+                   placeholder="Nome do autor"
+                   maxlength="255" required>
         </div>
 
-
-        <!-- ==========================================
-             BOTÕES
-        =========================================== -->
-
-        <div class="text-end mb-5">
-
-            <button
-                type="reset"
-                class="btn btn-secondary"
-            >
-
-                <i class="fas fa-eraser"></i>
-                Limpar
-
-            </button>
-
-
-            <button
-                type="submit"
-                class="btn btn-primary"
-            >
-
-                <i class="fas fa-save"></i>
-                Salvar Livro
-
-            </button>
-
+        <div class="col-md-6">
+            <label>Editora</label>
+            <input class="form-control" name="editora"
+                   placeholder="Nome da editora"
+                   maxlength="255">
         </div>
 
-    </form>
-
-
-    <style>
-
-        /* ===========================
-           CONTAINER
-        =========================== */
-
-        form {
-            max-width: 1450px;
-            margin: 25px auto;
-        }
-
-
-        /* ===========================
-           CARDS
-        =========================== */
-
-        .card {
-            border: 0;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0,0,0,.08);
-            margin-bottom: 18px;
-        }
-
-
-        .card-header {
-            background: linear-gradient(90deg,#b61d45,#8b2cf5);
-            padding: 12px 18px;
-            border: 0;
-        }
-
-
-        .card-header h5 {
-            margin: 0;
-            color: #fff;
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-
-        .card-body {
-            padding: 18px;
-        }
-
-
-        /* ===========================
-           LABELS
-        =========================== */
-
-        .form-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: #555;
-            margin-bottom: 4px;
-        }
-
-
-        /* ===========================
-           INPUTS
-        =========================== */
-
-        .form-control,
-        .form-select {
-
-            height: 36px;
-
-            font-size: 13px;
-
-            border-radius: 8px;
-
-            padding: 6px 12px;
-
-            border: 1px solid #d8dce5;
-
-            transition: .2s;
-
-        }
-
-
-        .form-control::placeholder {
-            font-size: 12px;
-        }
-
-
-        .form-control:focus,
-        .form-select:focus {
-
-            border-color: #8b2cf5;
-
-            box-shadow: 0 0 0 .15rem rgba(139,44,245,.12);
-
-        }
-
-
-        /* ===========================
-           TEXTAREA
-        =========================== */
-
-        textarea.form-control {
-
-            min-height: 85px;
-
-            resize: vertical;
-
-            padding-top: 8px;
-
-        }
-
-
-        /* ===========================
-           ESPAÇAMENTO
-        =========================== */
-
-        .mb-3 {
-            margin-bottom: 12px !important;
-        }
-
-
-        .row {
-            --bs-gutter-x: 1rem;
-        }
-
-
-        /* ===========================
-           BOTÕES
-        =========================== */
-
-        .btn {
-
-            height: 38px;
-
-            font-size: 13px;
-
-            border-radius: 8px;
-
-            padding: 0 18px;
-
-            font-weight: 600;
-
-        }
-
-
-        .btn-primary {
-
-            border: none;
-
-            background: linear-gradient(90deg,#b61d45,#8b2cf5);
-
-        }
-
-
-        .btn-primary:hover {
-
-            background: linear-gradient(90deg,#a1173e,#7124ca);
-
-        }
-
-
-        .text-end {
-
-            margin-top: 20px;
-
-        }
-
-    </style>
-
-
-    <!---------------FOOTER---------------------->
-    <?php include 'includes_painel/footer.php'?>
-    <!------------------------------------------->
+        <div class="col-md-4">
+            <label>Ano de Publicação</label>
+            <input type="number" class="form-control"
+                   name="ano_publicacao"
+                   placeholder="Ex.: 2026"
+                   min="1900" max="2100" required>
+        </div>
+
+        <div class="col-md-4">
+            <label>Páginas</label>
+            <input type="number" class="form-control"
+                   name="paginas"
+                   placeholder="Ex.: 250"
+                   min="1">
+        </div>
+
+        <div class="col-md-4">
+            <label>Edição</label>
+            <input type="number" class="form-control"
+                   name="edicao"
+                   placeholder="Ex.: 1"
+                   min="1">
+        </div>
+
+        <div class="col-md-4">
+            <label>Categoria</label>
+            <select class="form-select" name="categoria" required>
+                <option value="">Selecione</option>
+                <option>Literatura</option>
+                <option>Romance</option>
+                <option>Ficção</option>
+                <option>Fantasia</option>
+                <option>História</option>
+                <option>Ciência</option>
+                <option>Tecnologia</option>
+                <option>Educação</option>
+                <option>Outros</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label>Idioma</label>
+            <select class="form-select" name="idioma" required>
+                <option value="">Selecione</option>
+                <option>Português</option>
+                <option>Inglês</option>
+                <option>Espanhol</option>
+                <option>Francês</option>
+                <option>Outro</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label>Data de Cadastro</label>
+            <input type="date" class="form-control" name="data_cadastro">
+        </div>
+
+        <div class="col-md-12">
+            <label>Sinopse</label>
+            <textarea class="form-control" name="sinopse"
+                      placeholder="Digite a sinopse do livro"></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label>Status</label>
+            <select class="form-select" name="status">
+                <option>Disponível</option>
+                <option>Indisponível</option>
+                <option>Em Empréstimo</option>
+                <option>Arquivado</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label>Destaque</label>
+            <select class="form-select" name="destaque">
+                <option value="0">Não</option>
+                <option value="1">Sim</option>
+            </select>
+        </div>
+
+    </div>
+</div>
+
+<div class="botoes">
+    <button type="reset" class="btn btn-secondary">
+        <i class="fas fa-eraser"></i> Limpar
+    </button>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"></i> Salvar Livro
+    </button>
+</div>
+
+</form>
+
+<style>
+form{max-width:1450px;margin:25px auto}
+.card{border:0;border-radius:14px;overflow:hidden;box-shadow:0 5px 18px #00000014;margin-bottom:18px}
+.card-header{background:linear-gradient(90deg,#b61d45,#8b2cf5);color:#fff;padding:12px 18px;font-weight:600}
+.card-body{padding:18px}
+.card-body>div{margin-bottom:12px}
+label{display:block;margin-bottom:4px;font-size:13px;font-weight:600;color:#555}
+.form-control,.form-select{height:36px;font-size:13px;border-radius:8px}
+textarea.form-control{height:80px;resize:vertical}
+.botoes{text-align:right;margin-bottom:35px}
+.btn{height:38px;border-radius:8px;padding:0 18px;font-size:13px;font-weight:600}
+.btn-primary{border:0;background:linear-gradient(90deg,#b61d45,#8b2cf5)}
+</style>
+
+<?php include 'includes_painel/footer.php'; ?>
 
 </body>
-
 </html>
