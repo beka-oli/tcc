@@ -9,57 +9,86 @@
                 <h4>Associação Científica</h4>
 
                 <p>
-                    Promovendo o desenvolvimento científico, a inovação,
-                    a pesquisa e a disseminação do conhecimento por meio
-                    de projetos, eventos e ações voltadas à comunidade.
+                    Painel administrativo destinado ao gerenciamento
+                    de revistas científicas, livros, autores,
+                    concursos, inscrições e demais conteúdos
+                    da Associação Científica.
                 </p>
 
             </div>
 
+
             <div class="col-lg-3">
 
-                <h5>Institucional</h5>
+                <h5>PAINEL ADMINISTRATIVO</h5>
 
                 <ul class="footer-links">
-                    <li><a href="index.php">Início</a></li>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Projetos</a></li>
-                    <li><a href="#">Publicações</a></li>
+
+                    <li>
+                        <a href="index.php">
+                            <i class="fas fa-house"></i>
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-plus-circle"></i>
+                            Cadastros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-list"></i>
+                            Listar registros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-gear"></i>
+                            Configurações
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
 
+
             <div class="col-lg-4">
 
-                <h5>Contato</h5>
+                <h5>SISTEMA</h5>
 
                 <p>
-                    <i class="fas fa-envelope"></i>
-                    contato@associacao.org.br
+                    <i class="fas fa-user-shield"></i>
+                    Área restrita do administrador
                 </p>
 
                 <p>
-                    <i class="fas fa-phone"></i>
-                    (00) 0000-0000
+                    <i class="fas fa-database"></i>
+                    Gerenciamento de informações
                 </p>
 
                 <p>
-                    <i class="fas fa-location-dot"></i>
-                    Cidade - Estado
+                    <i class="fas fa-circle-check"></i>
+                    Sistema operacional
                 </p>
 
             </div>
 
         </div>
 
+
         <div class="footer-bottom">
 
             <span>
-                © 2026 Associação Científica. Todos os direitos reservados.
+                © 2026 Associação Científica
             </span>
 
             <span>
-                Desenvolvido por Rebeka de Oliveira
+                Painel Administrativo • Versão 1.0
             </span>
 
         </div>
@@ -68,168 +97,204 @@
 
 </footer>
 <style>
-    .footer-custom{
+    .footer-custom {
+    margin-top: 60px;
+    background: linear-gradient(
+        135deg,
+        #b51f4f 0%,
+        #a21f72 50%,
+        #7620a0 100%
+    );
 
-    margin-top:90px;
-
-    background:linear-gradient(90deg,
-        #c1274d,
-        #b11f67,
-        #9a1f88,
-        #7b1fa2);
-
-    color:#fff;
-
-    padding:70px 0 25px;
-
-    position:relative;
-
-    overflow:hidden;
+    color: #fff;
+    padding: 45px 0 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* efeito de brilho */
 
-.footer-custom::before{
+/* EFEITOS DECORATIVOS */
 
-    content:"";
+.footer-custom::before {
+    content: "";
+    position: absolute;
 
-    position:absolute;
+    width: 300px;
+    height: 300px;
 
-    width:350px;
-    height:350px;
+    background: rgba(255,255,255,.08);
 
-    background:rgba(255,255,255,.08);
+    border-radius: 50%;
 
-    border-radius:50%;
-
-    top:-140px;
-    right:-120px;
+    top: -160px;
+    right: -80px;
 }
 
-.footer-custom::after{
+.footer-custom::after {
+    content: "";
+    position: absolute;
 
-    content:"";
+    width: 220px;
+    height: 220px;
 
-    position:absolute;
+    background: rgba(255,255,255,.06);
 
-    width:250px;
-    height:250px;
+    border-radius: 50%;
 
-    background:rgba(255,255,255,.05);
-
-    border-radius:50%;
-
-    bottom:-120px;
-    left:-90px;
+    bottom: -140px;
+    left: -80px;
 }
 
-.footer-custom .container{
 
-    position:relative;
+/* CONTEÚDO */
 
-    z-index:2;
+.footer-custom .container {
+    position: relative;
+    z-index: 2;
 }
 
-.footer-custom h2{
 
-    font-size:2.2rem;
+/* TÍTULOS */
 
-    font-weight:700;
+.footer-custom h4 {
+    color: #fff;
 
-    margin-bottom:18px;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
 }
 
-.footer-custom h5{
+.footer-custom h5 {
+    color: #fff;
 
-    font-size:1rem;
+    font-size: .95rem;
 
-    text-transform:uppercase;
+    text-transform: uppercase;
 
-    letter-spacing:2px;
+    letter-spacing: 2px;
 
-    margin-bottom:22px;
+    margin-bottom: 20px;
 
-    opacity:.9;
+    font-weight: 700;
 }
 
-.footer-custom p{
 
-    font-size:15px;
+/* TEXTOS */
 
-    line-height:1.9;
+.footer-custom p {
+    color: rgba(255,255,255,.90);
 
-    opacity:.9;
+    font-size: 14px;
+
+    line-height: 1.8;
 }
 
-.footer-custom ul{
 
-    list-style:none;
+/* LINKS */
 
-    padding:0;
+.footer-custom ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
 }
 
-.footer-custom li{
-
-    margin-bottom:14px;
+.footer-custom li {
+    margin-bottom: 13px;
 }
 
-.footer-custom a{
+.footer-custom a {
+    color: #fff !important;
 
-    color:#fff;
+    text-decoration: none;
 
-    text-decoration:none;
+    font-size: 14px;
 
-    transition:.3s;
+    font-weight: 500;
+
+    transition: .3s;
 }
 
-.footer-custom a:hover{
+.footer-custom a:hover {
+    color: #fff;
 
-    opacity:.75;
+    opacity: .75;
 
-    padding-left:6px;
+    padding-left: 6px;
 }
 
-.info{
-
-    margin-bottom:16px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    opacity:.95;
+.footer-custom a i {
+    width: 22px;
 }
 
-.info i{
 
-    width:38px;
-    height:38px;
+/* INFORMAÇÕES */
 
-    background:rgba(255,255,255,.15);
+.footer-custom .info {
+    display: flex;
 
-    border-radius:50%;
+    align-items: center;
 
-    display:flex;
+    gap: 10px;
 
-    align-items:center;
+    margin-bottom: 12px;
 
-    justify-content:center;
+    color: rgba(255,255,255,.90);
 }
 
-.footer-bottom{
+.footer-custom .info i {
+    width: 32px;
+    height: 32px;
 
-    margin-top:50px;
+    display: flex;
 
-    border-top:1px solid rgba(255,255,255,.15);
+    align-items: center;
+    justify-content: center;
 
-    padding-top:20px;
+    background: rgba(255,255,255,.14);
 
-    text-align:center;
+    border-radius: 8px;
 
-    font-size:14px;
+    color: #fff;
+}
 
-    opacity:.8;
+
+/* LINHA INFERIOR */
+
+.footer-bottom {
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,.22);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: rgba(255,255,255,.80);
+
+    font-size: 13px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .footer-custom {
+        padding: 35px 0 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
 }
 </style>

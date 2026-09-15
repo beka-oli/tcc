@@ -221,7 +221,7 @@ $totalResultados = mysqli_num_rows($resultado);
                                     class="editar"
                                     title="Editar"
                                 >
-                                    <i class="fas fa-pen-to-square"></i>
+                                    <i class="fas fa-pen-to-square"></i> Alterar
                                 </a>
 
                                 <a
@@ -230,7 +230,7 @@ $totalResultados = mysqli_num_rows($resultado);
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este concurso?')"
                                 >
-                                    <i class="fas fa-trash"></i>
+                                    <i class="fas fa-trash"></i> Excluir
                                 </a>
                             </td>
                         </tr>
@@ -314,7 +314,7 @@ tbody tr:hover td{background:#faf9ff}
 .status.vermelho{background:#ffeaee;color:#d9274f}
 .status.cinza{background:#edf0f4;color:#697586}
 
-.acoes{white-space:nowrap}
+.acoes{white-space:nowrap;display:flex;gap:8px;align-items:center}
 .acoes a{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border-radius:9px;text-decoration:none;margin-right:5px;transition:.2s}
 .editar{color:#8227ed;border:1px solid #a56aff;background:#fff}
 .editar:hover{background:#f5efff}

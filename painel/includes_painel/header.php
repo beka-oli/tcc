@@ -46,7 +46,6 @@
                     <a href="lista_TA.php">Trabalhos Acadêmicos</a>
                     <a href="lista_artigos.php">Artigos</a>
                     <a href="lista_autores.php">Autores</a>
-                    <hr>
                     <a href="lista_concursos.php">Concursos</a>
                     <a href="lista_inscricoes.php">Inscrições</a>
                     <a href="lista_resultados.php">Resultados</a>

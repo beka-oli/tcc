@@ -161,7 +161,7 @@ $total = mysqli_num_rows($resultado);
                                     href="editar_resultado.php?id=<?= $r['id_resultado'] ?>"
                                     title="Editar"
                                 >
-                                    <i class="fas fa-pen-to-square"></i>
+                                    <i class="fas fa-pen-to-square"></i> Alterar
                                 </a>
 
                                 <a
@@ -170,7 +170,7 @@ $total = mysqli_num_rows($resultado);
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este resultado?')"
                                 >
-                                    <i class="fas fa-trash"></i>
+                                    <i class="fas fa-trash"></i> Excluir
                                 </a>
 
                             </td>
@@ -245,8 +245,8 @@ tbody tr:hover td{background:#faf9ff}
 .nota{display:inline-flex;align-items:center;justify-content:center;min-width:45px;padding:7px 12px;border-radius:20px;background:#f1e9ff;color:#7527d9;font-weight:600}
 .classificacao{display:inline-flex;align-items:center;justify-content:center;min-width:45px;padding:7px 12px;border-radius:20px;background:#eaf9ed;color:#2da847;font-weight:600}
 
-.acoes{white-space:nowrap}
-.acoes a{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;text-decoration:none;margin-right:5px;transition:.2s}
+.acoes{white-space:nowrap;display:flex;gap:8px;align-items:center}
+.acoes a{min-width:40px;height:40px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;text-decoration:none;margin-right:5px;transition:.2s}
 .editar{color:#8227ed;border:1px solid #a56aff;background:#fff}
 .editar:hover{background:#f5efff}
 .excluir{color:#df2851;border:1px solid #ef829b;background:#fff}

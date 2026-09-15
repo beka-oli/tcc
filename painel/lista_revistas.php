@@ -1,4 +1,4 @@
-```php
+
 <?php
 include 'verifica_login.php';
 include 'conexao.php';
@@ -136,9 +136,9 @@ $cards = [
         .status.cinza{background:#edf0f4;color:#697586}
         .ponto{font-size:11px}
 
-        .acoes{white-space:nowrap}
+        .acoes{white-space:nowrap;display:flex;gap:8px;align-items:center}
         .acoes a{
-            width:40px;height:40px;display:inline-flex;
+            min-width:40px;height:40px;padding:0 12px;display:inline-flex;
             align-items:center;justify-content:center;
             border-radius:10px;text-decoration:none;margin-right:5px
         }
@@ -299,13 +299,13 @@ $cards = [
                             <td class="acoes">
                                 <a href="editar_revista.php?id=<?= $r['id_revista'] ?>"
                                    class="editar" title="Editar">
-                                    <i class="fas fa-pen-to-square"></i>
+                                    <i class="fas fa-pen-to-square"></i> Alterar
                                 </a>
 
                                 <a href="excluir_revista.php?id=<?= $r['id_revista'] ?>"
                                    class="excluir" title="Excluir"
                                    onclick="return confirm('Deseja excluir esta revista?')">
-                                    <i class="fas fa-trash"></i>
+                                    <i class="fas fa-trash"></i> Excluir
                                 </a>
                             </td>
                         </tr>

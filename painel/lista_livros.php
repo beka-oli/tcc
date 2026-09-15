@@ -1,4 +1,4 @@
-```php
+
 <?php
 include 'verifica_login.php';
 include 'conexao.php';
@@ -158,7 +158,7 @@ $anos = mysqli_query($conexao, "
 
         .acoes{display:flex;gap:8px}
         .acao{
-            width:40px;height:40px;border-radius:10px;
+            min-width:40px;height:40px;padding:0 12px;border-radius:10px;
             display:flex;align-items:center;justify-content:center;
             text-decoration:none;background:#fff
         }
@@ -330,13 +330,13 @@ $anos = mysqli_query($conexao, "
                                 <div class="acoes">
                                     <a href="editar_livro.php?id=<?= $r['id_livro'] ?>"
                                        class="acao editar" title="Editar">
-                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-edit"></i> Alterar
                                     </a>
 
                                     <a href="excluir_livro.php?id=<?= $r['id_livro'] ?>"
                                        class="acao excluir" title="Excluir"
                                        onclick="return confirm('Deseja realmente excluir este livro?')">
-                                        <i class="fas fa-trash"></i>
+                                        <i class="fas fa-trash"></i> Excluir
                                     </a>
                                 </div>
                             </td>

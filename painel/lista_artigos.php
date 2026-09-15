@@ -192,7 +192,7 @@ $cards = [
                                     href="editar_artigo.php?id=<?= $r['id_artigo'] ?>"
                                     class="editar"
                                     title="Editar">
-                                    <i class="fas fa-pen-to-square"></i>
+                                    <i class="fas fa-pen-to-square"></i> Alterar
                                 </a>
 
                                 <a
@@ -200,7 +200,7 @@ $cards = [
                                     class="excluir"
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este artigo?')">
-                                    <i class="fas fa-trash"></i>
+                                    <i class="fas fa-trash"></i> Excluir
                                 </a>
 
                             </td>
@@ -357,7 +357,7 @@ tr:hover td{background:#faf9ff}
 .status.vermelho{background:#ffeaee;color:#d9274f}
 .status.cinza{background:#edf0f4;color:#697586}
 
-.acoes{white-space:nowrap}
+.acoes{white-space:nowrap;display:flex;gap:8px;align-items:center}
 
 .acoes a{
     display:inline-flex;width:40px;height:40px;
