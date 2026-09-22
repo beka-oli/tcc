@@ -1,4 +1,4 @@
-```php
+
 <?php
 include 'verifica_login.php';
 include 'conexao.php';
@@ -357,4 +357,4 @@ tbody tr:hover td{background:#faf9ff}
 
 </body>
 </html>
-```
+
