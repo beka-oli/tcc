@@ -196,7 +196,7 @@ $cards = [
                                 </a>
 
                                 <a
-                                    href="excluir_artigo.php?id=<?= $r['id_artigo'] ?>"
+                                    href="excluir_artigo.php?id=<?= $r['id_artigo'] ?>&csrf_token=<?=h(csrf_token())?>"
                                     class="excluir"
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este artigo?')">

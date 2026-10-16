@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_query($conexao, $sql)) {
         echo "<script>
             alert('Concurso cadastrado com sucesso!');
-            location='cad_concurso.php';
+            location='lista_concursos.php';
         </script>";
         exit;
     }
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'includes_painel/header.php'; ?>
 
-<form action="cad_concurso.php" method="POST">
+<form action="lista_concursos.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
 
 <!-- DADOS DO CONCURSO -->
 <div class="card">

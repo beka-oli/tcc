@@ -166,7 +166,7 @@ $total = mysqli_num_rows($resultado);
 
                                 <a
                                     class="excluir"
-                                    href="excluir_resultado.php?id=<?= $r['id_resultado'] ?>"
+                                    href="excluir_resultado.php?id=<?= $r['id_resultado'] ?>&csrf_token=<?=h(csrf_token())?>"
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este resultado?')"
                                 >

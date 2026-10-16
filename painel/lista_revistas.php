@@ -302,7 +302,7 @@ $cards = [
                                     <i class="fas fa-pen-to-square"></i> Alterar
                                 </a>
 
-                                <a href="excluir_revista.php?id=<?= $r['id_revista'] ?>"
+                                <a href="excluir_revista.php?id=<?= $r['id_revista'] ?>&csrf_token=<?=h(csrf_token())?>"
                                    class="excluir" title="Excluir"
                                    onclick="return confirm('Deseja excluir esta revista?')">
                                     <i class="fas fa-trash"></i> Excluir

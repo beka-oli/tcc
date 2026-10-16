@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     '$status','$destaque',NOW())";
 
     if (mysqli_query($conexao, $sql)) {
-        echo "<script>alert('Revista cadastrada com sucesso!');location='cad_revista.php';</script>";
+        echo "<script>alert('Revista cadastrada com sucesso!');location='lista_revistas.php';</script>";
         exit;
     }
 
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'includes_painel/header.php'; ?>
 
-<form action="cad_revista.php" method="POST">
+<form action="lista_revistas.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
 
 <!-- DADOS DA REVISTA -->
 <div class="card">

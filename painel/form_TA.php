@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "<script>
             alert('Trabalho acadêmico cadastrado com sucesso!');
-            location='cad_trabalho.php';
+            location='lista_TA.php';
         </script>";
 
         exit;
@@ -125,9 +125,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php include 'includes_painel/header.php'; ?>
 
 
-<form action="cad_trabalho.php"
+<form action="lista_TA.php"
       method="POST"
-      enctype="multipart/form-data">
+      enctype="multipart/form-data"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
 
 
 <!-- DADOS DO TRABALHO -->

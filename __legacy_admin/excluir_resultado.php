@@ -1,1 +1,0 @@
-<?php include 'verifica_login.php'; include 'conexao.php';$id=filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);if(!$id||$id<1)die('ID inválido.');$ok=mysqli_query($conexao,"DELETE FROM resultados WHERE id_resultado=$id");if(!$ok)die('Não foi possível excluir o resultado: '.htmlspecialchars(mysqli_error($conexao)));header('Location: lista_resultados.php');exit;

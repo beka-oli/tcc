@@ -108,7 +108,7 @@ $row = mysqli_fetch_assoc($r);
         <h1>Editar Revista</h1>
 
 
-        <form method="post">
+        <form method="post"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
 
             <div class="grid">
 

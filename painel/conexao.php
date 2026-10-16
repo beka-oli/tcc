@@ -1,11 +1,12 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
+declare(strict_types=1);
 
-define('HOST', 'localhost');
-define('USUARIO', 'root');
-define('SENHA', '');
-define('DB', 'medeia');
+require_once __DIR__ . '/config/config.php';
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível conectar');
-
-?>
+mysqli_report(MYSQLI_REPORT_OFF);
+$conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+if (!$conexao) {
+    http_response_code(500);
+    exit('Não foi possível conectar ao banco de dados.');
+}
+mysqli_set_charset($conexao, 'utf8mb4');

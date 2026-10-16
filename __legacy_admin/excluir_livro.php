@@ -1,1 +1,0 @@
-<?php include 'verifica_login.php'; include 'conexao.php'; $id=filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT);if(!$id||$id<1)die('ID inválido.');$ok=mysqli_query($conexao,"DELETE FROM livros WHERE id_livro=$id");if(!$ok)die('Não foi possível excluir o livro: '.htmlspecialchars(mysqli_error($conexao)));header('Location: lista_livros.php');exit;

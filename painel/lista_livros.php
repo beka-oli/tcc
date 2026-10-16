@@ -333,7 +333,7 @@ $anos = mysqli_query($conexao, "
                                         <i class="fas fa-edit"></i> Alterar
                                     </a>
 
-                                    <a href="excluir_livro.php?id=<?= $r['id_livro'] ?>"
+                                    <a href="excluir_livro.php?id=<?= $r['id_livro'] ?>&csrf_token=<?=h(csrf_token())?>"
                                        class="acao excluir" title="Excluir"
                                        onclick="return confirm('Deseja realmente excluir este livro?')">
                                         <i class="fas fa-trash"></i> Excluir

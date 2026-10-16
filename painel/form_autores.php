@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_query($conexao, $sql)) {
         echo "<script>
             alert('Autor cadastrado com sucesso!');
-            location='cad_autor.php';
+            location='lista_autores.php';
         </script>";
         exit;
     }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'includes_painel/header.php'; ?>
 
-<form action="cad_autor.php" method="POST">
+<form action="lista_autores.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
 
 <div class="card">
 

@@ -285,7 +285,7 @@ $cards = [
 
 
                                 <a
-                                    href="excluir_autor.php?id=<?= $r['id_autor'] ?>"
+                                    href="excluir_autor.php?id=<?= $r['id_autor'] ?>&csrf_token=<?=h(csrf_token())?>"
                                     class="excluir"
                                     title="Excluir autor"
                                     onclick="return confirm('Deseja realmente excluir este autor?')"

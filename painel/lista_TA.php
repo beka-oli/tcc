@@ -208,7 +208,7 @@ $cards = [
                 <i class="fas fa-search"></i> Buscar
             </button>
 
-            <a href="lista_trabalhos.php" class="btn limpar">
+            <a href="lista_TA.php" class="btn limpar">
                 <i class="fas fa-sync-alt"></i> Limpar
             </a>
         </form>
@@ -329,7 +329,7 @@ $cards = [
                                 </a>
 
                                 <a
-                                    href="excluir_trabalho.php?id=<?= $r['id_trabalho'] ?>"
+                                    href="excluir_trabalho.php?id=<?= $r['id_trabalho'] ?>&csrf_token=<?=h(csrf_token())?>"
                                     class="excluir"
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este trabalho acadêmico?')"

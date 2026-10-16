@@ -1,125 +1,32 @@
 <?php
-session_start();
-$erro = isset($_SESSION['nao_autenticado']) && $_SESSION['nao_autenticado'] === true;
-if ($erro) {
+require_once __DIR__ . '/../painel/config/seguranca.php';
+
+$erro = $_SESSION['nao_autenticado'] ?? '';
+
+if ($erro !== '') {
     unset($_SESSION['nao_autenticado']);
 }
 ?>
-<!DOCTYPE html>w
+<!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Login ADM</title>
-        <!-- Fonte -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    </head>
-    <body>
-        <div class="container">
-            <!-- LADO ESQUERDO -->
-            <div class="left">
-                <div class="logo">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h1>Painel Administrativo</h1>
-            </div>
-            <!-- LADO DIREITO -->
-            <div class="right">
-                <div class="form-title"> Entrar</div>
-                <div class="subtitle"> Faça login para continuar</div>
-                <form class="login100-form validate-form" action="../autentica.php" method="POST">
-                    <!-- Usuário -->
-                    <div class="input-group">
-                        <label for="email_operador"> E-mail</label>
-                        <div class="input-wrapper">
-                            <i class="fa-solid fa-user"></i>
-                            <input
-                                name="email_operador"
-                                type="text"
-                                id="usuario"
-                                placeholder="Digite seu usuário"
-                                required
-                            >
-                        </div>
-                    </div>
-                    <!-- Senha -->
-                    <div class="input-group">
-                        <label for="senha"> Senha</label>
-                        <div class="input-wrapper">
-                            <i class="fa-solid fa-lock"></i>
-                            <input
-                                name="senha_operador"
-                                type="password"
-                                id="senha"
-                                placeholder="Digite sua senha"
-                                required
-                            >
-                        </div>
-                        <?php if ($erro): ?>
-                        <div class="alert alert-danger text-center" role="alert" style="width:100%; margin-bottom:1rem;">
-                            Usuário ou senha inválidos. Verifique e tente novamente.
-                        </div>
-                    <?php endif; ?>
-                    </div>
-                    <button type="submit" class="btn">ENTRAR</button>
-                    <div id="message" class="message"></div>
-                </form>
-                <div class="footer">
-                    <a href="../"> ← Voltar</a>
-                </div>
-            </div>
-        </div>
-        <!-- SCRIPT FUNCIONAL -->
-        <script>
 
-            const form = document.getElementById('loginForm');
-            const message = document.getElementById('message');
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            form.addEventListener('submit', function(e){
+    <title>Login ADM</title>
 
-                e.preventDefault();
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-                const usuario = document.getElementById('usuario').value.trim();
-                const senha = document.getElementById('senha').value.trim();
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-                // Validação simples
-                if(usuario === '' || senha === ''){
-
-                    message.style.display = 'block';
-                    message.className = 'message error';
-                    message.innerHTML = 'Preencha todos os campos.';
-
-                    return;
-                }
-
-                // Simulação login
-                if(usuario === 'admin' && senha === '123456'){
-
-                    message.style.display = 'block';
-                    message.className = 'message success';
-                    message.innerHTML = 'Login realizado com sucesso!';
-
-                    // Redirecionamento
-                    setTimeout(() => {
-                        window.location.href = 'dashboard.html';
-                    }, 1500);
-
-                }else{
-
-                    message.style.display = 'block';
-                    message.className = 'message error';
-                    message.innerHTML = 'Usuário ou senha inválidos.';
-                }
-            });
-        </script>
-        <style>
+    <style>
         *{
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family:'Poppins', sans-serif;
+            font-family:'Poppins',sans-serif;
         }
 
         body{
@@ -127,7 +34,13 @@ if ($erro) {
             display:flex;
             align-items:center;
             justify-content:center;
-            background: linear-gradient(90deg, #c1274d 0%, #b11f67 35%, #9a1f88 70%, #7b1fa2 100%);
+            background:linear-gradient(
+                90deg,
+                #c1274d 0%,
+                #b11f67 35%,
+                #9a1f88 70%,
+                #7b1fa2 100%
+            );
             padding:20px;
         }
 
@@ -139,14 +52,18 @@ if ($erro) {
             background:#fff;
             border-radius:20px;
             overflow:hidden;
-            box-shadow:0 15px 40px rgba(0,0,0,0.3);
+            box-shadow:0 15px 40px rgba(0,0,0,.3);
         }
-
-        /* ================= LEFT ================= */
 
         .left{
             flex:1;
-            background:linear-gradient(90deg,#c1274d 0%,#b11f67 35%,#9a1f88 70%,#7b1fa2 100%);
+            background:linear-gradient(
+                90deg,
+                #c1274d,
+                #b11f67,
+                #9a1f88,
+                #7b1fa2
+            );
             color:#fff;
             padding:60px;
             display:flex;
@@ -155,24 +72,24 @@ if ($erro) {
             position:relative;
         }
 
-        .left::before{
+        .left:before,
+        .left:after{
             content:'';
             position:absolute;
+            background:rgba(255,255,255,.05);
+            border-radius:50%;
+        }
+
+        .left:before{
             width:250px;
             height:250px;
-            background:rgba(255,255,255,0.05);
-            border-radius:50%;
             top:-60px;
             right:-60px;
         }
 
-        .left::after{
-            content:'';
-            position:absolute;
+        .left:after{
             width:180px;
             height:180px;
-            background:rgba(255,255,255,0.05);
-            border-radius:50%;
             bottom:-50px;
             left:-50px;
         }
@@ -188,14 +105,6 @@ if ($erro) {
             margin-bottom:15px;
             z-index:1;
         }
-
-        .left p{
-            line-height:1.7;
-            opacity:0.9;
-            z-index:1;
-        }
-
-        /* ================= RIGHT ================= */
 
         .right{
             flex:1;
@@ -217,10 +126,6 @@ if ($erro) {
             margin-bottom:35px;
         }
 
-        form{
-            width:100%;
-        }
-
         .input-group{
             margin-bottom:22px;
         }
@@ -239,135 +144,186 @@ if ($erro) {
 
         .input-wrapper i{
             position:absolute;
-            left:15px;
+            left:16px;
             top:50%;
             transform:translateY(-50%);
-            color:#777;
+            color:#aaa;
         }
 
-        .input-group input{
+        .input-wrapper input{
             width:100%;
-            height:50px;
-            border:1px solid #dcdcdc;
-            border-radius:12px;
-            padding:0 15px 0 45px;
-            font-size:15px;
-            transition:0.3s;
+            padding:14px 15px 14px 45px;
+            border:1px solid #ddd;
+            border-radius:10px;
             outline:none;
-        }
-
-        .input-group input:focus{
-            border-color:#b11f67;
-            box-shadow:0 0 0 4px rgba(177,31,103,.18);
-        }
-
-        .actions{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            margin-bottom:25px;
-            flex-wrap:wrap;
-            gap:10px;
-        }
-
-        .remember{
-            display:flex;
-            align-items:center;
-            gap:8px;
             font-size:14px;
-            color:#555;
         }
 
-        .actions a{
-            font-size:14px;
-            text-decoration:none;
-            color:#b11f67;
-            transition:0.3s;
-        }
-
-        .actions a:hover{
-            opacity:0.8;
+        .input-wrapper input:focus{
+            border-color:#a21caf;
         }
 
         .btn{
             width:100%;
-            height:52px;
-            border:none;
-            border-radius:12px;
-            background:linear-gradient(90deg,#c1274d 0%,#b11f67 35%,#9a1f88 70%,#7b1fa2 100%);
+            border:0;
+            padding:14px;
+            border-radius:10px;
             color:#fff;
-            font-size:15px;
-            font-weight:600;
+            font-weight:700;
             cursor:pointer;
-            transition:0.3s;
+            background:linear-gradient(90deg,#c1274d,#7b1fa2);
+            transition:.2s;
         }
 
         .btn:hover{
-            background:linear-gradient(90deg,#d93a61,#c42b74,#ab2493,#8b2bb3);
-            transform:translateY(-2px);
+            transform:translateY(-1px);
+            box-shadow:0 8px 20px rgba(123,31,162,.25);
+        }
+
+        .alert{
+            margin-top:10px;
+            padding:10px;
+            border-radius:8px;
+            background:#ffe5e5;
+            color:#b42318;
+            font-size:13px;
         }
 
         .footer{
-            text-align:center;
             margin-top:25px;
+            text-align:center;
         }
 
         .footer a{
+            color:#8b2cf5;
             text-decoration:none;
-            color:#b11f67;
-            font-size:14px;
-            font-weight:500;
+            font-size:13px;
         }
 
-        .message{
-            margin-top:20px;
-            padding:12px;
-            border-radius:10px;
-            display:none;
-            text-align:center;
-            font-size:14px;
-        }
-
-        .success{
-            background:#d4edda;
-            color:#155724;
-            border:1px solid #c3e6cb;
-        }
-
-        .error{
-            background:#f8d7da;
-            color:#721c24;
-            border:1px solid #f5c6cb;
-        }
-
-        /* ================= RESPONSIVO ================= */
-
-        @media(max-width:900px){
+        @media(max-width:700px){
 
             .container{
+                min-height:auto;
                 flex-direction:column;
-                max-width:500px;
             }
 
             .left{
-                display:none;
+                padding:40px;
+                min-height:220px;
+            }
+
+            .left h1{
+                font-size:28px;
             }
 
             .right{
                 padding:40px 30px;
             }
         }
+    </style>
+</head>
 
-        @media(max-width:480px){
+<body>
 
-            .right{
-                padding:35px 20px;
-            }
+<div class="container">
 
-            .form-title{
-                font-size:28px;
-            }
-        }
-        </style>
-    </body>
+    <div class="left">
+
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <h1>Painel Administrativo</h1>
+
+    </div>
+
+    <div class="right">
+
+        <div class="form-title">
+            Entrar
+        </div>
+
+        <div class="subtitle">
+            Faça login para continuar
+        </div>
+
+        <?php if ($erro !== ''): ?>
+
+            <div class="alert">
+                <?= h($erro) ?>
+            </div>
+
+        <?php endif; ?>
+
+        <form action="../autentica.php" method="POST">
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="<?= h(csrf_token()) ?>"
+            >
+
+            <div class="input-group">
+
+                <label for="email_operador">
+                    E-mail
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        name="email_operador"
+                        type="email"
+                        id="email_operador"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="senha_operador">
+                    Senha
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        name="senha_operador"
+                        type="password"
+                        id="senha_operador"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn">
+                ENTRAR
+            </button>
+
+        </form>
+
+        <div class="footer">
+            <a href="../">
+                ← Voltar
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
 </html>

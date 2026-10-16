@@ -225,7 +225,7 @@ $totalResultados = mysqli_num_rows($resultado);
                                 </a>
 
                                 <a
-                                    href="excluir_concurso.php?id=<?= $r['id_concurso'] ?>"
+                                    href="excluir_concurso.php?id=<?= $r['id_concurso'] ?>&csrf_token=<?=h(csrf_token())?>"
                                     class="excluir"
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este concurso?')"
