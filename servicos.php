@@ -1,701 +1,167 @@
+<?php include 'includes_site/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Associação Científica Medeia</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Serviços | Associação Científica Medeia
-    </title>
-
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    >
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <style>
-
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-
             font-family: "Inter", sans-serif;
-
             background: #f8f2f9;
-
             color: #35152f;
-
         }
 
-
-        a {
-
-            text-decoration: none;
-
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .navbar-custom {
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #67012a,
-                    #70145c,
-                    #7b1fa2
-                );
-
-            padding: 16px 0;
-
-            box-shadow:
-                0 5px 25px rgba(60, 10, 55, 0.18);
-
-        }
-
-
-        .navbar-brand {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            color: white !important;
-
-            font-size: 20px;
-
-            font-weight: 800;
-
-        }
-
-
-        .logo {
-
-            width: 44px;
-
-            height: 44px;
-
-            border-radius: 13px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: white;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #8e2a8f,
-                    #c04a91
-                );
-
-        }
-
-
-        .nav-link {
-
-            color: #f8edf8 !important;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            padding: 10px 14px !important;
-
-            border-radius: 9px;
-
-            transition: .3s;
-
-        }
-
-
-        .nav-link:hover {
-
-            background:
-                rgba(255,255,255,.10);
-
-        }
-
-
-        .nav-admin {
-
-            background:
-                rgba(255,255,255,.12);
-
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
+        a { text-decoration: none; }
 
         .page-header {
-
-            text-align: left;
-
-            padding: 90px 0;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-
-                radial-gradient(
-                    circle at 15% 30%,
-                    rgba(123,31,162,.08),
-                    transparent 25%
-                ),
-
-                linear-gradient(
-                    120deg,
-                    #faf6fb,
-                    #eadcf1,
-                    #f7e8f0
-                );
-
+            padding: 80px 0;
+            background: linear-gradient(120deg, #faf6fb, #eadcf1, #f7e8f0);
         }
-
-
-        .page-header .container {
-
-            text-align: left;
-
-        }
-
 
         .page-header small {
-
             color: #7b2468;
-
             font-size: 11px;
-
             font-weight: 800;
-
             letter-spacing: 2px;
-
             text-transform: uppercase;
-
         }
-
 
         .page-header h1 {
-
-            font-family: "Playfair Display", serif;
-
+            margin: 12px 0;
             color: #42162f;
-
-            font-size: 58px;
-
-            margin: 10px 0;
-
+            font: 700 52px "Playfair Display", serif;
         }
-
 
         .page-header p {
-
-            color: #706375;
-
             max-width: 600px;
-
-            margin: 0;
-
+            color: #706375;
             line-height: 1.8;
-
         }
 
-
-        .page-header::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 140px;
-
-            height: 140px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(192,74,145,.07);
-
-            right: 8%;
-
-            bottom: -65px;
-
-        }
-
-
-        /* =========================
-           SERVIÇOS
-        ========================= */
-
-        .services {
-
-            padding: 90px 0;
-
-        }
-
+        .services { padding: 75px 0; }
 
         .service-card {
-
             height: 100%;
-
-            padding: 35px 30px;
-
-            border-radius: 20px;
-
-            background: rgba(255,255,255,.92);
-
+            padding: 30px;
+            background: #fff;
             border: 1px solid #e5d5ea;
-
-            box-shadow:
-                0 12px 30px rgba(70,25,80,.07);
-
-            position: relative;
-
-            overflow: hidden;
-
-            transition: .35s;
-
+            border-radius: 18px;
+            box-shadow: 0 10px 28px #4619500d;
+            transition: .3s;
         }
-
 
         .service-card:hover {
-
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 20px 45px rgba(70,25,80,.14);
-
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px #4619501c;
         }
 
-
-        .service-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 80px;
-
-            height: 80px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(192,74,145,.07);
-
-            right: -30px;
-
-            top: -30px;
-
-        }
-
-
-        .icon {
-
-            width: 62px;
-
-            height: 62px;
-
-            border-radius: 16px;
-
+        .service-icon {
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
+            width: 58px;
+            height: 58px;
+            margin-bottom: 22px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #eadcf0, #f5dfe9);
             color: #762476;
-
             font-size: 23px;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #eadcf0,
-                    #f5dfe9
-                );
-
-            margin-bottom: 23px;
-
         }
-
 
         .service-card h3 {
-
-            color: #42162f;
-
-            font-size: 19px;
-
-            font-weight: 700;
-
             margin-bottom: 12px;
-
+            color: #42162f;
+            font-size: 18px;
+            font-weight: 700;
         }
-
 
         .service-card p {
-
+            margin: 0;
             color: #706575;
-
             font-size: 13px;
-
             line-height: 1.8;
-
         }
 
+        .service-link { display: block; height: 100%; }
+        .service-link .service-card { height: 100%; }
 
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .footer-custom {
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #67012a,
-                    #7b1f70,
-                    #7b1fa2
-                );
-
-            color: white;
-
-            padding: 45px 0 20px;
-
-            position: relative;
-
+        @media (max-width: 768px) {
+            .page-header { padding: 60px 0; }
+            .page-header h1 { font-size: 40px; }
+            .services { padding: 50px 0; }
         }
 
-
-        .footer-custom h4 {
-
-            font-size: 19px;
-
-            font-weight: 700;
-
-        }
-
-
-        .footer-custom p {
-
-            color: #f5eaf5;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-        }
-
-
-        .footer-bottom {
-
-            margin-top: 30px;
-
-            padding-top: 18px;
-
-            border-top:
-                1px solid rgba(255,255,255,.15);
-
-            text-align: center;
-
-            font-size: 12px;
-
-            opacity: .8;
-
-        }
-
-
-        /* =========================
-           RESPONSIVO
-        ========================= */
-
-        @media(max-width:768px) {
-
-            .page-header {
-
-                padding: 65px 0;
-
-            }
-
-
-            .page-header h1 {
-
-                font-size: 45px;
-
-            }
-
-
-            .services {
-
-                padding: 60px 0;
-
-            }
-
-        }
-
-
+        a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none !important;
+}
     </style>
-
 </head>
 
-
 <body>
-<?php include 'includes_site/header.php'; ?>
-    <!-- =========================
-         HEADER
-    ========================= -->
 
     <section class="page-header">
-
         <div class="container">
-
-
-            <small>
-
-                Áreas de atuação
-
-            </small>
-
-
-            <h1>
-
-                Nossos Serviços
-
-            </h1>
-
-
-            <p>
-
-                Conheça as principais áreas de atuação
-                da Associação Científica Medeia.
-
-            </p>
-
-
+            <small>Áreas de atuação</small>
+            <h1>Nossos Serviços</h1>
+            <p>Conheça as principais áreas de atuação da Associação Científica Medeia.</p>
         </div>
-
     </section>
-
-
-
-    <!-- =========================
-         SERVIÇOS
-    ========================= -->
 
     <section class="services">
-
         <div class="container">
-
             <div class="row g-4">
 
-
-                <!-- SERVIÇO 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <h3>Editora</h3>
+                        <p>Publicação de livros, materiais acadêmicos e conteúdos para disseminar o conhecimento.</p>
+                    </div>
+                </div>
 
                 <div class="col-lg-3 col-md-6">
-
                     <div class="service-card">
-
-
-                        <div class="icon">
-
-                            <i class="fa-solid fa-book-open"></i>
-
-                        </div>
-
-
-                        <h3>
-
-                            Editora
-
-                        </h3>
-
-
-                        <p>
-
-                            Publicação de livros,
-                            materiais acadêmicos
-                            e conteúdos voltados
-                            à disseminação do conhecimento.
-
-                        </p>
-
-
+                        <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <h3>Revista Eletrônica</h3>
+                        <p>Divulgação online de artigos científicos, pesquisas e produções acadêmicas.</p>
                     </div>
-
                 </div>
-
-
-
-                <!-- SERVIÇO 2 -->
 
                 <div class="col-lg-3 col-md-6">
-
-                    <div class="service-card">
-
-
-                        <div class="icon">
-
-                            <i class="fa-solid fa-laptop"></i>
-
+                    <a href="agencia_concursos.php" class="service-link">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                            <h3>Agência de Concursos</h3>
+                            <p>Organização e realização de concursos públicos e privados.</p>
                         </div>
-
-
-                        <h3>
-
-                            Revista Eletrônica
-
-                        </h3>
-
-
-                        <p>
-
-                            Revista científica online
-                            destinada à divulgação de
-                            artigos, pesquisas e
-                            produções acadêmicas.
-
-                        </p>
-
-
-                    </div>
-
+                    </a>
                 </div>
-
-
-
-                <!-- SERVIÇO 3 -->
-
-                <div class="col-lg-3 col-md-6" >
-                <a href="/tcc/agencia_concursos.php">
-                    <div class="service-card" >
-
-
-                        <div class="icon">
-
-                            <i class="fa-solid fa-clipboard-list"></i>
-
-                        </div>
-
-
-                        <h3>
-
-                            Agência de Concursos
-
-                        </h3>
-
-
-                        <p>
-
-                            Organização e realização
-                            de concursos públicos
-                            e privados.
-
-                        </p>
-
-
-                    </div>
-                </a>
-
-                </div>
-
-
-
-                <!-- SERVIÇO 4 -->
 
                 <div class="col-lg-3 col-md-6">
-
                     <div class="service-card">
-
-
-                        <div class="icon">
-
-                            <i class="fa-solid fa-graduation-cap"></i>
-
-                        </div>
-
-
-                        <h3>
-
-                            Assessoria Pedagógica
-
-                        </h3>
-
-
-                        <p>
-
-                            Consultoria e apoio
-                            em projetos educacionais,
-                            científicos e institucionais.
-
-                        </p>
-
-
+                        <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>Assessoria Pedagógica</h3>
+                        <p>Consultoria e apoio em projetos educacionais, científicos e institucionais.</p>
                     </div>
-
                 </div>
-
 
             </div>
-
         </div>
-
     </section>
 
-
-
- 
-
+    <?php include 'includes_site/footer.php'; ?>
 
 </body>
-
 </html>
-
- <!--------------- FOOTER ---------------->
-    <?php include 'includes_site/footer.php'?>
- <!--------------------------------------->

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Agência de Concursos | AC Medeia</title>
+    <title>Agência de Concursos </title>
 
     <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -562,4 +562,32 @@
 </head>
 
 <body>
- <?php include 'includes_site/header.php'; ?>
+
+   <?php include 'includes_site/header.php'; ?>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <div>
+
+                <span class="tag">
+                    Oportunidades e Carreira
+                </span>
+
+                <h1>
+                    EM BREVE!
+                </h1>
+
+                <div class="subtitle">
+                    Agência de <span>Concursos</span>
+                </div>
+
+                <p class="description">
+                    A Agência de Concursos da Associação Científica
+                    Medeia atua na organização, divulgação e realização
+                    de concursos públicos e privados, oferecendo
+                    informações e oportunidades de forma clara

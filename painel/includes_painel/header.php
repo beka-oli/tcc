@@ -1,9 +1,14 @@
+
+<?php
+// HEADER - ASSOCIAÇÃO CIENTÍFICA MEDEIA
+?>
+
 <nav class="medeia-header">
     <div class="medeia-container">
 
         <!-- LOGO -->
-        <a href="dashboard.php" class="logo">
-            <img src="midias/logo.png" alt="Medeia">
+        <a href="dashboard.php" class="logo" aria-label="Medeia - Início">
+            <img src="midias/logo.png" alt="Logo Medeia">
         </a>
 
         <!-- MENU PRINCIPAL -->
@@ -15,948 +20,922 @@
                 <span>Início</span>
             </a>
 
-
-            <!-- =========================
+            <!-- ======================================
                  CADASTRO
-            ========================== -->
-            <div class="dropdown">
+            ======================================= -->
+            <div class="dropdown medeia-dropdown">
 
-                <button class="item dropdown-btn" type="button">
+                <button class="item dropdown-btn"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="menu-cadastro">
+
                     <i class="fas fa-folder-plus"></i>
                     <span>Cadastro</span>
                     <i class="fas fa-chevron-down seta"></i>
                 </button>
 
-                <div class="dropdown-box">
+                <div class="dropdown-box" id="menu-cadastro">
 
-                    <!-- REVISTAS -->
-                    <div class="dropdown-title">
-                        <i class="fas fa-book-open"></i>
-                        Editora
-                    </div>
+                    <!-- REVISTA -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
 
-                    <a href="form_revista.php">
-                        <i class="fas fa-newspaper"></i>
-                        Revistas
-                    </a>
+                            <span>
+                                <i class="fas fa-newspaper"></i>
+                                REVISTA
+                            </span>
 
-                    <a href="form_livros.php">
-                        <i class="fas fa-book"></i>
-                        Livros
-                    </a>
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
 
-                    <a href="form_TA.php">
-                        <i class="fas fa-graduation-cap"></i>
-                        Trabalhos Acadêmicos
-                    </a>
+                        <div class="categoria-links" hidden>
+                            <a href="form_revista.php">
+                                <i class="fas fa-book-open"></i>
+                                Revistas
+                            </a>
 
-                    <a href="form_artigo.php">
-                        <i class="fas fa-file-lines"></i>
-                        Artigos
-                    </a>
+                            <a href="form_edicao.php">
+                                <i class="fas fa-layer-group"></i>
+                                Edições
+                            </a>
+                        </div>
+                    </section>
 
-                    <a href="form_autores.php">
-                        <i class="fas fa-users"></i>
-                        Autores
-                    </a>
+                    <!-- EDITORA -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
 
+                            <span>
+                                <i class="fas fa-book"></i>
+                                EDITORA
+                            </span>
 
-                    <!-- DIVISOR -->
-                    <div class="dropdown-divider"></div>
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
 
+                        <div class="categoria-links" hidden>
+                            <a href="form_livros.php">
+                                <i class="fas fa-book"></i>
+                                Livros
+                            </a>
+
+                            <a href="form_artigo.php">
+                                <i class="fas fa-file-lines"></i>
+                                Artigos
+                            </a>
+
+                            <a href="form_autores.php">
+                                <i class="fas fa-users"></i>
+                                Autores
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- ASSESSORIA PEDAGÓGICA -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
+
+                            <span>
+                                <i class="fas fa-graduation-cap"></i>
+                                ASSESSORIA PEDAGÓGICA
+                            </span>
+
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
+
+                        <div class="categoria-links" hidden>
+                            <a href="form_TA.php">
+                                <i class="fas fa-user-graduate"></i>
+                                Trabalhos Acadêmicos
+                            </a>
+                        </div>
+                    </section>
 
                     <!-- CONCURSOS -->
-                    <div class="dropdown-title">
-                        <i class="fas fa-briefcase"></i>
-                        Concursos
-                    </div>
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
 
-                    <a href="form_concurso.php">
-                        <i class="fas fa-file-signature"></i>
-                        Concursos
-                    </a>
+                            <span>
+                                <i class="fas fa-briefcase"></i>
+                                CONCURSOS
+                            </span>
 
-                    <a href="form_inscricoes.php">
-                        <i class="fas fa-clipboard-check"></i>
-                        Inscrições
-                    </a>
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
+
+                        <div class="categoria-links" hidden>
+                            <a href="form_concurso.php">
+                                <i class="fas fa-file-signature"></i>
+                                Concursos
+                            </a>
+
+                            <a href="form_inscricoes.php">
+                                <i class="fas fa-clipboard-check"></i>
+                                Inscrições
+                            </a>
+                        </div>
+                    </section>
 
                 </div>
             </div>
 
-
-            <!-- =========================
+            <!-- ======================================
                  LISTAR
-            ========================== -->
-            <div class="dropdown">
+            ======================================= -->
+            <div class="dropdown medeia-dropdown">
 
-                <button class="item dropdown-btn" type="button">
+                <button class="item dropdown-btn"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="menu-listar">
+
                     <i class="fas fa-list-check"></i>
                     <span>Listar</span>
                     <i class="fas fa-chevron-down seta"></i>
                 </button>
 
-                <div class="dropdown-box">
+                <div class="dropdown-box" id="menu-listar">
 
-                    <!-- LISTAGENS -->
-                    <div class="dropdown-title">
-                        <i class="fas fa-table-list"></i>
-                        Listagens
-                    </div>
+                    <!-- REVISTA -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
 
-                    <a href="lista_revistas.php">
-                        <i class="fas fa-newspaper"></i>
-                        Revistas
-                    </a>
+                            <span>
+                                <i class="fas fa-newspaper"></i>
+                                REVISTA
+                            </span>
 
-                    <a href="lista_livros.php">
-                        <i class="fas fa-book"></i>
-                        Livros
-                    </a>
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
 
-                    <a href="lista_TA.php">
-                        <i class="fas fa-graduation-cap"></i>
-                        Trabalhos Acadêmicos
-                    </a>
+                        <div class="categoria-links" hidden>
+                            <a href="lista_revistas.php">
+                                <i class="fas fa-book-open"></i>
+                                Revistas
+                            </a>
 
-                    <a href="lista_artigos.php">
-                        <i class="fas fa-file-lines"></i>
-                        Artigos
-                    </a>
+                            <a href="lista_edicoes.php">
+                                <i class="fas fa-layer-group"></i>
+                                Edições
+                            </a>
+                        </div>
+                    </section>
 
-                    <a href="lista_autores.php">
-                        <i class="fas fa-users"></i>
-                        Autores
-                    </a>
+                    <!-- EDITORA -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
 
-                    <a href="lista_concursos.php">
-                        <i class="fas fa-briefcase"></i>
-                        Concursos
-                    </a>
+                            <span>
+                                <i class="fas fa-book"></i>
+                                EDITORA
+                            </span>
 
-                    <a href="lista_inscricoes.php">
-                        <i class="fas fa-clipboard-check"></i>
-                        Inscrições
-                    </a>
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
 
-                    <a href="lista_resultados.php">
-                        <i class="fas fa-square-poll-vertical"></i>
-                        Resultados
-                    </a>
+                        <div class="categoria-links" hidden>
+                            <a href="lista_livros.php">
+                                <i class="fas fa-book"></i>
+                                Livros
+                            </a>
+
+                            <a href="lista_artigos.php">
+                                <i class="fas fa-file-lines"></i>
+                                Artigos
+                            </a>
+
+                            <a href="lista_autores.php">
+                                <i class="fas fa-users"></i>
+                                Autores
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- ASSESSORIA PEDAGÓGICA -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
+
+                            <span>
+                                <i class="fas fa-graduation-cap"></i>
+                                ASSESSORIA PEDAGÓGICA
+                            </span>
+
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
+
+                        <div class="categoria-links" hidden>
+                            <a href="lista_TA.php">
+                                <i class="fas fa-user-graduate"></i>
+                                Trabalhos Acadêmicos
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- CONCURSOS -->
+                    <section class="categoria-menu">
+                        <button class="categoria-titulo"
+                                type="button"
+                                aria-expanded="false">
+
+                            <span>
+                                <i class="fas fa-briefcase"></i>
+                                CONCURSOS
+                            </span>
+
+                            <i class="fas fa-chevron-right categoria-seta"></i>
+                        </button>
+
+                        <div class="categoria-links" hidden>
+                            <a href="lista_concursos.php">
+                                <i class="fas fa-file-signature"></i>
+                                Concursos
+                            </a>
+
+                            <a href="lista_inscricoes.php">
+                                <i class="fas fa-clipboard-check"></i>
+                                Inscrições
+                            </a>
+
+                            <a href="lista_resultados.php">
+                                <i class="fas fa-square-poll-vertical"></i>
+                                Resultados
+                            </a>
+                        </div>
+                    </section>
 
                 </div>
             </div>
 
         </div>
 
-
-        <!-- =========================
+        <!-- ======================================
              USUÁRIO
-        ========================== -->
+        ======================================= -->
         <?php if (eh_admin()): ?>
 
-        <div class="dropdown usuario-menu">
+            <div class="dropdown usuario-menu">
 
-            <button class="item usuario-botao" type="button">
+                <button class="item usuario-botao dropdown-btn"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="menu-usuario">
 
-                <span class="usuario-icone">
-                    <i class="fas fa-user-shield"></i>
-                </span>
+                    <span class="usuario-icone">
+                        <i class="fas fa-user-shield"></i>
+                    </span>
 
-                <span class="usuario-info">
+                    <span class="usuario-info">
+                        <strong><?= h(nome_usuario()) ?></strong>
 
-                    <strong>
-                        <?= h(nome_usuario()) ?>
-                    </strong>
+                        <small>
+                            <?= h(strtoupper(str_replace('_', ' ', perfil_usuario()))) ?>
+                        </small>
+                    </span>
 
-                    <small>
-                        <?= h(strtoupper(str_replace('_', ' ', perfil_usuario()))) ?>
-                    </small>
+                    <i class="fas fa-chevron-down seta"></i>
+                </button>
 
-                </span>
+                <div class="dropdown-box usuario-box" id="menu-usuario">
 
-                <i class="fas fa-chevron-down seta"></i>
+                    <div class="dropdown-title">
+                        <i class="fas fa-shield-halved"></i>
+                        Administração
+                    </div>
 
-            </button>
+                    <a href="lista_operadores.php">
+                        <i class="fas fa-users-gear"></i>
+                        Usuários
+                    </a>
 
+                    <?php if (eh_ultra_master()): ?>
+                        <a href="form_operador.php">
+                            <i class="fas fa-user-plus"></i>
+                            Novo usuário
+                        </a>
+                    <?php endif; ?>
 
-            <div class="dropdown-box usuario-box">
-
-                <div class="dropdown-title">
-                    <i class="fas fa-shield-halved"></i>
-                    Administração
                 </div>
-
-                <a href="lista_operadores.php">
-                    <i class="fas fa-users-gear"></i>
-                    Usuários
-                </a>
-
-                <?php if (eh_ultra_master()): ?>
-
-                <a href="form_operador.php">
-                    <i class="fas fa-user-plus"></i>
-                    Novo usuário
-                </a>
-
-                <?php endif; ?>
-
             </div>
-
-        </div>
 
         <?php endif; ?>
 
-
-        <!-- =========================
-             SAIR
-        ========================== -->
+        <!-- SAIR -->
         <a href="logout.php" class="sair">
-
             <i class="fas fa-right-from-bracket"></i>
-
             <span>Sair</span>
-
         </a>
 
     </div>
 </nav>
 
-
+<!-- ==========================================
+     CSS DO HEADER
+========================================== -->
 <style>
-
-/* =====================================================
-   VARIÁVEIS
-===================================================== */
-
-:root{
-
-    --grad:
-        linear-gradient(
-            90deg,
-            #b91c3c,
-            #a21caf,
-            #7c3aed
-        );
-
-    --rosa:#a21caf;
-
-    --vinho:#b91c3c;
-
-    --texto:#633653;
-
-    --borda:#f0e5f1;
-
-    --fundo-hover:#fff3f9;
-
+:root {
+    --grad: linear-gradient(90deg, #b91c3c, #a21caf, #7c3aed);
+    --rosa: #a21caf;
+    --vinho: #b91c3c;
+    --texto: #633653;
+    --borda: #f0e5f1;
+    --fundo-hover: #fff3f9;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.medeia-header{
-
-    height:78px;
-
-    background:#fff;
-
-    border-bottom:1px solid var(--borda);
-
-    box-shadow:0 4px 18px rgba(82,27,71,.07);
-
-    position:relative;
-
-    z-index:1000;
-
+.medeia-header,
+.medeia-header * {
+    box-sizing: border-box;
 }
 
-
-.medeia-header::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:4px;
-
-    background:var(--grad);
-
+.medeia-header {
+    position: relative;
+    z-index: 1000;
+    min-height: 78px;
+    background: #fff;
+    border-bottom: 1px solid var(--borda);
+    box-shadow: 0 4px 18px rgba(82, 27, 71, .07);
+    font-family: inherit;
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.medeia-container{
-
-    width:88%;
-
-    max-width:1500px;
-
-    height:100%;
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
+.medeia-header::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: var(--grad);
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin-right:35px;
-
-    text-decoration:none;
-
+.medeia-container {
+    width: 88%;
+    max-width: 1500px;
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-
-.logo img{
-
-    width:95px;
-
-    height:auto;
-
-    max-height:55px;
-
-    object-fit:contain;
-
-    display:block;
-
+/* LOGO */
+.medeia-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 25px;
+    text-decoration: none;
 }
 
-
-/* =====================================================
-   MENU
-===================================================== */
-
-.menu{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
+.medeia-header .logo img {
+    display: block;
+    width: 95px;
+    max-height: 55px;
+    object-fit: contain;
 }
 
-
-/* =====================================================
-   BOTÕES
-===================================================== */
-
-.item{
-
-    border:0;
-
-    background:none;
-
-    color:var(--texto);
-
-    padding:11px 16px;
-
-    border-radius:12px;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
-    transition:.2s ease;
-
+/* MENU PRINCIPAL */
+.medeia-header .menu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-
-.item:hover{
-
-    background:var(--fundo-hover);
-
-    color:var(--rosa);
-
+/* BOTÕES */
+.medeia-header .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--texto);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .2s, color .2s;
 }
 
-
-.item.active{
-
-    color:#fff;
-
-    background:var(--grad);
-
-    box-shadow:
-        0 6px 16px rgba(162,28,175,.20);
-
+.medeia-header .item:hover {
+    background: var(--fundo-hover);
+    color: var(--rosa);
 }
 
-
-.item i:first-child{
-
-    margin-right:2px;
-
+.medeia-header .item.active {
+    color: #fff;
+    background: var(--grad);
+    box-shadow: 0 6px 16px rgba(162, 28, 175, .2);
 }
 
-
-/* =====================================================
-   SETA
-===================================================== */
-
-.seta{
-
-    font-size:9px;
-
-    margin-left:4px;
-
-    transition:.2s;
-
+/* SETAS */
+.medeia-header .seta {
+    margin-left: 4px;
+    font-size: 10px;
+    transition: transform .2s;
 }
 
-
-.dropdown:hover .seta{
-
-    transform:rotate(180deg);
-
+.medeia-header .dropdown.open > .dropdown-btn .seta {
+    transform: rotate(180deg);
 }
 
-
-/* =====================================================
-   DROPDOWN
-===================================================== */
-
-.dropdown{
-
-    position:relative;
-
+/* DROPDOWNS */
+.medeia-header .dropdown {
+    position: relative;
 }
 
-
-.dropdown-box{
-
-    position:absolute;
-
-    top:calc(100% + 9px);
-
-    left:0;
-
-    width:255px;
-
-    padding:10px;
-
-    background:#fff;
-
-    border:1px solid var(--borda);
-
-    border-radius:16px;
-
-    box-shadow:
-        0 18px 40px rgba(82,27,71,.14);
-
-    display:none;
-
-    animation:dropdownAnim .16s ease;
-
+.medeia-header .dropdown-box {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    width: 225px;
+    max-width: calc(100vw - 24px);
+    max-height: 75vh;
+    overflow: visible;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 14px 40px rgba(75, 20, 65, .15);
+    animation: medeiaDropdown .16s ease;
 }
 
-
-/* pequeno espaço invisível para evitar
-   que o menu feche ao mover o mouse */
-
-.dropdown-box::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-10px;
-
-    left:0;
-
-    width:100%;
-
-    height:10px;
-
+.medeia-header .dropdown.open > .dropdown-box {
+    display: flex;
 }
 
-
-.dropdown:hover .dropdown-box{
-
-    display:block;
-
+/* Abre pelo clique, não pelo mouse */
+.medeia-header .medeia-dropdown:hover > .dropdown-box,
+.medeia-header .usuario-menu:hover > .dropdown-box {
+    display: none;
 }
 
+.medeia-header .medeia-dropdown.open:hover > .dropdown-box,
+.medeia-header .usuario-menu.open:hover > .dropdown-box {
+    display: flex;
+}
 
-/* =====================================================
-   ANIMAÇÃO
-===================================================== */
+@keyframes medeiaDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-@keyframes dropdownAnim{
+/* CATEGORIAS */
+.medeia-header .categoria-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
-    from{
+.medeia-header .categoria-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 10px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #8f247f;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .3px;
+    text-align: left;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
 
-        opacity:0;
+.medeia-header .categoria-titulo > span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
 
-        transform:translateY(-5px);
+.medeia-header .categoria-titulo > span > i {
+    width: 17px;
+    flex-shrink: 0;
+    text-align: center;
+}
 
+.medeia-header .categoria-titulo:hover,
+.medeia-header .categoria-titulo[aria-expanded="true"] {
+    background: #f8edf8;
+    color: #a51b82;
+}
+
+/* SETAS LATERAIS */
+.medeia-header .categoria-seta {
+    flex-shrink: 0;
+    font-size: 10px;
+    transition: transform .2s;
+}
+
+.medeia-header .categoria-titulo[aria-expanded="true"] .categoria-seta {
+    transform: rotate(90deg);
+}
+
+/* SUBMENUS LATERAIS */
+.medeia-header .categoria-links {
+    position: absolute;
+    top: -1px;
+    left: calc(100% + 10px);
+    z-index: 1001;
+    width: 245px;
+    max-width: calc(100vw - 270px);
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #eee1ef;
+    border-radius: 14px;
+    box-shadow: 0 14px 35px rgba(75, 20, 65, .12);
+}
+
+.medeia-header .categoria-links[hidden] {
+    display: none !important;
+}
+
+/* LINKS DOS SUBMENUS */
+.medeia-header .categoria-links a,
+.medeia-header .dropdown-box > a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 43px;
+    padding: 11px 12px;
+    margin-bottom: 3px;
+    border-radius: 9px;
+    color: #63304e;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: background .2s, color .2s;
+}
+
+.medeia-header .categoria-links a > i,
+.medeia-header .dropdown-box > a > i {
+    width: 17px;
+    flex-shrink: 0;
+    text-align: center;
+    color: #a66c9d;
+}
+
+.medeia-header .categoria-links a:hover,
+.medeia-header .dropdown-box > a:hover {
+    background: var(--fundo-hover);
+    color: var(--rosa);
+}
+
+/* USUÁRIO */
+.medeia-header .usuario-menu {
+    margin-left: auto;
+}
+
+.medeia-header .usuario-botao {
+    gap: 8px;
+    min-width: 170px;
+}
+
+.medeia-header .usuario-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--grad);
+}
+
+.medeia-header .usuario-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+.medeia-header .usuario-info strong {
+    max-width: 125px;
+    overflow: hidden;
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.medeia-header .usuario-info small {
+    margin-top: 4px;
+    color: #9b6a91;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.medeia-header .usuario-box {
+    right: 0;
+    left: auto;
+    width: 220px;
+}
+
+/* TÍTULO DO MENU DO USUÁRIO */
+.medeia-header .dropdown-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 10px 7px;
+    color: var(--rosa);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+/* SAIR */
+.medeia-header .sair {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: 2px;
+    padding: 10px 15px;
+    border: 1px solid #f0dce9;
+    border-radius: 12px;
+    color: var(--vinho);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s, color .2s;
+}
+
+.medeia-header .sair:hover {
+    color: #fff;
+    background: var(--grad);
+    border-color: transparent;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1100px) {
+    .medeia-container {
+        width: 94%;
+        gap: 6px;
     }
 
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
+    .medeia-header .logo {
+        margin-right: 10px;
     }
 
-}
-
-
-/* =====================================================
-   TÍTULOS DOS DROPDOWNS
-===================================================== */
-
-.dropdown-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:9px 10px 7px;
-
-    color:var(--rosa);
-
-    font-size:11px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:.5px;
-
-}
-
-
-.dropdown-title i{
-
-    font-size:11px;
-
-}
-
-
-/* =====================================================
-   ITENS DOS DROPDOWNS
-===================================================== */
-
-.dropdown-box a{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:9px 10px 9px 18px;
-
-    margin:2px 0;
-
-    border-radius:9px;
-
-    color:var(--texto);
-
-    text-decoration:none;
-
-    font-size:13px;
-
-    font-weight:500;
-
-    transition:.18s ease;
-
-}
-
-
-.dropdown-box a i{
-
-    width:16px;
-
-    text-align:center;
-
-    color:#9b6a91;
-
-    font-size:12px;
-
-    transition:.18s;
-
-}
-
-
-.dropdown-box a:hover{
-
-    color:#fff;
-
-    background:var(--grad);
-
-    padding-left:22px;
-
-}
-
-
-.dropdown-box a:hover i{
-
-    color:#fff;
-
-}
-
-
-/* =====================================================
-   DIVISOR
-===================================================== */
-
-.dropdown-divider{
-
-    height:1px;
-
-    background:#f0e5f1;
-
-    margin:9px 5px;
-
-}
-
-
-/* =====================================================
-   MENU DO USUÁRIO
-===================================================== */
-
-.usuario-menu{
-
-    margin-left:auto;
-
-}
-
-
-.usuario-botao{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    min-width:185px;
-
-}
-
-
-.usuario-icone{
-
-    width:34px;
-
-    height:34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:10px;
-
-    color:#fff;
-
-    background:var(--grad);
-
-    flex-shrink:0;
-
-}
-
-
-.usuario-info{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    line-height:1.1;
-
-    flex:1;
-
-}
-
-
-.usuario-info strong{
-
-    color:var(--texto);
-
-    font-size:12px;
-
-    font-weight:700;
-
-    max-width:125px;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-    white-space:nowrap;
-
-}
-
-
-.usuario-info small{
-
-    margin-top:4px;
-
-    color:#9b6a91;
-
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:.4px;
-
-}
-
-
-/* =====================================================
-   DROPDOWN DO USUÁRIO
-===================================================== */
-
-.usuario-box{
-
-    left:auto;
-
-    right:0;
-
-    width:220px;
-
-}
-
-
-/* =====================================================
-   BOTÃO SAIR
-===================================================== */
-
-.sair{
-
-    margin-left:10px;
-
-    padding:10px 18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    border:1px solid #f0dce9;
-
-    border-radius:12px;
-
-    color:var(--vinho);
-
-    background:#fff;
-
-    text-decoration:none;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    transition:.2s ease;
-
-}
-
-
-.sair:hover{
-
-    color:#fff;
-
-    background:var(--grad);
-
-    border-color:transparent;
-
-    box-shadow:
-        0 6px 16px rgba(162,28,175,.18);
-
-}
-
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media(max-width:1100px){
-
-    .medeia-container{
-
-        width:94%;
-
+    .medeia-header .logo img {
+        width: 80px;
     }
 
-    .logo{
-
-        margin-right:15px;
-
+    .medeia-header .item {
+        gap: 5px;
+        padding: 10px;
+        font-size: 13px;
     }
 
-    .logo img{
-
-        width:80px;
-
+    .medeia-header .usuario-botao {
+        min-width: 135px;
     }
-
-    .item{
-
-        padding:10px 11px;
-
-    }
-
-    .usuario-botao{
-
-        min-width:150px;
-
-    }
-
 }
 
-
-@media(max-width:850px){
-
-    .medeia-header{
-
-        height:auto;
-
-        min-height:78px;
-
+@media (max-width: 850px) {
+    .medeia-container {
+        flex-wrap: wrap;
+        padding: 12px 0;
     }
 
-    .medeia-container{
-
-        flex-wrap:wrap;
-
-        padding:12px 0;
-
-        gap:6px;
-
+    .medeia-header .logo {
+        margin-right: auto;
     }
 
-    .logo{
-
-        margin-right:auto;
-
+    .medeia-header .menu {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
     }
 
-    .menu{
-
-        order:3;
-
-        width:100%;
-
-        justify-content:center;
-
+    .medeia-header .usuario-menu {
+        margin-left: 0;
     }
-
-    .usuario-menu{
-
-        margin-left:0;
-
-    }
-
 }
 
-
-@media(max-width:600px){
-
-    .medeia-container{
-
-        width:94%;
-
+@media (max-width: 600px) {
+    .medeia-container {
+        width: 94%;
+        gap: 5px;
     }
 
-    .menu{
-
-        overflow-x:auto;
-
-        justify-content:flex-start;
-
-        padding-bottom:4px;
-
+    .medeia-header .menu {
+        overflow: visible;
+        flex-wrap: wrap;
+        gap: 4px;
     }
 
-    .item{
-
-        white-space:nowrap;
-
-        font-size:12px;
-
+    .medeia-header .item {
+        padding: 10px 8px;
+        font-size: 12px;
     }
 
-    .usuario-info{
-
-        display:none;
-
+    .medeia-header .usuario-info {
+        display: none;
     }
 
-    .usuario-botao{
-
-        min-width:auto;
-
+    .medeia-header .usuario-botao {
+        min-width: auto;
     }
 
-    .sair span{
-
-        display:none;
-
+    .medeia-header .sair {
+        padding: 10px 12px;
     }
 
-    .sair{
-
-        padding:10px 12px;
-
+    .medeia-header .medeia-dropdown > .dropdown-box {
+        width: 205px;
+        max-width: calc(100vw - 24px);
+        max-height: 65vh;
     }
 
-    .dropdown-box{
-
-        position:fixed;
-
-        top:78px;
-
-        left:10px;
-
-        right:10px;
-
-        width:auto;
-
+    .medeia-header .categoria-titulo {
+        min-height: 44px;
+        padding: 10px 7px;
+        font-size: 11px;
     }
 
+    .medeia-header .categoria-titulo > span {
+        gap: 6px;
+    }
+
+    .medeia-header .categoria-links {
+        left: calc(100% + 6px);
+        width: min(220px, calc(100vw - 235px));
+        max-width: none;
+        max-height: 65vh;
+        padding: 8px;
+    }
+
+    .medeia-header .categoria-links a {
+        gap: 7px;
+        padding: 10px 7px;
+        font-size: 12px;
+    }
 }
-
 </style>
+
+<!-- ==========================================
+     JAVASCRIPT DOS DROPDOWNS
+========================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const header = document.querySelector('.medeia-header');
+
+    if (!header) return;
+
+    const dropdowns = header.querySelectorAll('.dropdown');
+
+    // Fecha um dropdown e suas categorias
+    function fecharDropdown(dropdown) {
+
+        dropdown.classList.remove('open');
+
+        const botao = dropdown.querySelector(':scope > .dropdown-btn');
+
+        if (botao) {
+            botao.setAttribute('aria-expanded', 'false');
+        }
+
+        dropdown.querySelectorAll('.categoria-menu').forEach(function (categoria) {
+
+            const titulo = categoria.querySelector('.categoria-titulo');
+            const links = categoria.querySelector('.categoria-links');
+
+            if (titulo && links) {
+                links.hidden = true;
+                titulo.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // Cadastro, Listar e Usuário
+    dropdowns.forEach(function (dropdown) {
+
+        const botao = dropdown.querySelector(':scope > .dropdown-btn');
+
+        if (!botao) return;
+
+        botao.addEventListener('click', function (event) {
+
+            event.stopPropagation();
+
+            const abrir = !dropdown.classList.contains('open');
+
+            // Fecha os outros menus principais
+            dropdowns.forEach(function (outro) {
+                if (outro !== dropdown) {
+                    fecharDropdown(outro);
+                }
+            });
+
+            if (abrir) {
+                dropdown.classList.add('open');
+                botao.setAttribute('aria-expanded', 'true');
+            } else {
+                fecharDropdown(dropdown);
+            }
+        });
+
+        // Categorias expansíveis de Cadastro e Listar
+        dropdown.querySelectorAll('.categoria-menu').forEach(function (categoria) {
+
+            const titulo = categoria.querySelector('.categoria-titulo');
+            const links = categoria.querySelector('.categoria-links');
+
+            if (!titulo || !links) return;
+
+            titulo.addEventListener('click', function (event) {
+
+                event.stopPropagation();
+
+                const abrir = links.hidden;
+
+                // Mantém somente uma categoria aberta por menu
+                dropdown.querySelectorAll('.categoria-menu').forEach(function (outra) {
+
+                    const outroTitulo = outra.querySelector('.categoria-titulo');
+                    const outrosLinks = outra.querySelector('.categoria-links');
+
+                    outrosLinks.hidden = true;
+                    outroTitulo.setAttribute('aria-expanded', 'false');
+                });
+
+                if (abrir) {
+                    links.hidden = false;
+                    titulo.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    });
+
+    // Fecha os menus ao clicar fora
+    document.addEventListener('click', function (event) {
+
+        if (!header.contains(event.target)) {
+            dropdowns.forEach(fecharDropdown);
+            return;
+        }
+
+        dropdowns.forEach(function (dropdown) {
+            if (!dropdown.contains(event.target)) {
+                fecharDropdown(dropdown);
+            }
+        });
+    });
+
+    // Fecha com Escape
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === 'Escape') {
+            dropdowns.forEach(fecharDropdown);
+        }
+    });
+
+});
+</script>

@@ -1,0 +1,23 @@
+CORREÇÕES NAS LISTAGENS MEDEIA
+
+Arquivos incluídos:
+- lista_artigos.php
+- lista_autores.php
+- lista_concursos.php
+- lista_inscricoes.php
+- lista_livros.php
+- lista_operadores.php
+- lista_resultados.php
+- lista_revistas.php
+- lista_TA.php
+
+Alterações:
+- charset de conexão MySQL configurado para utf8mb4;
+- meta charset UTF-8 e viewport responsivo;
+- ajustes visuais consistentes e responsivos para filtros, tabelas, cartões e campos;
+- removidas cercas Markdown acidentais do arquivo lista_concursos.php;
+- validação sintática com php -l: todos os 9 arquivos passaram.
+
+Instalação:
+Faça backup dos arquivos atuais e substitua apenas os arquivos de listagem correspondentes.
+A correção da exibição não altera automaticamente registros que já estejam gravados no banco com texto corrompido (por exemplo, "InscriÃ§Ã£o"); esses dados precisam ser corrigidos separadamente.

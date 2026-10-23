@@ -45,7 +45,7 @@
                 <p class="footer-contact">
                     <i class="fas fa-phone"></i>
                     <a href="tel:+5555991012088">
-                        (55) 99101-2088
+                        (55) 99135-3429
                     </a>
                 </p>
             </div>
