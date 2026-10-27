@@ -1,612 +1,196 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Publicações | Associação Científica Medeia</title>
 
-    <title>
-        Publicações | Associação Científica Medeia
-    </title>
-
-
+    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    >
-
-
-    <style>
-
-
-        /* =========================
-           GERAL
-        ========================= */
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-        }
-
-
-        body {
-
-            font-family: "Inter", sans-serif;
-
-            background: #f8f2f9;
-
-            color: #35152f;
-
-        }
-
-
-        a {
-
-            text-decoration: none;
-
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        .navbar-custom {
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #67012a,
-                    #70145c,
-                    #7b1fa2
-                );
-
-            padding: 16px 0;
-
-            box-shadow:
-                0 5px 25px rgba(60, 10, 55, 0.18);
-
-        }
-
-
-        .navbar-brand {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            color: white !important;
-
-            font-size: 20px;
-
-            font-weight: 800;
-
-        }
-
-
-        .logo {
-
-            width: 44px;
-
-            height: 44px;
-
-            border-radius: 13px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: white;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #8e2a8f,
-                    #c04a91
-                );
-
-        }
-
-
-        .nav-link {
-
-            color: #f8edf8 !important;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            padding: 10px 14px !important;
-
-            border-radius: 9px;
-
-            transition: .3s;
-
-        }
-
-
-        .nav-link:hover {
-
-            background:
-                rgba(255,255,255,.10);
-
-        }
-
-
-        .nav-admin {
-
-            background:
-                rgba(255,255,255,.12);
-
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        .page-header {
-
-            text-align: left;
-
-            padding: 90px 0;
-
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(192,74,145,.13),
-                    transparent 25%
-                ),
-
-                linear-gradient(
-                    120deg,
-                    #faf6fb,
-                    #eadcf1,
-                    #f7e8f0
-                );
-
-        }
-
-
-        .page-header .container {
-
-            text-align: left;
-
-        }
-
-
-        .page-header::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 150px;
-
-            height: 150px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(123,31,162,.06);
-
-            left: 7%;
-
-            bottom: -70px;
-
-        }
-
-
-        .page-header small {
-
-            color: #7b2468;
-
-            font-size: 11px;
-
-            font-weight: 800;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .page-header h1 {
-
-            font-family: "Playfair Display", serif;
-
-            color: #42162f;
-
-            font-size: 58px;
-
-            margin: 10px 0;
-
-        }
-
-
-        .page-header p {
-
-            color: #706375;
-
-            max-width: 600px;
-
-            margin: 0;
-
-            line-height: 1.8;
-
-        }
-
-
-        /* =========================
-           PUBLICAÇÕES
-        ========================= */
-
-        .publications {
-
-            padding: 90px 0;
-
-        }
-
-
-        .publication-card {
-
-            height: 100%;
-
-            background: #ffffff;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            border: 1px solid #e5d6eb;
-
-            box-shadow:
-                0 12px 30px rgba(70,25,80,.07);
-
-            transition: .35s;
-
-        }
-
-
-        .publication-card:hover {
-
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 22px 45px rgba(70,25,80,.14);
-
-        }
-
-
-        .publication-image {
-
-            height: 230px;
-
-            overflow: hidden;
-
-        }
-
-
-        .publication-image img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            transition: .4s;
-
-        }
-
-
-        .publication-card:hover img {
-
-            transform: scale(1.06);
-
-        }
-
-
-        .publication-content {
-
-            padding: 28px;
-
-        }
-
-
-        .tag {
-
-            display: inline-block;
-
-            padding: 6px 12px;
-
-            border-radius: 20px;
-
-            background: #eadcf0;
-
-            color: #743285;
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 14px;
-
-        }
-
-
-        .publication-content h3 {
-
-            color: #42162f;
-
-            font-size: 19px;
-
-            font-weight: 700;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .publication-content p {
-
-            color: #706575;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .footer-custom {
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #67012a,
-                    #7b1f70,
-                    #7b1fa2
-                );
-
-            color: white;
-
-            padding: 45px 0 20px;
-
-        }
-
-
-        .footer-custom h4 {
-
-            font-size: 19px;
-
-            font-weight: 700;
-
-        }
-
-
-        .footer-custom p {
-
-            color: #f5eaf5;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-        }
-
-
-        .footer-bottom {
-
-            margin-top: 30px;
-
-            padding-top: 18px;
-
-            border-top:
-                1px solid rgba(255,255,255,.15);
-
-            text-align: center;
-
-            font-size: 12px;
-
-            opacity: .8;
-
-        }
-
-
-        /* =========================
-           RESPONSIVO
-        ========================= */
-
-        @media(max-width:768px) {
-
-            .page-header {
-
-                padding: 65px 0;
-
-            }
-
-
-            .page-header h1 {
-
-                font-size: 45px;
-
-            }
-
-
-            .publications {
-
-                padding: 60px 0;
-
-            }
-
-        }
-
-
-    </style>
-
+    <!-- Fontes -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/tcc/assets/css/site.css">
 </head>
 
+<body data-page="publicacoes">
 
-<body>
-<?php include 'includes_site/header.php'; ?>
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER COMPARTILHADO -->
+    <?php include 'includes_site/header.php'; ?>
 
+    <!-- APRESENTAÇÃO -->
     <section class="page-header">
-
         <div class="container">
 
+            <small>Produção intelectual</small>
 
-            <small>
-
-                Produção intelectual
-
-            </small>
-
-
-            <h1>
-
-                Publicações
-
-            </h1>
-
+            <h1>Publicações</h1>
 
             <p>
-
-                Conteúdos e produções relacionados
-                à ciência, educação e cultura.
-
+                Conheça os conteúdos e as produções relacionados
+                à ciência, à educação e à cultura, promovendo
+                a disseminação do conhecimento.
             </p>
 
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================
-         PUBLICAÇÕES
-    ========================= -->
-
+    <!-- PUBLICAÇÕES -->
     <section class="publications">
-
         <div class="container">
+
+            <div class="section-heading">
+                <span>Conhecimento e pesquisa</span>
+
+                <h2>Nossas Publicações</h2>
+
+                <p>
+                    Explore as iniciativas editoriais e os materiais
+                    acadêmicos vinculados à Associação Científica Medeia.
+                </p>
+            </div>
 
             <div class="row g-4">
 
+                <!-- EDITORA -->
+                <div class="col-lg-4 col-md-6">
 
-                <!-- PUBLICAÇÃO - EDITORA -->
-
-                <div class="col-lg-4">
-
-                    <div class="publication-card">
-
+                    <article class="publication-card">
 
                         <div class="publication-image">
-
                             <img
                                 src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
-                                alt="Livros"
+                                alt="Livros organizados em uma estante"
+                                loading="lazy"
                             >
-
                         </div>
-
 
                         <div class="publication-content">
 
-
-                            <span class="tag">
-
-                                Editora
-
-                            </span>
-
+                            <span class="tag">Editora</span>
 
                             <h3>
-
                                 Livros e materiais acadêmicos
-
                             </h3>
 
-
                             <p>
-
                                 Publicações destinadas à divulgação
-                                e compartilhamento do conhecimento
-                                científico e acadêmico.
-
+                                e ao compartilhamento do conhecimento
+                                científico, acadêmico e educacional.
                             </p>
 
+                            <a
+                                href="servicos.php"
+                                class="publication-link"
+                            >
+                                Conheça nossos serviços
+                                <i class="fa-solid fa-arrow-right"
+                                   aria-hidden="true"></i>
+                            </a>
 
                         </div>
 
-
-                    </div>
+                    </article>
 
                 </div>
 
+                <!-- REVISTAS CIENTÍFICAS -->
+                <div class="col-lg-4 col-md-6">
+
+                    <article class="publication-card">
+
+                        <div class="publication-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85"
+                                alt="Biblioteca com livros e materiais de pesquisa"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="publication-content">
+
+                            <span class="tag">Revistas científicas</span>
+
+                            <h3>
+                                Pesquisa e produção científica
+                            </h3>
+
+                            <p>
+                                Espaço dedicado à divulgação de artigos,
+                                pesquisas e trabalhos que contribuem
+                                para a produção do conhecimento.
+                            </p>
+
+                            <a
+                                href="servicos.php"
+                                class="publication-link"
+                            >
+                                Conheça nossas iniciativas
+                                <i class="fa-solid fa-arrow-right"
+                                   aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- CONCURSOS -->
+                <div class="col-lg-4 col-md-6">
+
+                    <article class="publication-card">
+
+                        <div class="publication-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=85"
+                                alt="Materiais de estudo sobre uma mesa"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="publication-content">
+
+                            <span class="tag">Concursos</span>
+
+                            <h3>
+                                Informações e oportunidades
+                            </h3>
+
+                            <p>
+                                Conheça as iniciativas relacionadas
+                                à organização de concursos e às
+                                oportunidades disponibilizadas.
+                            </p>
+
+                            <a
+                                href="agencia_concursos.php"
+                                class="publication-link"
+                            >
+                                Acessar agência de concursos
+                                <i class="fa-solid fa-arrow-right"
+                                   aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
 
             </div>
 
         </div>
-
     </section>
 
-
-
-  
-
+    <!-- FOOTER COMPARTILHADO -->
+    <?php include 'includes_site/footer.php'; ?>
 
 </body>
-
 </html>
-
- <!--------------- FOOTER ---------------->
-    <?php include 'includes_site/footer.php'?>
- <!--------------------------------------->
