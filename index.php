@@ -16,7 +16,7 @@
 
     <!-- Fontes -->
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/tcc/assets/css/site.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
 <body data-page="home">
