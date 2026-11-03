@@ -1,6 +1,5 @@
 <?php
 include('conexao.php');
-
 $tabelas = [
     'revistas'    => ['id_revista', 'Revistas'],
     'livros'      => ['id_livro', 'Livros'],
@@ -211,70 +210,3 @@ $mostrar = array_slice($colunas, 0, 6);
 
 </div>
 
-<style>
-.container-fluid{
-    max-width:1450px;
-}
-
-.titulo-lista{
-    color:#4d1235;
-    font-size:25px;
-    font-weight:600;
-}
-
-.titulo-lista i{
-    color:#b61d45;
-    margin-right:8px;
-}
-
-.card{
-    border:0;
-    border-radius:14px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
-}
-
-.filtro{
-    border-top:4px solid #b61d45;
-}
-
-.form-control,
-.form-select{
-    height:40px;
-    border-radius:8px;
-    font-size:13px;
-}
-
-.btn-primary{
-    border:0;
-    border-radius:8px;
-    background:linear-gradient(90deg,#b61d45,#8b2cf5);
-}
-
-.table thead th{
-    background:linear-gradient(90deg,#b61d45,#8b2cf5);
-    color:#fff;
-    font-size:13px;
-    white-space:nowrap;
-}
-
-.table td{
-    font-size:13px;
-    color:#555;
-}
-
-.btn-editar{
-    color:#8b2cf5;
-    border:1px solid #8b2cf5;
-}
-
-.btn-excluir{
-    color:#b61d45;
-    border:1px solid #b61d45;
-}
-
-.btn-editar:hover,
-.btn-excluir:hover{
-    color:#fff;
-    background:linear-gradient(90deg,#b61d45,#8b2cf5);
-}
-</style>

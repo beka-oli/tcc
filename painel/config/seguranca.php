@@ -87,9 +87,30 @@ function exigir_login(): void
     $_SESSION['ultima_atividade'] = time();
 }
 
+if (!function_exists('corrigir_codificacao_painel')) {
+    function corrigir_codificacao_painel($valor): string
+    {
+        $valor = (string)($valor ?? '');
+
+        // Corrige textos legados gravados/exibidos como "JoÃ£o" ou "EdiÃ§Ã£o".
+        // Não altera textos UTF-8 normais.
+        for ($i = 0; $i < 2; $i++) {
+            if (!preg_match('/(?:Ã[-¿]|Â[-¿]|â€)/u', $valor)) {
+                break;
+            }
+            $corrigido = @iconv('UTF-8', 'ISO-8859-1//IGNORE', $valor);
+            if ($corrigido === false || $corrigido === $valor || preg_match('//u', $corrigido) !== 1) {
+                break;
+            }
+            $valor = $corrigido;
+        }
+        return $valor;
+    }
+}
+
 if (!function_exists('h')) {
     function h($v): string
     {
-        return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8');
+        return htmlspecialchars(corrigir_codificacao_painel($v), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     }
 }

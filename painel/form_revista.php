@@ -201,66 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 
-<style>
-form{max-width:1450px;margin:25px auto}
 
-.card{
-    border:0;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow:0 5px 18px #00000014;
-    margin-bottom:18px
-}
-
-.card-header{
-    background:linear-gradient(90deg,#b61d45,#8b2cf5);
-    color:#fff;
-    padding:12px 18px;
-    font-weight:600
-}
-
-.card-body{padding:18px}
-
-.card-body>div{margin-bottom:12px}
-
-label{
-    display:block;
-    margin-bottom:4px;
-    font-size:13px;
-    font-weight:600;
-    color:#555
-}
-
-.form-control,
-.form-select{
-    height:36px;
-    font-size:13px;
-    border-radius:8px
-}
-
-textarea.form-control{
-    height:70px;
-    resize:vertical
-}
-
-.botoes{
-    text-align:right;
-    margin-bottom:35px
-}
-
-.btn{
-    height:38px;
-    border-radius:8px;
-    padding:0 18px;
-    font-size:13px;
-    font-weight:600
-}
-
-.btn-primary{
-    border:0;
-    background:linear-gradient(90deg,#b61d45,#8b2cf5)
-}
-</style>
 
 <?php include 'includes_painel/footer.php'; ?>
 

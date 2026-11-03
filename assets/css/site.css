@@ -1,10 +1,20 @@
 /* Reset seguro: não remove margens/paddings do Bootstrap nem do conteúdo. */
+
 body[data-page],
+
 body[data-page] *,
+
 body[data-page] *::before,
+
 body[data-page] *::after {
+
     box-sizing: border-box;
+
 }
+
+
+
+
 
 
 
@@ -12,409 +22,819 @@ body[data-page] *::after {
 
 
 
+
+
+
+
 /* index.php *//* ======================================
 
+
+
            CONFIGURAÇÕES GERAIS
+
+
 
         ====================================== */
 
 
 
+
+
+
+
 body[data-page="home"] {
+
+
 
             width: 100%;
 
+
+
             overflow-x: hidden;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="home"] {
 
+
+
             width: 100%;
+
+
 
             min-height: 100vh;
 
+
+
             font-family: "Inter", sans-serif;
+
+
 
             background: #f8f2f9;
 
+
+
             color: #35152f;
+
+
 
             overflow-x: hidden;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="home"] a, body[data-page="home"] a:hover, body[data-page="home"] a:focus, body[data-page="home"] a:active {
 
+
+
             text-decoration: none !important;
+
+
 
         }
 
 
 
+
+
+
+
 /* ======================================
+
+
 
            PÁGINA INICIAL
 
+
+
         ====================================== */ body[data-page="home"] .medeia-home {
+
+
 
             display: block;
 
+
+
             width: 100%;
+
+
 
             margin: 0;
 
+
+
             padding: 0;
+
+
 
             background: #f8f2f9;
 
+
+
             color: #35152f;
+
+
 
         }
 
 
 
+
+
+
+
 /* ======================================
+
+
 
            BANNER PRINCIPAL
 
+
+
         ====================================== */ body[data-page="home"] .medeia-home .hero {
+
+
 
             width: 100%;
 
+
+
             min-height: calc(100vh - 84px);
+
+
 
             display: flex;
 
+
+
             align-items: center;
+
+
 
             position: relative;
 
+
+
             isolation: isolate;
 
+
+
             overflow: hidden;
+
+
 
             padding: 60px 0;
 
 
 
+
+
+
+
             background:
+
+
 
                 radial-gradient(
 
+
+
                     circle at 85% 20%,
+
+
 
                     rgba(192, 74, 145, 0.16),
 
+
+
                     transparent 24%
+
+
 
                 ),
 
+
+
                 linear-gradient(
+
+
 
                     120deg,
 
+
+
                     #faf6fb,
+
+
 
                     #eee0f3 50%,
 
+
+
                     #f7e8f0
+
+
 
                 );
 
+
+
         }
+
+
+
+
 
 
 
 /* CÍRCULOS DECORATIVOS */ body[data-page="home"] .medeia-home .hero::before, body[data-page="home"] .medeia-home .hero::after {
 
+
+
             content: "";
+
+
 
             position: absolute;
 
+
+
             z-index: -1;
+
+
 
             border-radius: 50%;
 
+
+
             pointer-events: none;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero::before {
 
+
+
             width: 250px;
+
+
 
             height: 250px;
 
+
+
             background: rgba(123, 31, 162, 0.07);
+
+
 
             top: -100px;
 
+
+
             right: 13%;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero::after {
 
+
+
             width: 130px;
+
+
 
             height: 130px;
 
+
+
             background: rgba(103, 1, 42, 0.06);
+
+
 
             bottom: 30px;
 
+
+
             left: 5%;
 
+
+
         }
+
+
+
+
 
 
 
 /* CONTEÚDO */ body[data-page="home"] .medeia-home .hero-content, body[data-page="home"] .medeia-home .hero-image-area {
 
+
+
             position: relative;
+
+
 
             z-index: 1;
 
+
+
             min-width: 0;
 
+
+
         }
+
+
+
+
 
 
 
 /* ETIQUETA */ body[data-page="home"] .medeia-home .hero-label {
 
+
+
             display: inline-block;
+
+
 
             padding: 8px 15px;
 
+
+
             margin-bottom: 24px;
+
+
 
             border-radius: 30px;
 
+
+
             background: #ead7ed;
+
+
 
             color: #70205f;
 
+
+
             font-size: 11px;
+
+
 
             font-weight: 800;
 
+
+
             letter-spacing: 1.5px;
+
+
 
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 /* TÍTULO */ body[data-page="home"] .medeia-home .hero h1 {
 
+
+
             margin: 0 0 24px;
+
+
 
             color: #42162f;
 
+
+
             font-family: "Playfair Display", serif;
+
+
 
             font-size: clamp(42px, 5.5vw, 70px);
 
+
+
             line-height: 1.12;
+
+
 
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero h1 span {
 
+
+
             background: linear-gradient(
+
+
 
                 90deg,
 
+
+
                 #67012a,
+
+
 
                 #7b1fa2,
 
+
+
                 #c04a91
+
+
 
             );
 
 
 
+
+
+
+
             -webkit-background-clip: text;
+
+
 
             background-clip: text;
 
+
+
             -webkit-text-fill-color: transparent;
 
+
+
         }
+
+
+
+
 
 
 
 /* SUBTÍTULO */ body[data-page="home"] .medeia-home .hero h4 {
 
+
+
             margin: 0 0 18px;
+
+
 
             color: #6b3266;
 
+
+
             font-size: 18px;
+
+
 
             font-weight: 600;
 
+
+
             line-height: 1.5;
 
+
+
         }
+
+
+
+
 
 
 
 /* DESCRIÇÃO */ body[data-page="home"] .medeia-home .hero p {
 
+
+
             max-width: 540px;
 
+
+
             margin: 0;
+
+
 
             color: #6f626e;
 
+
+
             font-size: 15px;
+
+
 
             line-height: 1.9;
 
+
+
         }
 
 
 
+
+
+
+
 /* ======================================
+
+
 
            IMAGEM DO BANNER
 
+
+
         ====================================== */ body[data-page="home"] .medeia-home .hero-image-area {
+
+
 
             width: 100%;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero-image {
 
+
+
             display: block;
+
+
 
             width: 100%;
 
+
+
             height: 470px;
+
+
 
             margin: 0;
 
+
+
             object-fit: cover;
+
+
 
             border: none;
 
+
+
             border-radius: 25px;
+
+
 
             box-shadow: 0 25px 55px rgba(60, 15, 60, 0.18);
 
+
+
         }
+
+
+
+
 
 
 
 /* ======================================
 
+
+
            RESPONSIVIDADE
+
+
 
         ====================================== */ @media (max-width: 991px) {body[data-page="home"] .medeia-home .hero {
 
+
+
                 min-height: auto;
+
+
 
                 padding: 65px 0;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero-image {
 
+
+
                 height: 390px;
+
+
 
                 margin-top: 35px;
 
+
+
             }
 
+
+
         }
+
+
+
+
 
 
 
         @media (max-width: 575px) {body[data-page="home"] .medeia-home .hero {
 
+
+
                 padding: 45px 0;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero-label {
 
+
+
                 font-size: 10px;
+
+
 
                 letter-spacing: 1px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero h1 {
 
+
+
                 font-size: clamp(38px, 10vw, 52px);
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero h4 {
 
+
+
                 font-size: 16px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero p {
 
+
+
                 font-size: 14px;
+
+
 
                 line-height: 1.8;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="home"] .medeia-home .hero-image {
 
+
+
                 height: 300px;
+
+
 
                 margin-top: 25px;
 
+
+
                 border-radius: 18px;
 
+
+
             }
+
+
 
         }
 
 
 
+
+
+
+
 /* sobre.php *//* =========================
+
+
 
            GERAL
 
+
+
         ========================= */
+
+
+
+
 
 
 
@@ -422,7 +842,15 @@ body[data-page="sobre"] {
 
 
 
+
+
+
+
             font-family: "Inter", sans-serif;
+
+
+
+
 
 
 
@@ -430,11 +858,23 @@ body[data-page="sobre"] {
 
 
 
+
+
+
+
             color: #35152f;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -442,7 +882,15 @@ body[data-page="sobre"] a {
 
 
 
+
+
+
+
             text-decoration: none;
+
+
+
+
 
 
 
@@ -450,9 +898,17 @@ body[data-page="sobre"] a {
 
 
 
+
+
+
+
 /* =========================
 
+
+
            NAVBAR
+
+
 
         ========================= */
 
@@ -478,11 +934,43 @@ body[data-page="sobre"] a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
+
+
 
            CABEÇALHO
 
+
+
         ========================= */ body[data-page="sobre"] .page-header {
+
+
+
+
 
 
 
@@ -490,7 +978,15 @@ body[data-page="sobre"] a {
 
 
 
+
+
+
+
             position: relative;
+
+
+
+
 
 
 
@@ -498,37 +994,75 @@ body[data-page="sobre"] a {
 
 
 
+
+
+
+
             background:
+
+
+
+
 
 
 
                 radial-gradient(
 
+
+
                     circle at 85% 20%,
+
+
 
                     rgba(192, 74, 145, 0.14),
 
+
+
                     transparent 25%
+
+
 
                 ),
 
 
 
+
+
+
+
                 linear-gradient(
+
+
 
                     120deg,
 
+
+
                     #faf6fb,
+
+
 
                     #eadcf1,
 
+
+
                     #f7e8f0
+
+
 
                 );
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -536,7 +1070,15 @@ body[data-page="sobre"] .page-header::before {
 
 
 
+
+
+
+
             content: "";
+
+
+
+
 
 
 
@@ -544,7 +1086,15 @@ body[data-page="sobre"] .page-header::before {
 
 
 
+
+
+
+
             width: 180px;
+
+
+
+
 
 
 
@@ -552,13 +1102,27 @@ body[data-page="sobre"] .page-header::before {
 
 
 
+
+
+
+
             border-radius: 50%;
+
+
+
+
 
 
 
             background:
 
+
+
                 rgba(123, 31, 162, 0.06);
+
+
+
+
 
 
 
@@ -566,11 +1130,23 @@ body[data-page="sobre"] .page-header::before {
 
 
 
+
+
+
+
             left: 8%;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -578,7 +1154,15 @@ body[data-page="sobre"] .page-header small {
 
 
 
+
+
+
+
             color: #7b2468;
+
+
+
+
 
 
 
@@ -586,7 +1170,15 @@ body[data-page="sobre"] .page-header small {
 
 
 
+
+
+
+
             font-weight: 800;
+
+
+
+
 
 
 
@@ -594,11 +1186,23 @@ body[data-page="sobre"] .page-header small {
 
 
 
+
+
+
+
             text-transform: uppercase;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -606,11 +1210,23 @@ body[data-page="sobre"] .page-header h1 {
 
 
 
+
+
+
+
             font-family: "Playfair Display", serif;
 
 
 
+
+
+
+
             color: #42162f;
+
+
+
+
 
 
 
@@ -618,11 +1234,23 @@ body[data-page="sobre"] .page-header h1 {
 
 
 
+
+
+
+
             margin: 10px 0;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -630,7 +1258,15 @@ body[data-page="sobre"] .page-header p {
 
 
 
+
+
+
+
             color: #706375;
+
+
+
+
 
 
 
@@ -638,7 +1274,15 @@ body[data-page="sobre"] .page-header p {
 
 
 
+
+
+
+
             line-height: 1.8;
+
+
+
+
 
 
 
@@ -646,11 +1290,23 @@ body[data-page="sobre"] .page-header p {
 
 
 
+
+
+
+
 /* =========================
+
+
 
            SOBRE
 
+
+
         ========================= */ body[data-page="sobre"] .about {
+
+
+
+
 
 
 
@@ -658,7 +1314,15 @@ body[data-page="sobre"] .page-header p {
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -666,7 +1330,15 @@ body[data-page="sobre"] .about-image {
 
 
 
+
+
+
+
             width: 100%;
+
+
+
+
 
 
 
@@ -674,7 +1346,15 @@ body[data-page="sobre"] .about-image {
 
 
 
+
+
+
+
             object-fit: cover;
+
+
+
+
 
 
 
@@ -682,13 +1362,27 @@ body[data-page="sobre"] .about-image {
 
 
 
+
+
+
+
             box-shadow:
+
+
 
                 0 25px 55px rgba(70, 25, 80, 0.14);
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -696,11 +1390,23 @@ body[data-page="sobre"] .about-content {
 
 
 
+
+
+
+
             padding-left: 55px;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -708,7 +1414,15 @@ body[data-page="sobre"] .about-content h2 {
 
 
 
+
+
+
+
             font-family: "Playfair Display", serif;
+
+
+
+
 
 
 
@@ -716,7 +1430,15 @@ body[data-page="sobre"] .about-content h2 {
 
 
 
+
+
+
+
             font-size: 40px;
+
+
+
+
 
 
 
@@ -724,11 +1446,23 @@ body[data-page="sobre"] .about-content h2 {
 
 
 
+
+
+
+
             margin-bottom: 22px;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -736,7 +1470,15 @@ body[data-page="sobre"] .about-content p {
 
 
 
+
+
+
+
             color: #6d6272;
+
+
+
+
 
 
 
@@ -744,11 +1486,23 @@ body[data-page="sobre"] .about-content p {
 
 
 
+
+
+
+
             line-height: 1.9;
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -756,7 +1510,15 @@ body[data-page="sobre"] .about-item {
 
 
 
+
+
+
+
             display: flex;
+
+
+
+
 
 
 
@@ -764,7 +1526,15 @@ body[data-page="sobre"] .about-item {
 
 
 
+
+
+
+
             gap: 12px;
+
+
+
+
 
 
 
@@ -772,7 +1542,15 @@ body[data-page="sobre"] .about-item {
 
 
 
+
+
+
+
             margin-top: 12px;
+
+
+
+
 
 
 
@@ -780,7 +1558,15 @@ body[data-page="sobre"] .about-item {
 
 
 
+
+
+
+
             border-radius: 10px;
+
+
+
+
 
 
 
@@ -788,7 +1574,15 @@ body[data-page="sobre"] .about-item {
 
 
 
+
+
+
+
             font-size: 13px;
+
+
+
+
 
 
 
@@ -796,7 +1590,15 @@ body[data-page="sobre"] .about-item {
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -804,7 +1606,15 @@ body[data-page="sobre"] .about-item i {
 
 
 
+
+
+
+
             color: #a7357d;
+
+
+
+
 
 
 
@@ -812,9 +1622,17 @@ body[data-page="sobre"] .about-item i {
 
 
 
+
+
+
+
 /* =========================
 
+
+
            FOOTER
+
+
 
         ========================= */
 
@@ -832,11 +1650,35 @@ body[data-page="sobre"] .about-item i {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
+
+
 
            RESPONSIVO
 
+
+
         ========================= */ @media(max-width:768px) {body[data-page="sobre"] .about-content {
+
+
+
+
 
 
 
@@ -844,11 +1686,23 @@ body[data-page="sobre"] .about-item i {
 
 
 
+
+
+
+
                 margin-top: 40px;
 
 
 
+
+
+
+
             }
+
+
+
+
 
 
 
@@ -856,7 +1710,15 @@ body[data-page="sobre"] .about-image {
 
 
 
+
+
+
+
                 height: 350px;
+
+
+
+
 
 
 
@@ -864,7 +1726,15 @@ body[data-page="sobre"] .about-image {
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -872,15 +1742,31 @@ body[data-page="sobre"] .about-image {
 
 
 
+
+
+
+
 body[data-page="servicos"] {
+
+
 
             font-family: "Inter", sans-serif;
 
+
+
             background: #f8f2f9;
+
+
 
             color: #35152f;
 
+
+
         }
+
+
+
+
 
 
 
@@ -888,53 +1774,107 @@ body[data-page="servicos"] a { text-decoration: none; }
 
 
 
+
+
+
+
 body[data-page="servicos"] .page-header {
+
+
 
             padding: 80px 0;
 
+
+
             background: linear-gradient(120deg, #faf6fb, #eadcf1, #f7e8f0);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .page-header small {
 
+
+
             color: #7b2468;
+
+
 
             font-size: 11px;
 
+
+
             font-weight: 800;
+
+
 
             letter-spacing: 2px;
 
+
+
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .page-header h1 {
 
+
+
             margin: 12px 0;
+
+
 
             color: #42162f;
 
+
+
             font: 700 52px "Playfair Display", serif;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .page-header p {
 
+
+
             max-width: 600px;
+
+
 
             color: #706375;
 
+
+
             line-height: 1.8;
 
+
+
         }
+
+
+
+
 
 
 
@@ -942,87 +1882,175 @@ body[data-page="servicos"] .services { padding: 75px 0; }
 
 
 
+
+
+
+
 body[data-page="servicos"] .service-card {
+
+
 
             height: 100%;
 
+
+
             padding: 30px;
+
+
 
             background: #fff;
 
+
+
             border: 1px solid #e5d5ea;
+
+
 
             border-radius: 18px;
 
+
+
             box-shadow: 0 10px 28px #4619500d;
+
+
 
             transition: .3s;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .service-card:hover {
 
+
+
             transform: translateY(-6px);
+
+
 
             box-shadow: 0 18px 35px #4619501c;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .service-icon {
 
+
+
             display: flex;
+
+
 
             align-items: center;
 
+
+
             justify-content: center;
+
+
 
             width: 58px;
 
+
+
             height: 58px;
+
+
 
             margin-bottom: 22px;
 
+
+
             border-radius: 15px;
+
+
 
             background: linear-gradient(135deg, #eadcf0, #f5dfe9);
 
+
+
             color: #762476;
+
+
 
             font-size: 23px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .service-card h3 {
 
+
+
             margin-bottom: 12px;
+
+
 
             color: #42162f;
 
+
+
             font-size: 18px;
+
+
 
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] .service-card p {
 
+
+
             margin: 0;
+
+
 
             color: #706575;
 
+
+
             font-size: 13px;
+
+
 
             line-height: 1.8;
 
+
+
         }
+
+
+
+
 
 
 
@@ -1030,7 +2058,15 @@ body[data-page="servicos"] .service-link { display: block; height: 100%; }
 
 
 
+
+
+
+
 body[data-page="servicos"] .service-link .service-card { height: 100%; }
+
+
+
+
 
 
 
@@ -1038,21 +2074,43 @@ body[data-page="servicos"] .service-link .service-card { height: 100%; }
 
 
 
+
+
+
+
 body[data-page="servicos"] .page-header h1 { font-size: 40px; }
+
+
+
+
 
 
 
 body[data-page="servicos"] .services { padding: 50px 0; }
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="servicos"] a, body[data-page="servicos"] a:hover, body[data-page="servicos"] a:focus, body[data-page="servicos"] a:active {
 
+
+
     text-decoration: none !important;
 
+
+
 }
+
+
+
+
 
 
 
@@ -1060,447 +2118,895 @@ body[data-page="servicos"] a, body[data-page="servicos"] a:hover, body[data-page
 
 
 
+
+
+
+
 body[data-page="publicacoes"] {
+
+
 
             font-family: "Inter", sans-serif;
 
+
+
             background: #ffffff;
+
+
 
             color: #35152f;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] a {
 
+
+
             text-decoration: none !important;
 
+
+
         }
+
+
+
+
 
 
 
 /* CABEÇALHO DA PÁGINA */ body[data-page="publicacoes"] .page-header {
 
+
+
             position: relative;
+
+
 
             overflow: hidden;
 
+
+
             padding: 100px 0;
+
+
 
             background:
 
+
+
                 radial-gradient(
+
+
 
                     circle at 85% 20%,
 
+
+
                     rgba(192, 74, 145, 0.13),
+
+
 
                     transparent 25%
 
+
+
                 ),
+
+
 
                 linear-gradient(
 
+
+
                     120deg,
+
+
 
                     #faf6fb,
 
+
+
                     #eadcf1,
+
+
 
                     #f7e8f0
 
+
+
                 );
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header .container {
 
+
+
             position: relative;
+
+
 
             z-index: 1;
 
+
+
             text-align: left;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header::before {
 
+
+
             content: "";
+
+
 
             position: absolute;
 
+
+
             width: 165px;
+
+
 
             height: 165px;
 
+
+
             border-radius: 50%;
+
+
 
             background: rgba(123, 31, 162, 0.06);
 
+
+
             left: 7%;
+
+
 
             bottom: -75px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header small {
 
+
+
             display: inline-block;
+
+
 
             color: #7b2468;
 
+
+
             font-size: 11px;
+
+
 
             font-weight: 800;
 
+
+
             letter-spacing: 2px;
+
+
 
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header h1 {
 
+
+
             margin: 12px 0;
+
+
 
             color: #42162f;
 
+
+
             font-family: "Playfair Display", serif;
+
+
 
             font-size: 58px;
 
+
+
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header p {
 
+
+
             max-width: 650px;
+
+
 
             margin: 0;
 
+
+
             color: #706375;
+
+
 
             font-size: 16px;
 
+
+
             line-height: 1.9;
 
+
+
         }
+
+
+
+
 
 
 
 /* SEÇÃO DE PUBLICAÇÕES */ body[data-page="publicacoes"] .publications {
 
+
+
             padding: 85px 0;
+
+
 
             background: #ffffff;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .section-heading {
 
+
+
             margin-bottom: 38px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .section-heading span {
 
+
+
             display: inline-block;
+
+
 
             margin-bottom: 10px;
 
+
+
             color: #92277b;
+
+
 
             font-size: 11px;
 
+
+
             font-weight: 800;
+
+
 
             letter-spacing: 2px;
 
+
+
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .section-heading h2 {
 
+
+
             margin-bottom: 12px;
+
+
 
             color: #42162f;
 
+
+
             font-family: "Playfair Display", serif;
+
+
 
             font-size: 35px;
 
+
+
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .section-heading p {
 
+
+
             max-width: 650px;
+
+
 
             margin: 0;
 
+
+
             color: #706575;
+
+
 
             font-size: 14px;
 
+
+
             line-height: 1.8;
 
+
+
         }
+
+
+
+
 
 
 
 /* CARDS */ body[data-page="publicacoes"] .publication-card {
 
+
+
             height: 100%;
+
+
 
             overflow: hidden;
 
+
+
             background: #ffffff;
+
+
 
             border: 1px solid #e5d6eb;
 
+
+
             border-radius: 20px;
+
+
 
             box-shadow: 0 12px 30px rgba(70, 25, 80, 0.07);
 
+
+
             transition:
+
+
 
                 transform 0.3s ease,
 
+
+
                 box-shadow 0.3s ease;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-card:hover {
 
+
+
             transform: translateY(-7px);
+
+
 
             box-shadow: 0 20px 42px rgba(70, 25, 80, 0.13);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-image {
 
+
+
             position: relative;
+
+
 
             height: 245px;
 
+
+
             overflow: hidden;
+
+
 
             background: #f4e8f5;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-image img {
 
+
+
             display: block;
+
+
 
             width: 100%;
 
+
+
             height: 100%;
+
+
 
             object-fit: cover;
 
+
+
             transition: transform 0.4s ease;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-card:hover .publication-image img {
 
+
+
             transform: scale(1.05);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-content {
 
+
+
             padding: 28px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .tag {
 
+
+
             display: inline-block;
+
+
 
             margin-bottom: 15px;
 
+
+
             padding: 7px 13px;
+
+
 
             border-radius: 20px;
 
+
+
             background: #f1e4f4;
+
+
 
             color: #743285;
 
+
+
             font-size: 10px;
+
+
 
             font-weight: 800;
 
+
+
             letter-spacing: 1px;
+
+
 
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-content h3 {
 
+
+
             margin-bottom: 13px;
+
+
 
             color: #42162f;
 
+
+
             font-size: 19px;
+
+
 
             font-weight: 700;
 
+
+
             line-height: 1.5;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-content p {
 
+
+
             margin-bottom: 20px;
+
+
 
             color: #706575;
 
+
+
             font-size: 13px;
+
+
 
             line-height: 1.9;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-link {
 
+
+
             display: inline-flex;
+
+
 
             align-items: center;
 
+
+
             gap: 9px;
+
+
 
             color: #8d267b !important;
 
+
+
             font-size: 13px;
+
+
 
             font-weight: 700;
 
+
+
             text-decoration: none !important;
+
+
 
             transition: color 0.25s ease;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-link:hover {
 
+
+
             color: #c21887 !important;
 
+
+
         }
+
+
+
+
 
 
 
 /* RESPONSIVIDADE */ @media (max-width: 768px) {body[data-page="publicacoes"] .page-header {
 
+
+
                 padding: 65px 0;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header h1 {
 
+
+
                 font-size: 43px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .page-header p {
 
+
+
                 font-size: 14px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publications {
 
+
+
                 padding: 55px 0;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .section-heading h2 {
 
+
+
                 font-size: 29px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-image {
 
+
+
                 height: 220px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="publicacoes"] .publication-content {
 
+
+
                 padding: 23px;
+
+
 
             }
 
+
+
         }
+
+
+
+
 
 
 
         @media (prefers-reduced-motion: reduce) {body[data-page="publicacoes"] *, body[data-page="publicacoes"] *::before, body[data-page="publicacoes"] *::after {
 
+
+
                 transition: none !important;
+
+
 
             }
 
+
+
         }
+
+
+
+
 
 
 
@@ -1508,479 +3014,959 @@ body[data-page="publicacoes"] .publication-content {
 
 
 
+
+
+
+
 body[data-page="contato"] {
+
+
 
             font-family: "Inter", sans-serif;
 
+
+
             background: #ffffff;
+
+
 
             color: #35152f;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] a {
 
+
+
             text-decoration: none !important;
 
+
+
         }
+
+
+
+
 
 
 
 /* CABEÇALHO DA PÁGINA */ body[data-page="contato"] .page-header {
 
+
+
             position: relative;
+
+
 
             overflow: hidden;
 
+
+
             padding: 105px 0;
+
+
 
             background: linear-gradient(
 
+
+
                 120deg,
+
+
 
                 #faf6fb,
 
+
+
                 #eadcf1,
+
+
 
                 #f7e8f0
 
+
+
             );
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header::before {
 
+
+
             content: "";
+
+
 
             position: absolute;
 
+
+
             width: 165px;
+
+
 
             height: 165px;
 
+
+
             top: -70px;
+
+
 
             left: 7%;
 
+
+
             border-radius: 50%;
+
+
 
             background: rgba(151, 78, 173, 0.07);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header::after {
 
+
+
             content: "";
+
+
 
             position: absolute;
 
+
+
             width: 260px;
+
+
 
             height: 260px;
 
+
+
             right: 7%;
+
+
 
             top: -45px;
 
+
+
             border-radius: 50%;
+
+
 
             background: rgba(217, 69, 151, 0.06);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header .container {
 
+
+
             position: relative;
+
+
 
             z-index: 1;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header small {
 
+
+
             display: inline-block;
+
+
 
             margin-bottom: 12px;
 
+
+
             color: #8c246f;
+
+
 
             font-size: 12px;
 
+
+
             font-weight: 800;
+
+
 
             letter-spacing: 2px;
 
+
+
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header h1 {
 
+
+
             margin-bottom: 16px;
+
+
 
             color: #42162f;
 
+
+
             font-family: "Playfair Display", serif;
+
+
 
             font-size: 60px;
 
+
+
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header p {
 
+
+
             max-width: 720px;
+
+
 
             margin: 0;
 
+
+
             color: #706375;
+
+
 
             font-size: 17px;
 
+
+
             line-height: 1.9;
 
+
+
         }
+
+
+
+
 
 
 
 /* ÁREA DE CONTATO */ body[data-page="contato"] .contact-section {
 
+
+
             padding: 85px 0;
+
+
 
             background: #ffffff;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-wrapper {
 
+
+
             padding: 50px;
+
+
 
             border: 1px solid #ead8ef;
 
+
+
             border-radius: 28px;
+
+
 
             background: #ffffff;
 
+
+
             box-shadow: 0 18px 55px rgba(70, 25, 80, 0.07);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-intro {
 
+
+
             padding: 10px 20px 10px 0;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .section-label {
 
+
+
             display: inline-block;
+
+
 
             margin-bottom: 12px;
 
+
+
             color: #92277b;
+
+
 
             font-size: 11px;
 
+
+
             font-weight: 800;
+
+
 
             letter-spacing: 2px;
 
+
+
             text-transform: uppercase;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-intro h2 {
 
+
+
             margin-bottom: 18px;
+
+
 
             color: #42162f;
 
+
+
             font-family: "Playfair Display", serif;
+
+
 
             font-size: 36px;
 
+
+
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-intro p {
 
+
+
             color: #706575;
+
+
 
             font-size: 14px;
 
+
+
             line-height: 1.9;
 
+
+
         }
+
+
+
+
 
 
 
 /* CARDS */ body[data-page="contato"] .contact-card {
 
+
+
             height: 100%;
+
+
 
             padding: 34px;
 
+
+
             border: 1px solid #ead8ef;
+
+
 
             border-radius: 23px;
 
+
+
             background: linear-gradient(
+
+
 
                 145deg,
 
+
+
                 #f7edf9,
+
+
 
                 #fdf6fa
 
+
+
             );
+
+
 
             transition: transform .3s ease, box-shadow .3s ease;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-card:hover {
 
+
+
             transform: translateY(-5px);
+
+
 
             box-shadow: 0 15px 35px rgba(82, 25, 92, 0.10);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-icon {
 
+
+
             display: flex;
+
+
 
             align-items: center;
 
+
+
             justify-content: center;
+
+
 
             width: 62px;
 
+
+
             height: 62px;
+
+
 
             margin-bottom: 23px;
 
+
+
             border-radius: 18px;
+
+
 
             background: #ffffff;
 
+
+
             color: #85277f;
+
+
 
             font-size: 23px;
 
+
+
             box-shadow: 0 5px 15px rgba(75, 25, 85, 0.04);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-card h3 {
 
+
+
             margin-bottom: 12px;
+
+
 
             color: #42162f;
 
+
+
             font-size: 18px;
+
+
 
             font-weight: 750;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-card p {
 
+
+
             margin-bottom: 15px;
+
+
 
             color: #766779;
 
+
+
             font-size: 13px;
+
+
 
             line-height: 1.8;
 
+
+
             overflow-wrap: anywhere;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-link {
 
+
+
             display: inline-flex;
+
+
 
             align-items: center;
 
+
+
             gap: 8px;
+
+
 
             color: #8d267b !important;
 
+
+
             font-size: 13px;
+
+
 
             font-weight: 700;
 
+
+
             overflow-wrap: anywhere;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-link:hover {
 
+
+
             color: #c21887 !important;
 
+
+
         }
+
+
+
+
 
 
 
 /* INFORMAÇÕES INSTITUCIONAIS */ body[data-page="contato"] .contact-note {
 
+
+
             margin-top: 30px;
+
+
 
             padding: 24px 28px;
 
+
+
             border-left: 4px solid #b72c99;
+
+
 
             border-radius: 12px;
 
+
+
             background: #faf4fb;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-note h3 {
 
+
+
             margin-bottom: 8px;
+
+
 
             color: #42162f;
 
+
+
             font-size: 16px;
+
+
 
             font-weight: 700;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-note p {
 
+
+
             margin: 0;
+
+
 
             color: #706575;
 
+
+
             font-size: 13px;
+
+
 
             line-height: 1.8;
 
+
+
         }
+
+
+
+
 
 
 
 /* RESPONSIVIDADE */ @media (max-width: 768px) {body[data-page="contato"] .page-header {
 
+
+
                 padding: 65px 0;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header h1 {
 
+
+
                 font-size: 43px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .page-header p {
 
+
+
                 font-size: 15px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-section {
 
+
+
                 padding: 45px 0;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-wrapper {
 
+
+
                 padding: 25px 18px;
+
+
 
                 border-radius: 20px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-intro {
 
+
+
                 padding: 0 5px 15px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-intro h2 {
 
+
+
                 font-size: 30px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="contato"] .contact-card {
 
+
+
                 padding: 25px;
+
+
 
             }
 
+
+
         }
+
+
+
+
 
 
 
         @media (prefers-reduced-motion: reduce) {body[data-page="contato"] *, body[data-page="contato"] *::before, body[data-page="contato"] *::after {
 
+
+
                 transition: none !important;
+
+
 
             }
 
+
+
         }
+
+
+
+
 
 
 
@@ -1988,103 +3974,207 @@ body[data-page="contato"] .contact-card {
 
 
 
+
+
+
+
 body[data-page="agencia"] {
+
+
 
             font-family: "Inter", sans-serif;
 
+
+
             background: #f8f2f9;
+
+
 
             color: #35152f;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] a {
 
+
+
             text-decoration: none;
 
+
+
         }
+
+
+
+
 
 
 
 /* =========================
 
+
+
            NAVBAR
+
+
 
         ========================= */ body[data-page="agencia"] .navbar {
 
+
+
             height: 85px;
+
+
 
             background: linear-gradient(
 
+
+
                 90deg,
+
+
 
                 #67012a,
 
+
+
                 #70145c,
 
+
+
                 #7b1fa2
+
+
 
             );
 
 
 
+
+
+
+
             display: flex;
+
+
 
             align-items: center;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .nav-container {
 
+
+
             width: 100%;
+
+
 
             max-width: 1500px;
 
+
+
             margin: auto;
+
+
 
             padding: 0 60px;
 
 
 
+
+
+
+
             display: flex;
+
+
 
             align-items: center;
 
+
+
             justify-content: space-between;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .logo-area {
 
+
+
             display: flex;
 
+
+
             align-items: center;
+
+
 
             gap: 14px;
 
 
 
+
+
+
+
             color: white;
+
+
 
             font-size: 23px;
 
+
+
             font-weight: 800;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .logo {
+
+
 
             width: 52px;
 
+
+
             height: 52px;
+
+
+
+
 
 
 
@@ -2092,137 +4182,275 @@ body[data-page="agencia"] .logo {
 
 
 
+
+
+
+
             display: flex;
 
+
+
             align-items: center;
+
+
 
             justify-content: center;
 
 
 
+
+
+
+
             background: linear-gradient(
+
+
 
                 135deg,
 
+
+
                 #8e2a8f,
 
+
+
                 #c04a91
+
+
 
             );
 
 
 
+
+
+
+
             color: white;
+
+
 
             font-size: 23px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .menu {
 
+
+
             display: flex;
+
+
 
             align-items: center;
 
+
+
             gap: 8px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .menu a {
 
+
+
             color: #fff;
 
+
+
             font-size: 15px;
+
+
 
             font-weight: 600;
 
 
 
+
+
+
+
             padding: 12px 15px;
+
+
 
             border-radius: 10px;
 
 
 
+
+
+
+
             transition: .3s;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .menu a:hover {
 
+
+
             background: rgba(255,255,255,.12);
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .admin {
 
+
+
             background: rgba(255,255,255,.14);
 
+
+
         }
+
+
+
+
 
 
 
 /* =========================
 
+
+
            HERO
 
+
+
         ========================= */ body[data-page="agencia"] .hero {
+
+
 
             min-height: 650px;
 
 
 
+
+
+
+
             position: relative;
+
+
 
             overflow: hidden;
 
 
 
+
+
+
+
             display: flex;
+
+
 
             align-items: center;
 
 
 
+
+
+
+
             background:
+
+
 
                 radial-gradient(
 
+
+
                     circle at 10% 35%,
+
+
 
                     rgba(123,31,162,.08),
 
+
+
                     transparent 25%
+
+
 
                 ),
 
+
+
                 linear-gradient(
+
+
 
                     120deg,
 
+
+
                     #faf6fb,
+
+
 
                     #eadcf1,
 
+
+
                     #f7e8f0
 
+
+
                 );
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .hero::before {
 
+
+
             content: "";
+
+
+
+
 
 
 
@@ -2230,13 +4458,27 @@ body[data-page="agencia"] .hero::before {
 
 
 
+
+
+
+
             width: 220px;
+
+
 
             height: 220px;
 
 
 
+
+
+
+
             border-radius: 50%;
+
+
+
+
 
 
 
@@ -2244,17 +4486,35 @@ body[data-page="agencia"] .hero::before {
 
 
 
+
+
+
+
             top: -100px;
 
+
+
             right: 15%;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .hero::after {
 
+
+
             content: "";
+
+
+
+
 
 
 
@@ -2262,13 +4522,27 @@ body[data-page="agencia"] .hero::after {
 
 
 
+
+
+
+
             width: 150px;
+
+
 
             height: 150px;
 
 
 
+
+
+
+
             border-radius: 50%;
+
+
+
+
 
 
 
@@ -2276,31 +4550,63 @@ body[data-page="agencia"] .hero::after {
 
 
 
+
+
+
+
             bottom: -70px;
 
+
+
             left: 5%;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .hero-container {
 
+
+
             width: 100%;
+
+
 
             max-width: 1500px;
 
 
 
+
+
+
+
             margin: auto;
+
+
 
             padding: 70px 60px;
 
 
 
+
+
+
+
             display: grid;
 
+
+
             grid-template-columns: 1fr 1fr;
+
+
+
+
 
 
 
@@ -2308,25 +4614,51 @@ body[data-page="agencia"] .hero-container {
 
 
 
+
+
+
+
             align-items: center;
+
+
+
+
 
 
 
             position: relative;
 
+
+
             z-index: 2;
+
+
 
         }
 
 
 
+
+
+
+
 /* =========================
+
+
 
            TEXTO
 
+
+
         ========================= */ body[data-page="agencia"] .tag {
 
+
+
             display: inline-block;
+
+
+
+
 
 
 
@@ -2334,7 +4666,15 @@ body[data-page="agencia"] .hero-container {
 
 
 
+
+
+
+
             border-radius: 30px;
+
+
+
+
 
 
 
@@ -2342,31 +4682,63 @@ body[data-page="agencia"] .hero-container {
 
 
 
+
+
+
+
             color: #7b2468;
+
+
+
+
 
 
 
             font-size: 12px;
 
+
+
             font-weight: 800;
+
+
+
+
 
 
 
             letter-spacing: 2px;
 
+
+
             text-transform: uppercase;
+
+
+
+
 
 
 
             margin-bottom: 25px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .hero h1 {
 
+
+
             font-family: "Playfair Display", serif;
+
+
+
+
 
 
 
@@ -2374,7 +4746,15 @@ body[data-page="agencia"] .hero h1 {
 
 
 
+
+
+
+
             line-height: 1.05;
+
+
+
+
 
 
 
@@ -2382,55 +4762,111 @@ body[data-page="agencia"] .hero h1 {
 
 
 
+
+
+
+
             margin-bottom: 25px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .hero h1 span {
 
+
+
             background: linear-gradient(
+
+
 
                 90deg,
 
+
+
                 #7b1fa2,
 
+
+
                 #c04a91
+
+
 
             );
 
 
 
+
+
+
+
             -webkit-background-clip: text;
+
+
 
             -webkit-text-fill-color: transparent;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .subtitle {
 
+
+
             color: #7b2468;
+
+
+
+
 
 
 
             font-size: 20px;
 
+
+
             font-weight: 700;
+
+
+
+
 
 
 
             margin-bottom: 18px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .description {
 
+
+
             color: #706375;
+
+
+
+
 
 
 
@@ -2438,7 +4874,15 @@ body[data-page="agencia"] .description {
 
 
 
+
+
+
+
             line-height: 1.8;
+
+
+
+
 
 
 
@@ -2446,25 +4890,51 @@ body[data-page="agencia"] .description {
 
 
 
+
+
+
+
             margin-bottom: 30px;
+
+
 
         }
 
 
 
+
+
+
+
 /* =========================
+
+
 
            BOTÃO
 
+
+
         ========================= */ body[data-page="agencia"] .btn {
+
+
 
             display: inline-flex;
 
 
 
+
+
+
+
             align-items: center;
 
+
+
             gap: 10px;
+
+
+
+
 
 
 
@@ -2472,23 +4942,47 @@ body[data-page="agencia"] .description {
 
 
 
+
+
+
+
             border-radius: 12px;
+
+
+
+
 
 
 
             background: linear-gradient(
 
+
+
                 135deg,
+
+
 
                 #7b1fa2,
 
+
+
                 #c04a91
+
+
 
             );
 
 
 
+
+
+
+
             color: white;
+
+
+
+
 
 
 
@@ -2496,43 +4990,87 @@ body[data-page="agencia"] .description {
 
 
 
+
+
+
+
             box-shadow:
+
+
 
                 0 10px 25px rgba(123,31,162,.22);
 
 
 
+
+
+
+
             transition: .3s;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .btn:hover {
 
+
+
             transform: translateY(-3px);
+
+
+
+
 
 
 
             box-shadow:
 
+
+
                 0 15px 30px rgba(123,31,162,.30);
+
+
+
+
 
 
 
             color: white;
 
+
+
         }
+
+
+
+
 
 
 
 /* =========================
 
+
+
            CARD DIREITO
+
+
 
         ========================= */ body[data-page="agencia"] .hero-card {
 
+
+
             min-height: 430px;
+
+
+
+
 
 
 
@@ -2540,7 +5078,15 @@ body[data-page="agencia"] .btn:hover {
 
 
 
+
+
+
+
             border-radius: 30px;
+
+
+
+
 
 
 
@@ -2548,13 +5094,27 @@ body[data-page="agencia"] .btn:hover {
 
 
 
+
+
+
+
             border: 1px solid rgba(255,255,255,.8);
+
+
+
+
 
 
 
             box-shadow:
 
+
+
                 0 25px 60px rgba(70,25,80,.12);
+
+
+
+
 
 
 
@@ -2562,13 +5122,27 @@ body[data-page="agencia"] .btn:hover {
 
 
 
+
+
+
+
             display: flex;
+
+
+
+
 
 
 
             align-items: center;
 
+
+
             justify-content: center;
+
+
+
+
 
 
 
@@ -2576,15 +5150,31 @@ body[data-page="agencia"] .btn:hover {
 
 
 
+
+
+
+
             overflow: hidden;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .hero-card::before {
 
+
+
             content: "";
+
+
+
+
 
 
 
@@ -2592,9 +5182,19 @@ body[data-page="agencia"] .hero-card::before {
 
 
 
+
+
+
+
             width: 180px;
 
+
+
             height: 180px;
+
+
+
+
 
 
 
@@ -2602,37 +5202,75 @@ body[data-page="agencia"] .hero-card::before {
 
 
 
+
+
+
+
             background: #eadcf0;
+
+
+
+
 
 
 
             top: -80px;
 
+
+
             right: -50px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .card-content {
 
+
+
             position: relative;
+
+
 
             z-index: 2;
 
 
 
+
+
+
+
             text-align: center;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .big-icon {
+
+
 
             width: 110px;
 
+
+
             height: 110px;
+
+
+
+
 
 
 
@@ -2640,31 +5278,63 @@ body[data-page="agencia"] .big-icon {
 
 
 
+
+
+
+
             border-radius: 30px;
+
+
+
+
 
 
 
             display: flex;
 
+
+
             align-items: center;
+
+
 
             justify-content: center;
 
 
 
+
+
+
+
             background: linear-gradient(
+
+
 
                 135deg,
 
+
+
                 #eadcf0,
 
+
+
                 #f5dfe9
+
+
 
             );
 
 
 
+
+
+
+
             color: #762476;
+
+
+
+
 
 
 
@@ -2672,17 +5342,35 @@ body[data-page="agencia"] .big-icon {
 
 
 
+
+
+
+
             box-shadow:
 
+
+
                 0 15px 30px rgba(123,31,162,.10);
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .hero-card h2 {
 
+
+
             font-family: "Playfair Display", serif;
+
+
+
+
 
 
 
@@ -2690,19 +5378,39 @@ body[data-page="agencia"] .hero-card h2 {
 
 
 
+
+
+
+
             color: #42162f;
+
+
+
+
 
 
 
             margin-bottom: 15px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .hero-card p {
 
+
+
             color: #706575;
+
+
+
+
 
 
 
@@ -2710,63 +5418,127 @@ body[data-page="agencia"] .hero-card p {
 
 
 
+
+
+
+
             max-width: 420px;
 
+
+
         }
+
+
+
+
 
 
 
 /* =========================
 
+
+
            SERVIÇOS
 
+
+
         ========================= */ body[data-page="agencia"] .services {
+
+
 
             padding: 90px 60px;
 
 
 
+
+
+
+
             background: #fbf7fc;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .section-title {
 
+
+
             text-align: center;
+
+
+
+
 
 
 
             margin-bottom: 50px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .section-title small {
 
+
+
             color: #7b2468;
+
+
+
+
 
 
 
             font-size: 11px;
 
+
+
             font-weight: 800;
+
+
+
+
 
 
 
             letter-spacing: 2px;
 
+
+
             text-transform: uppercase;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .section-title h2 {
 
+
+
             font-family: "Playfair Display", serif;
+
+
+
+
 
 
 
@@ -2774,19 +5546,39 @@ body[data-page="agencia"] .section-title h2 {
 
 
 
+
+
+
+
             color: #42162f;
+
+
+
+
 
 
 
             margin-top: 10px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .cards {
 
+
+
             max-width: 1200px;
+
+
+
+
 
 
 
@@ -2794,25 +5586,51 @@ body[data-page="agencia"] .cards {
 
 
 
+
+
+
+
             display: grid;
+
+
+
+
 
 
 
             grid-template-columns:
 
+
+
                 repeat(3, 1fr);
+
+
+
+
 
 
 
             gap: 25px;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .card {
 
+
+
             padding: 30px;
+
+
+
+
 
 
 
@@ -2820,7 +5638,15 @@ body[data-page="agencia"] .card {
 
 
 
+
+
+
+
             border-radius: 20px;
+
+
+
+
 
 
 
@@ -2828,37 +5654,75 @@ body[data-page="agencia"] .card {
 
 
 
+
+
+
+
             box-shadow:
+
+
 
                 0 12px 30px rgba(70,25,80,.07);
 
 
 
+
+
+
+
             transition: .3s;
 
+
+
         }
+
+
+
+
 
 
 
 body[data-page="agencia"] .card:hover {
 
+
+
             transform: translateY(-7px);
+
+
+
+
 
 
 
             box-shadow:
 
+
+
                 0 20px 40px rgba(70,25,80,.13);
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .card-icon {
+
+
 
             width: 55px;
 
+
+
             height: 55px;
+
+
+
+
 
 
 
@@ -2866,11 +5730,23 @@ body[data-page="agencia"] .card-icon {
 
 
 
+
+
+
+
             display: flex;
+
+
 
             align-items: center;
 
+
+
             justify-content: center;
+
+
+
+
 
 
 
@@ -2878,7 +5754,15 @@ body[data-page="agencia"] .card-icon {
 
 
 
+
+
+
+
             color: #762476;
+
+
+
+
 
 
 
@@ -2886,15 +5770,31 @@ body[data-page="agencia"] .card-icon {
 
 
 
+
+
+
+
             margin-bottom: 20px;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .card h3 {
 
+
+
             color: #42162f;
+
+
+
+
 
 
 
@@ -2902,15 +5802,31 @@ body[data-page="agencia"] .card h3 {
 
 
 
+
+
+
+
             margin-bottom: 10px;
+
+
 
         }
 
 
 
+
+
+
+
 body[data-page="agencia"] .card p {
 
+
+
             color: #706575;
+
+
+
+
 
 
 
@@ -2918,19 +5834,39 @@ body[data-page="agencia"] .card p {
 
 
 
+
+
+
+
             line-height: 1.7;
+
+
 
         }
 
 
 
+
+
+
+
 /* =========================
+
+
 
            FOOTER
 
+
+
         ========================= */ body[data-page="agencia"] footer {
 
+
+
             padding: 35px 20px;
+
+
+
+
 
 
 
@@ -2938,17 +5874,35 @@ body[data-page="agencia"] .card p {
 
 
 
+
+
+
+
             background: linear-gradient(
+
+
 
                 90deg,
 
+
+
                 #67012a,
+
+
 
                 #7b1f70,
 
+
+
                 #7b1fa2
 
+
+
             );
+
+
+
+
 
 
 
@@ -2956,67 +5910,135 @@ body[data-page="agencia"] .card p {
 
 
 
+
+
+
+
             font-size: 13px;
 
+
+
         }
+
+
+
+
 
 
 
 /* =========================
 
+
+
            RESPONSIVO
+
+
 
         ========================= */ @media(max-width: 900px) {body[data-page="agencia"] .nav-container {
 
+
+
                 padding: 0 25px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="agencia"] .menu a:not(.admin) {
 
+
+
                 display: none;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="agencia"] .hero-container {
 
+
+
                 grid-template-columns: 1fr;
+
+
+
+
 
 
 
                 padding: 70px 30px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="agencia"] .hero-card {
 
+
+
                 min-height: 350px;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="agencia"] .cards {
 
+
+
                 grid-template-columns: 1fr;
 
+
+
             }
+
+
+
+
 
 
 
 body[data-page="agencia"] .services {
 
+
+
                 padding: 70px 30px;
+
+
 
             }
 
+
+
         }
+
+
+
+
 
 
 
@@ -3024,469 +6046,939 @@ body[data-page="agencia"] .services {
 
 
 
+
+
+
+
 .medeia-header,
+
+
 
 .medeia-header * {
 
+
+
     box-sizing: border-box;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header {
 
+
+
     position: relative;
+
+
 
     z-index: 1000;
 
+
+
     width: 100%;
+
+
 
     margin: 0;
 
+
+
     background: linear-gradient(110deg, #510b31 0%, #350c36 48%, #401080 100%);
+
+
 
     border-top: 3px solid #d323a8;
 
+
+
     border-bottom: 1px solid rgba(255,255,255,.15);
+
+
 
     box-shadow: 0 5px 20px rgba(53,10,49,.12);
 
+
+
     font-family: 'Inter', sans-serif;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-inner {
 
+
+
     width: 100%;
+
+
 
     max-width: 1700px;
 
+
+
     min-height: 84px;
+
+
 
     margin: 0 auto;
 
+
+
     padding: 12px 32px;
+
+
 
     display: flex;
 
+
+
     align-items: center;
+
+
 
     justify-content: space-between;
 
+
+
     gap: 25px;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-brand {
 
+
+
     display: flex;
+
+
 
     align-items: center;
 
+
+
     gap: 14px;
+
+
 
     flex-shrink: 0;
 
+
+
     text-decoration: none;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-logo {
 
+
+
     display: block;
+
+
 
     width: 70px;
 
+
+
     height: 48px;
+
+
 
     object-fit: contain;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-divider {
 
+
+
     width: 1px;
+
+
 
     height: 40px;
 
+
+
     background: rgba(255,255,255,.3);
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-identity {
 
+
+
     display: flex;
+
+
 
     flex-direction: column;
 
+
+
     gap: 4px;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-name {
 
+
+
     color: #fff;
+
+
 
     font-size: 19px;
 
+
+
     font-weight: 700;
+
+
 
     letter-spacing: -.4px;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-caption {
 
+
+
     color: rgba(255,255,255,.7);
+
+
 
     font-size: 11px;
 
+
+
     font-weight: 400;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-nav {
 
+
+
     display: flex;
+
+
 
     align-items: center;
 
+
+
     justify-content: flex-end;
+
+
 
     flex-wrap: wrap;
 
+
+
     gap: 5px;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-link {
 
+
+
     position: relative;
+
+
 
     min-height: 43px;
 
+
+
     padding: 0 13px;
+
+
 
     display: inline-flex;
 
+
+
     align-items: center;
+
+
 
     justify-content: center;
 
+
+
     gap: 9px;
+
+
 
     border: 1px solid transparent;
 
+
+
     border-radius: 25px;
+
+
 
     color: rgba(255,255,255,.85);
 
+
+
     background: transparent;
+
+
 
     font-family: inherit;
 
+
+
     font-size: 13px;
+
+
 
     font-weight: 600;
 
+
+
     line-height: 1.3;
+
+
 
     text-decoration: none;
 
+
+
     white-space: nowrap;
 
-    transition: *background* .2s ease, color .2s ease, border-color .2s ease;
+
+
+    transition: **background** .2s ease, color .2s ease, border-color .2s ease;
+
+
 
 }
+
+
+
+
 
 
 
 .medeia-header .mh-link i {
 
+
+
     font-size: 14px;
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-link:hover {
 
+
+
     color: #fff;
+
+
 
     background: rgba(255,255,255,.1);
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-link.mh-active {
 
+
+
     color: #fff;
+
+
 
     background: rgba(255,255,255,.1);
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-link.mh-active::after {
 
+
+
     content: "";
+
+
 
     position: absolute;
 
+
+
     bottom: 3px;
+
+
 
     left: 22%;
 
+
+
     width: 56%;
+
+
 
     height: 2px;
 
+
+
     border-radius: 5px;
+
+
 
     background: linear-gradient(90deg, #f01558, #c22de7);
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-admin {
 
+
+
     margin-left: 10px;
+
+
 
     padding: 0 18px;
 
+
+
     color: #f5c4f2;
+
+
 
     border-color: rgba(218,76,221,.65);
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header .mh-admin:hover {
 
+
+
     color: #fff;
+
+
 
     border-color: #e64cce;
 
+
+
     background: rgba(190,35,190,.18);
 
+
+
 }
+
+
+
+
 
 
 
 .medeia-header a:focus-visible {
 
+
+
     outline: 2px solid #ff77c5;
+
+
 
     outline-offset: 3px;
 
+
+
 }
+
+
+
+
 
 
 
 @media (max-width: 1100px) {
 
+
+
     .medeia-header .mh-inner {
+
+
 
         padding: 12px 18px;
 
+
+
         gap: 12px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-brand {
 
+
+
         gap: 9px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-logo {
 
+
+
         width: 58px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-name {
 
+
+
         font-size: 16px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-caption {
 
+
+
         font-size: 10px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-nav {
 
+
+
         gap: 2px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-link {
 
+
+
         padding: 0 9px;
+
+
 
         gap: 6px;
 
+
+
         font-size: 12px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-admin {
 
+
+
         margin-left: 3px;
+
+
 
     }
 
+
+
 }
+
+
+
+
 
 
 
 @media (max-width: 760px) {
 
+
+
     .medeia-header .mh-inner {
+
+
 
         min-height: auto;
 
+
+
         padding: 15px 10px;
+
+
 
         flex-direction: column;
 
+
+
         gap: 12px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-logo {
 
+
+
         height: 40px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-nav {
 
+
+
         width: 100%;
+
+
 
         justify-content: center;
 
+
+
         flex-wrap: wrap;
+
+
 
         gap: 3px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-link {
 
+
+
         min-height: 37px;
+
+
 
         padding: 0 9px;
 
+
+
         gap: 6px;
+
+
 
         font-size: 11px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-link i {
 
+
+
         font-size: 12px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-admin {
 
+
+
         margin-left: 0;
+
+
 
         padding: 0 10px;
 
+
+
     }
 
+
+
 }
+
+
+
+
 
 
 
 @media (max-width: 380px) {
 
+
+
     .medeia-header .mh-nav {
+
+
 
         gap: 1px;
 
+
+
     }
+
+
+
+
 
 
 
     .medeia-header .mh-link {
 
+
+
         padding: 0 7px;
+
+
 
         font-size: 10px;
 
+
+
     }
 
+
+
 }
+
+
+
+
 
 
 
 @media (prefers-reduced-motion: reduce) {
 
+
+
     .medeia-header *,
+
+
 
     .medeia-header *::before,
 
+
+
     .medeia-header *::after {
+
+
 
         transition: none !important;
 
+
+
     }
 
+
+
 }
+
+
+
+
 
 
 
@@ -3496,385 +6988,776 @@ body[data-page="agencia"] .services {
 
 
 
+
+
+
+
+
+
 /* =========================
+
+
 
    FOOTER - MEDEIA
 
-\========================= */
+
+
+\\========================= */
+
+
+
+
 
 
 
 .footer-custom {
 
+
+
     position: relative;
+
+
 
     overflow: hidden;
 
+
+
     margin-top: 60px;
+
+
 
     padding: 55px 0 0;
 
+
+
     background: linear-gradient(
+
+
 
         135deg,
 
+
+
         #4b0028 0%,
+
+
 
         #700037 55%,
 
+
+
         #480052 100%
+
+
 
     );
 
+
+
     color: #f8f4f7;
+
+
 
     border-top: 3px solid transparent;
 
+
+
     border-image: linear-gradient(
+
+
 
         90deg,
 
+
+
         #ff1744,
+
+
 
         #e00091,
 
+
+
         #7200ff
+
+
 
     ) 1;
 
+
+
 }
+
+
+
+
 
 
 
 /* Brilho decorativo superior */
 
+
+
 .footer-custom::before {
+
+
 
     content: "";
 
+
+
     position: absolute;
+
+
 
     top: 0;
 
+
+
     left: 10%;
+
+
 
     width: 80%;
 
+
+
     height: 1px;
+
+
 
     background: linear-gradient(
 
+
+
         90deg,
+
+
 
         transparent,
 
+
+
         rgba(255, 255, 255, 0.35),
+
+
 
         transparent
 
+
+
     );
 
+
+
 }
+
+
+
+
 
 
 
 .footer-content {
 
+
+
     padding-bottom: 35px;
 
+
+
 }
+
+
+
+
 
 
 
 /* Nome da associação */
 
+
+
 .footer-brand h4 {
+
+
 
     font-size: 1.45rem;
 
+
+
     font-weight: 700;
+
+
 
     color: #ffffff;
 
+
+
     margin-bottom: 18px;
+
+
 
     letter-spacing: 0.3px;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-brand h4 span {
 
+
+
     background: linear-gradient(
+
+
 
         90deg,
 
+
+
         #ff526f,
+
+
 
         #ff36b5,
 
+
+
         #b58aff
+
+
 
     );
 
+
+
     -webkit-background-clip: text;
+
+
 
     background-clip: text;
 
+
+
     -webkit-text-fill-color: transparent;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-brand p {
 
+
+
     max-width: 440px;
+
+
 
     color: #e4d5df;
 
+
+
     line-height: 1.8;
+
+
 
     font-size: 0.95rem;
 
+
+
     margin-bottom: 0;
 
+
+
 }
+
+
+
+
 
 
 
 /* Títulos das colunas */
 
+
+
 .footer-title {
+
+
 
     position: relative;
 
+
+
     display: inline-block;
+
+
 
     color: #ffffff;
 
+
+
     font-size: 1.05rem;
+
+
 
     font-weight: 700;
 
+
+
     margin-bottom: 22px;
+
+
 
     padding-bottom: 10px;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-title::after {
 
+
+
     content: "";
+
+
 
     position: absolute;
 
+
+
     left: 0;
+
+
 
     bottom: 0;
 
+
+
     width: 38px;
+
+
 
     height: 3px;
 
+
+
     border-radius: 10px;
+
+
 
     background: linear-gradient(
 
+
+
         90deg,
+
+
 
         #ff1744,
 
+
+
         #a000ff
+
+
 
     );
 
+
+
 }
+
+
+
+
 
 
 
 /* Links institucionais */
 
+
+
 .footer-links {
+
+
 
     list-style: none;
 
+
+
     padding: 0;
+
+
 
     margin: 0;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-links li {
 
+
+
     margin-bottom: 12px;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-links a {
 
+
+
     color: #e4d5df;
+
+
 
     text-decoration: none;
 
+
+
     font-size: 0.94rem;
+
+
 
     transition: color 0.25s ease,
 
+
+
                 padding-left 0.25s ease;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-links a:hover {
 
+
+
     color: #ff70c8;
+
+
 
     padding-left: 6px;
 
+
+
 }
+
+
+
+
 
 
 
 /* Informações de contato */
 
+
+
 .footer-contact {
+
+
 
     display: flex;
 
+
+
     align-items: flex-start;
+
+
 
     gap: 11px;
 
+
+
     color: #e4d5df;
+
+
 
     font-size: 0.9rem;
 
+
+
     line-height: 1.7;
+
+
 
     overflow-wrap: anywhere;
 
+
+
     margin-bottom: 14px;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-contact i {
 
+
+
     color: #ff65bd;
+
+
 
     font-size: 1rem;
 
+
+
     margin-top: 4px;
+
+
 
     min-width: 16px;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-contact a {
 
+
+
     color: #e4d5df;
+
+
 
     text-decoration: none;
 
+
+
     transition: color 0.25s ease;
 
+
+
 }
+
+
+
+
 
 
 
 .footer-contact a:hover {
 
+
+
     color: #ffffff;
 
+
+
 }
+
+
+
+
 
 
 
 /* Faixa inferior */
 
+
+
 .footer-bottom {
+
+
 
     padding: 22px 0;
 
+
+
     text-align: center;
+
+
 
     border-top: 1px solid rgba(255, 255, 255, 0.14);
 
+
+
 }
+
+
+
+
 
 
 
 .footer-bottom p {
 
+
+
     margin: 0;
+
+
 
     color: #cdb8c8;
 
+
+
     font-size: 0.85rem;
+
+
 
     line-height: 1.7;
 
+
+
 }
+
+
+
+
 
 
 
 /* Responsividade */
 
+
+
 @media (max-width: 767px) {
+
+
 
     .footer-custom {
 
+
+
         margin-top: 40px;
+
+
 
         padding-top: 40px;
 
+
+
     }
+
+
+
+
 
 
 
     .footer-content {
 
+
+
         padding-bottom: 25px;
 
+
+
     }
+
+
+
+
 
 
 
     .footer-brand h4 {
 
+
+
         font-size: 1.25rem;
 
+
+
     }
+
+
+
+
 
 
 
     .footer-title {
 
+
+
         margin-bottom: 16px;
 
+
+
     }
+
+
+
+
 
 
 
     .footer-contact a {
 
+
+
         word-break: break-word;
+
+
 
     }
 
+
+
 }
+
+
+
+
+
+
+
 
 
 
@@ -3882,233 +7765,573 @@ body[data-page="agencia"] .services {
 
 
 /* ==========================================================
+
    AJUSTE ÚNICO DE ESPAÇAMENTO — SITE PÚBLICO MEDEIA
+
    Isolado por página; não interfere no painel administrativo.
-========================================================== */
+
+\========================================================== */
+
+
 
 body[data-page] {
+
     font-family: "Inter", sans-serif;
+
     color: #35152f;
+
     overflow-x: clip;
+
 }
 
+
+
 body[data-page] img,
+
 body[data-page] svg,
+
 body[data-page] video {
+
+    max-width: 100%;
+
+}
+
+
+
+/* Conteúdo central: mantém o espaçamento padrão do Bootstrap. */
+
+body[data-page] main,
+
+body[data-page] .medeia-home,
+
+body[data-page] .page-content {
+
+    min-width: 0;
+
+}
+
+
+
+/* Cabeçalhos internos das páginas. */
+
+body[data-page="sobre"] .page-header,
+
+body[data-page="servicos"] .page-header,
+
+body[data-page="publicacoes"] .page-header,
+
+body[data-page="contato"] .page-header {
+
+    padding: clamp(48px, 6vw, 82px) 0;
+
+}
+
+
+
+body[data-page="sobre"] .page-header h1,
+
+body[data-page="servicos"] .page-header h1,
+
+body[data-page="publicacoes"] .page-header h1,
+
+body[data-page="contato"] .page-header h1 {
+
+    margin: 10px 0 16px;
+
+    line-height: 1.15;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+body[data-page="sobre"] .page-header p,
+
+body[data-page="servicos"] .page-header p,
+
+body[data-page="publicacoes"] .page-header p,
+
+body[data-page="contato"] .page-header p {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Página inicial. */
+
+body[data-page="home"] .medeia-home .hero {
+
+    padding-block: clamp(42px, 5vw, 68px);
+
+}
+
+
+
+body[data-page="home"] .medeia-home .hero h1 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+body[data-page="home"] .medeia-home .hero h4 {
+
+    margin-top: 0;
+
+    margin-bottom: 16px;
+
+}
+
+
+
+body[data-page="home"] .medeia-home .hero p {
+
+    margin-top: 0;
+
+}
+
+
+
+/* Sobre. */
+
+body[data-page="sobre"] .about {
+
+    padding-block: clamp(48px, 7vw, 88px);
+
+}
+
+
+
+body[data-page="sobre"] .about-content {
+
+    min-width: 0;
+
+}
+
+
+
+body[data-page="sobre"] .about-content h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+body[data-page="sobre"] .about-content p:last-of-type {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Serviços. */
+
+body[data-page="servicos"] .services {
+
+    padding-block: clamp(42px, 6vw, 72px);
+
+}
+
+
+
+body[data-page="servicos"] .service-card h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    line-height: 1.35;
+
+}
+
+
+
+body[data-page="servicos"] .service-card p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Publicações. */
+
+body[data-page="publicacoes"] .publications {
+
+    padding-block: clamp(42px, 6vw, 72px);
+
+}
+
+
+
+body[data-page="publicacoes"] .section-heading {
+
+    margin-bottom: clamp(24px, 3vw, 38px);
+
+}
+
+
+
+body[data-page="publicacoes"] .publication-content h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+body[data-page="publicacoes"] .publication-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Contato. */
+
+body[data-page="contato"] .contact-section {
+
+    padding-block: clamp(42px, 6vw, 72px);
+
+}
+
+
+
+body[data-page="contato"] .contact-wrapper {
+
+    margin-inline: auto;
+
+}
+
+
+
+body[data-page="contato"] .contact-intro h2,
+
+body[data-page="contato"] .contact-note h3 {
+
+    margin-top: 0;
+
+}
+
+
+
+body[data-page="contato"] .contact-intro p:last-child,
+
+body[data-page="contato"] .contact-note p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Agência de concursos. */
+
+body[data-page="agencia"] .hero {
+
+    padding-block: clamp(46px, 6vw, 78px);
+
+}
+
+
+
+body[data-page="agencia"] .services {
+
+    padding-block: clamp(46px, 6vw, 78px);
+
+}
+
+
+
+body[data-page="agencia"] .section-title {
+
+    margin-bottom: clamp(24px, 3vw, 38px);
+
+}
+
+
+
+body[data-page="agencia"] .card h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    line-height: 1.35;
+
+}
+
+
+
+body[data-page="agencia"] .card p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Header e footer públicos: somente box-sizing, sem reset global. */
+
+.medeia-header,
+
+.medeia-header *,
+
+.medeia-header *::before,
+
+.medeia-header *::after,
+
+.footer-custom,
+
+.footer-custom *,
+
+.footer-custom *::before,
+
+.footer-custom *::after {
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* Mobile: reduz os espaços sem esmagar o conteúdo. */
+
+@media (max-width: 767px) {
+
+    body[data-page="home"] .medeia-home .hero {
+
+        padding-block: 38px;
+
+    }
+
+
+
+    body[data-page="sobre"] .about {
+
+        padding-block: 42px;
+
+    }
+
+
+
+    body[data-page="sobre"] .about-content {
+
+        padding-left: 0;
+
+        margin-top: 28px;
+
+    }
+
+
+
+    body[data-page="sobre"] .about-content h2 {
+
+        font-size: clamp(28px, 7vw, 36px);
+
+    }
+
+
+
+    body[data-page="sobre"] .about-image {
+
+        height: auto;
+
+        max-height: 380px;
+
+        aspect-ratio: 4 / 3;
+
+    }
+
+
+
+    body[data-page="servicos"] .services,
+
+    body[data-page="publicacoes"] .publications,
+
+    body[data-page="contato"] .contact-section,
+
+    body[data-page="agencia"] .services {
+
+        padding-block: 40px;
+
+    }
+
+
+
+    body[data-page="sobre"] .page-header,
+
+    body[data-page="servicos"] .page-header,
+
+    body[data-page="publicacoes"] .page-header,
+
+    body[data-page="contato"] .page-header {
+
+        padding-block: 48px;
+
+    }
+
+
+
+    body[data-page="sobre"] .page-header h1,
+
+    body[data-page="servicos"] .page-header h1,
+
+    body[data-page="publicacoes"] .page-header h1,
+
+    body[data-page="contato"] .page-header h1 {
+
+        font-size: clamp(34px, 9vw, 44px);
+
+    }
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    body[data-page] *,
+
+    body[data-page] *::before,
+
+    body[data-page] *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
+
+/* ==========================================================
+   AJUSTES FINAIS — IDENTIDADE VISUAL MEDEIA
+   Mantém o layout original e evita estilos padrão do navegador.
+========================================================== */
+
+/* Base pública: apenas box-sizing, sem zerar margens do Bootstrap. */
+body[data-page] {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: #35152f;
+    background: #f8f2f9;
+    overflow-x: hidden;
+}
+
+body[data-page] img {
     max-width: 100%;
 }
 
-/* Conteúdo central: mantém o espaçamento padrão do Bootstrap. */
-body[data-page] main,
-body[data-page] .medeia-home,
-body[data-page] .page-content {
-    min-width: 0;
+/* Header vinho/roxo com logo compacta e navegação alinhada. */
+.medeia-header {
+    display: block;
+    width: 100%;
+    min-height: 84px;
+    position: relative;
+    z-index: 1000;
 }
 
-/* Cabeçalhos internos das páginas. */
-body[data-page="sobre"] .page-header,
-body[data-page="servicos"] .page-header,
-body[data-page="publicacoes"] .page-header,
-body[data-page="contato"] .page-header {
-    padding: clamp(48px, 6vw, 82px) 0;
-}
-
-body[data-page="sobre"] .page-header h1,
-body[data-page="servicos"] .page-header h1,
-body[data-page="publicacoes"] .page-header h1,
-body[data-page="contato"] .page-header h1 {
-    margin: 10px 0 16px;
-    line-height: 1.15;
-    overflow-wrap: anywhere;
-}
-
-body[data-page="sobre"] .page-header p,
-body[data-page="servicos"] .page-header p,
-body[data-page="publicacoes"] .page-header p,
-body[data-page="contato"] .page-header p {
-    margin-bottom: 0;
-}
-
-/* Página inicial. */
-body[data-page="home"] .medeia-home .hero {
-    padding-block: clamp(42px, 5vw, 68px);
-}
-
-body[data-page="home"] .medeia-home .hero h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-body[data-page="home"] .medeia-home .hero h4 {
-    margin-top: 0;
-    margin-bottom: 16px;
-}
-
-body[data-page="home"] .medeia-home .hero p {
-    margin-top: 0;
-}
-
-/* Sobre. */
-body[data-page="sobre"] .about {
-    padding-block: clamp(48px, 7vw, 88px);
-}
-
-body[data-page="sobre"] .about-content {
-    min-width: 0;
-}
-
-body[data-page="sobre"] .about-content h2 {
-    margin-top: 0;
-    margin-bottom: 18px;
-}
-
-body[data-page="sobre"] .about-content p:last-of-type {
-    margin-bottom: 0;
-}
-
-/* Serviços. */
-body[data-page="servicos"] .services {
-    padding-block: clamp(42px, 6vw, 72px);
-}
-
-body[data-page="servicos"] .service-card h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    line-height: 1.35;
-}
-
-body[data-page="servicos"] .service-card p:last-child {
-    margin-bottom: 0;
-}
-
-/* Publicações. */
-body[data-page="publicacoes"] .publications {
-    padding-block: clamp(42px, 6vw, 72px);
-}
-
-body[data-page="publicacoes"] .section-heading {
-    margin-bottom: clamp(24px, 3vw, 38px);
-}
-
-body[data-page="publicacoes"] .publication-content h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    line-height: 1.35;
-    overflow-wrap: anywhere;
-}
-
-body[data-page="publicacoes"] .publication-content p:last-child {
-    margin-bottom: 0;
-}
-
-/* Contato. */
-body[data-page="contato"] .contact-section {
-    padding-block: clamp(42px, 6vw, 72px);
-}
-
-body[data-page="contato"] .contact-wrapper {
+.medeia-header .mh-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(100%, 1700px);
+    min-height: 84px;
     margin-inline: auto;
 }
 
-body[data-page="contato"] .contact-intro h2,
-body[data-page="contato"] .contact-note h3 {
-    margin-top: 0;
+.medeia-header .mh-brand,
+.medeia-header .mh-nav {
+    flex-shrink: 0;
 }
 
-body[data-page="contato"] .contact-intro p:last-child,
-body[data-page="contato"] .contact-note p:last-child {
-    margin-bottom: 0;
+.medeia-header .mh-logo {
+    width: 70px;
+    height: 48px;
+    object-fit: contain;
 }
 
-/* Agência de concursos. */
-body[data-page="agencia"] .hero {
-    padding-block: clamp(46px, 6vw, 78px);
+.medeia-header a,
+.medeia-header a:hover,
+.medeia-header a:focus {
+    text-decoration: none;
 }
 
-body[data-page="agencia"] .services {
-    padding-block: clamp(46px, 6vw, 78px);
+/* Banner inicial: texto e imagem lado a lado. */
+body[data-page="home"] .medeia-home .hero {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-body[data-page="agencia"] .section-title {
-    margin-bottom: clamp(24px, 3vw, 38px);
+body[data-page="home"] .medeia-home .hero-content,
+body[data-page="home"] .medeia-home .hero-image-area {
+    min-width: 0;
 }
 
-body[data-page="agencia"] .card h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    line-height: 1.35;
+body[data-page="home"] .medeia-home .hero-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-body[data-page="agencia"] .card p:last-child {
-    margin-bottom: 0;
+/* Evita que imagens, textos e colunas estourem a largura. */
+body[data-page] main,
+body[data-page] section,
+body[data-page] .container,
+body[data-page] .container-fluid,
+body[data-page] .row,
+body[data-page] [class*="col-"] {
+    min-width: 0;
 }
 
-/* Header e footer públicos: somente box-sizing, sem reset global. */
-.medeia-header,
-.medeia-header *,
-.medeia-header *::before,
-.medeia-header *::after,
-.footer-custom,
-.footer-custom *,
-.footer-custom *::before,
-.footer-custom *::after {
-    box-sizing: border-box;
-}
-
-/* Mobile: reduz os espaços sem esmagar o conteúdo. */
-@media (max-width: 767px) {
-    body[data-page="home"] .medeia-home .hero {
-        padding-block: 38px;
+@media (max-width: 760px) {
+    .medeia-header .mh-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 12px;
     }
 
-    body[data-page="sobre"] .about {
+    .medeia-header .mh-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body[data-page="home"] .medeia-home .hero {
+        min-height: auto;
         padding-block: 42px;
     }
 
-    body[data-page="sobre"] .about-content {
-        padding-left: 0;
-        margin-top: 28px;
-    }
-
-    body[data-page="sobre"] .about-content h2 {
-        font-size: clamp(28px, 7vw, 36px);
-    }
-
-    body[data-page="sobre"] .about-image {
+    body[data-page="home"] .medeia-home .hero-image {
         height: auto;
         max-height: 380px;
-        aspect-ratio: 4 / 3;
-    }
-
-    body[data-page="servicos"] .services,
-    body[data-page="publicacoes"] .publications,
-    body[data-page="contato"] .contact-section,
-    body[data-page="agencia"] .services {
-        padding-block: 40px;
-    }
-
-    body[data-page="sobre"] .page-header,
-    body[data-page="servicos"] .page-header,
-    body[data-page="publicacoes"] .page-header,
-    body[data-page="contato"] .page-header {
-        padding-block: 48px;
-    }
-
-    body[data-page="sobre"] .page-header h1,
-    body[data-page="servicos"] .page-header h1,
-    body[data-page="publicacoes"] .page-header h1,
-    body[data-page="contato"] .page-header h1 {
-        font-size: clamp(34px, 9vw, 44px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body[data-page] *,
-    body[data-page] *::before,
-    body[data-page] *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        margin-top: 24px;
     }
 }

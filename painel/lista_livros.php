@@ -6,31 +6,31 @@ include 'conexao.php';
 // Garante a comunicação com o MySQL em UTF-8 completo.
 mysqli_set_charset($conexao, 'utf8mb4');
 
-$busca = $_GET['busca'] ?? '';
-$categoria = $_GET['categoria'] ?? '';
-$ano = $_GET['ano'] ?? '';
-$status = $_GET['status'] ?? '';
+$busca = trim((string)($_GET['busca'] ?? ''));
+$categoria = trim((string)($_GET['categoria'] ?? ''));
+$ano = trim((string)($_GET['ano'] ?? ''));
+$status = trim((string)($_GET['status'] ?? ''));
 
 $where = "WHERE 1=1";
 
 if ($busca) {
     $b = mysqli_real_escape_string($conexao, $busca);
-    $where .= " AND (titulo LIKE '%$b%' OR isbn LIKE '%$b%' OR autor LIKE '%$b%')";
+    $where .= " AND (CONVERT(titulo USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%' OR CONVERT(isbn USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%' OR CONVERT(autor USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%')";
 }
 
 if ($categoria) {
     $c = mysqli_real_escape_string($conexao, $categoria);
-    $where .= " AND categoria = '$c'";
+    $where .= " AND CONVERT(TRIM(categoria) USING utf8mb4) COLLATE utf8mb4_unicode_ci = CONVERT('$c' USING utf8mb4) COLLATE utf8mb4_unicode_ci";
 }
 
 if ($ano) {
     $a = mysqli_real_escape_string($conexao, $ano);
-    $where .= " AND ano_publicacao = '$a'";
+    $where .= " AND TRIM(CAST(ano_publicacao AS CHAR)) = '$a'";
 }
 
 if ($status) {
     $s = mysqli_real_escape_string($conexao, $status);
-    $where .= " AND status = '$s'";
+    $where .= " AND CONVERT(TRIM(status) USING utf8mb4) COLLATE utf8mb4_unicode_ci = CONVERT('$s' USING utf8mb4) COLLATE utf8mb4_unicode_ci";
 }
 
 $resultado = mysqli_query(
@@ -63,238 +63,9 @@ $anos = mysqli_query($conexao, "
     <title>Livros</title>
     <?php include 'includes_painel/head.php'; ?>
 
-    <style>
-        body{background:#faf9fc}
-        .pagina{max-width:1450px;margin:auto;padding:45px 30px}
-
-        .cabecalho{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
-        .titulo-area{display:flex;align-items:center;gap:20px}
-        .icone-titulo{
-            width:82px;height:82px;border-radius:50%;
-            background:linear-gradient(135deg,#c2185b,#7c2be8);
-            color:#fff;display:flex;align-items:center;justify-content:center;
-            font-size:35px;box-shadow:0 10px 25px rgba(124,43,232,.18)
-        }
-        .titulo-area h1{margin:0;font-size:38px;color:#172033}
-        .titulo-area p{margin:5px 0;color:#718096;font-size:17px}
-
-        .filtros,.estatisticas,.tabela{
-            background:#fff;border-radius:22px;
-            box-shadow:0 8px 30px rgba(31,41,55,.06)
-        }
-
-        .filtros{padding:30px;margin-bottom:35px}
-        .filtros form{
-            display:grid;
-            grid-template-columns:1.5fr 1fr 1fr 1fr auto auto;
-            gap:14px;align-items:end
-        }
-
-        .campo label{display:block;font-weight:600;color:#172033;margin-bottom:8px}
-        .campo input,.campo select{
-            width:100%;height:48px;border:1px solid #dce2ea;
-            border-radius:10px;padding:0 15px;font-size:15px;
-            box-sizing:border-box;background:#fff
-        }
-
-        .campo input:focus,.campo select:focus{
-            outline:none;border-color:#7c2be8;
-            box-shadow:0 0 0 3px rgba(124,43,232,.08)
-        }
-
-        .btn-buscar,.btn-limpar{
-            height:48px;border-radius:10px;font-weight:600;
-            display:flex;align-items:center;justify-content:center
-        }
-
-        .btn-buscar{
-            border:0;padding:0 24px;background:#7c2be8;color:#fff
-        }
-
-        .btn-limpar{
-            padding:0 20px;border:1px solid #dce2ea;
-            background:#fff;color:#4a5568;text-decoration:none
-        }
-
-        .estatisticas{
-            padding:28px;display:grid;
-            grid-template-columns:repeat(4,1fr);margin-bottom:35px
-        }
-
-        .estatistica{
-            display:flex;align-items:center;gap:18px;
-            padding:10px 28px;border-right:1px solid #e6e9ef
-        }
-
-        .estatistica:last-child{border:0}
-
-        .estatistica-icone{
-            width:72px;height:72px;border-radius:20px;
-            display:flex;align-items:center;justify-content:center;font-size:27px
-        }
-
-        .roxo{background:#f0e8ff;color:#7c2be8}
-        .verde{background:#eaf9ee;color:#25b85a}
-        .amarelo{background:#fff6df;color:#f0a500}
-        .rosa{background:#fdebf1;color:#e72c61}
-
-        .estatistica span,.estatistica small{display:block;color:#718096}
-        .estatistica strong{display:block;color:#7c2be8;font-size:30px;margin:3px 0}
-
-        .tabela{overflow:hidden}
-        table{width:100%;border-collapse:collapse}
-        thead{background:#4b2670}
-        th{color:#fff;padding:20px;text-align:left;font-size:15px}
-        td{padding:20px;border-bottom:1px solid #edf0f4;color:#172033}
-        tbody tr:hover{background:#faf8ff}
-
-        .titulo-livro{font-weight:600}
-
-        .status{
-            display:inline-block;padding:7px 14px;
-            border-radius:20px;font-size:13px;font-weight:600
-        }
-
-        .status-disponivel{background:#eaf9ee;color:#20a650}
-        .status-revisao{background:#fff6df;color:#e59a00}
-        .status-arquivado{background:#fdebf1;color:#df2759}
-        .status-padrao{background:#eee;color:#666}
-
-        .acoes{display:flex;gap:8px}
-        .acao{
-            min-width:40px;height:40px;padding:0 12px;border-radius:10px;
-            display:flex;align-items:center;justify-content:center;
-            text-decoration:none;background:#fff
-        }
-
-        .editar{color:#7c2be8;border:1px solid #974cff}
-        .excluir{color:#e72c61;border:1px solid #f05b7d}
-
-        .rodape-tabela{padding:22px 28px;color:#718096;font-size:14px}
-
-        @media(max-width:1000px){
-            .filtros form{grid-template-columns:1fr 1fr}
-            .estatisticas{grid-template-columns:1fr 1fr}
-            .estatistica{border:0;border-bottom:1px solid #e6e9ef}
-        }
-
-        @media(max-width:700px){
-            .pagina{padding:25px 15px}
-            .cabecalho{align-items:flex-start}
-            .filtros form,.estatisticas{grid-template-columns:1fr}
-            .tabela{overflow-x:auto}
-            table{min-width:900px}
-        }
-    </style>
-
-    <style>
-        /* Identidade visual consistente das listagens Medeia (sem interferir no header). */
-        body { background: #f5f6fa; color: #252238; font-family: Inter, "Segoe UI", Arial, sans-serif; }
-        body > .container, .pagina, .usuarios-page { box-sizing: border-box; }
-        body > .container, .container {
-            width: min(100% - 40px, 1420px);
-            max-width: 1420px;
-            margin: 0 auto;
-            padding: 34px 0 56px;
-        }
-        .pagina { width: min(100% - 40px, 1420px); margin: 0 auto; padding: 34px 0 56px; }
-        .topo, .cabecalho { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-bottom: 28px; }
-        .titulo, .titulo-area { display: flex; align-items: center; gap: 17px; }
-        .titulo h1, .titulo-area h1 { color: #30213e; font-size: clamp(1.55rem, 2.5vw, 2rem); font-weight: 750; letter-spacing: -.035em; margin: 0 0 5px; }
-        .titulo p, .titulo-area p { color: #777386; margin: 0; line-height: 1.5; }
-        .icone, .icone-titulo { flex: 0 0 auto; box-shadow: 0 8px 20px rgba(139, 44, 245, .16); }
-        .card, .usuarios-box { background: #fff; border: 1px solid #ece9f2; border-radius: 16px; box-shadow: 0 8px 28px rgba(38, 25, 58, .055); }
-        .filtros, .card.filtros { padding: 22px; margin-bottom: 24px; }
-        .campo label { display: block; margin-bottom: 7px; color: #4d465b; font-size: .86rem; font-weight: 650; }
-        .campo input, .campo select, .campo textarea, input[type="text"], input[type="search"], input[type="email"], select {
-            max-width: 100%; box-sizing: border-box; border: 1px solid #ded9e8; border-radius: 9px;
-            background: #fff; color: #302b3b; padding: 11px 13px; min-height: 42px; outline: none;
-            transition: border-color .18s ease, box-shadow .18s ease;
-        }
-        .campo input:focus, .campo select:focus, .campo textarea:focus, input:focus, select:focus {
-            border-color: #9b45dc; box-shadow: 0 0 0 3px rgba(155, 69, 220, .12);
-        }
-        .estatisticas, .card.estatisticas { margin-bottom: 24px; }
-        .card.tabela { overflow: hidden; padding: 0; }
-        .table-responsive { width: 100%; overflow-x: auto; }
-        table, .tabela { width: 100%; border-collapse: collapse; background: #fff; }
-        table thead th, .tabela thead th {
-            background: #faf8fc; color: #61576f; font-size: .76rem; font-weight: 750;
-            letter-spacing: .045em; text-transform: uppercase; white-space: nowrap;
-            padding: 15px 17px; border-bottom: 1px solid #ebe7f1;
-        }
-        table tbody td, .tabela tbody td { color: #514b5e; padding: 15px 17px; border-bottom: 1px solid #f0edf4; vertical-align: middle; }
-        table tbody tr:hover, .tabela tbody tr:hover { background: #fcfaff; }
-        table tbody tr:last-child td, .tabela tbody tr:last-child td { border-bottom: 0; }
-        .btn, .btn-grad, .btn-buscar, .btn.buscar { border-radius: 9px; font-weight: 650; transition: transform .16s ease, box-shadow .16s ease; }
-        .btn:hover, .btn-grad:hover, .btn-buscar:hover, .btn.buscar:hover { transform: translateY(-1px); }
-        .acoes { display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .status, .badge { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 5px 10px; font-size: .78rem; font-weight: 700; white-space: nowrap; }
-        .vazio { padding: 35px 18px; text-align: center; color: #81798d; }
-        .rodape, .rodape-tabela { color: #81798d; font-size: .85rem; padding-top: 16px; }
-        @media (max-width: 700px) {
-            body > .container, .container, .pagina { width: min(100% - 24px, 1420px); padding-top: 22px; }
-            .topo, .cabecalho { align-items: flex-start; flex-direction: column; }
-            .filtros, .card.filtros { padding: 16px; }
-            table thead th, table tbody td, .tabela thead th, .tabela tbody td { padding: 12px 13px; }
-        }
     
-        /* Padronização final das ações e responsividade das listagens Medeia. */
-        .acoes {
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: nowrap;
-            gap: 8px;
-            white-space: nowrap;
-            min-width: 150px;
-        }
-        .acoes form { display: inline-flex; margin: 0; padding: 0; }
-        .acoes a, .acoes button, a.acao, button.acao {
-            box-sizing: border-box;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            min-height: 38px;
-            padding: 8px 11px;
-            border-radius: 10px;
-            font: inherit;
-            font-size: 13px;
-            font-weight: 650;
-            line-height: 1.2;
-            text-decoration: none;
-            white-space: nowrap;
-            cursor: pointer;
-            background: #fff;
-            transition: background-color .18s ease, box-shadow .18s ease, transform .18s ease;
-        }
-        .acoes a.editar, .acoes a.alterar, .acoes .editar, .acoes .alterar {
-            color: #8427ed;
-            border: 1px solid #a56aff;
-        }
-        .acoes a.editar:hover, .acoes a.alterar:hover, .acoes .editar:hover, .acoes .alterar:hover {
-            background: #f7f0ff;
-            box-shadow: 0 3px 9px rgba(132,39,237,.12);
-        }
-        .acoes a.excluir, .acoes button.excluir, .acoes .excluir {
-            color: #df2851;
-            border: 1px solid #ef829b;
-        }
-        .acoes a.excluir:hover, .acoes button.excluir:hover, .acoes .excluir:hover {
-            background: #fff1f4;
-            box-shadow: 0 3px 9px rgba(223,40,81,.10);
-        }
-        .acoes i, .acoes svg { flex: 0 0 auto; }
-        .table-responsive { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .card.tabela, .usuarios-box { min-width: 0; }
-        table th, table td { vertical-align: middle; }
-        @media (max-width: 700px) {
-            .topo, .cabecalho { align-items: flex-start; flex-direction: column; }
-            .filtros, .card.filtros { padding: 16px; }
-            table { min-width: 680px; }
-        }
-</style>
+
+    
     
 </head>
 
@@ -322,13 +93,13 @@ $anos = mysqli_query($conexao, "
             <div class="campo">
                 <label>Buscar</label>
                 <input name="busca" placeholder="Título, ISBN, autor..."
-                    value="<?= htmlspecialchars($busca) ?>">
+                    value="<?= h($busca) ?>">
             </div>
 
             <div class="campo">
                 <label>Categoria</label>
                 <input name="categoria" placeholder="Todas as categorias"
-                    value="<?= htmlspecialchars($categoria) ?>">
+                    value="<?= h($categoria) ?>">
             </div>
 
             <div class="campo">
@@ -395,7 +166,7 @@ $anos = mysqli_query($conexao, "
 
     <div class="tabela">
 
-        <div style="overflow-x:auto">
+        <div class="livros-tabela-scroll">
             <table>
 
                 <thead>
@@ -428,15 +199,15 @@ $anos = mysqli_query($conexao, "
 
                         <tr>
                             <td><?= $r['id_livro'] ?></td>
-                            <td class="titulo-livro"><?= htmlspecialchars($r['titulo']) ?></td>
-                            <td><?= htmlspecialchars($r['isbn']) ?></td>
-                            <td><?= htmlspecialchars($r['autor']) ?></td>
-                            <td><?= htmlspecialchars($r['categoria']) ?></td>
-                            <td><?= htmlspecialchars($r['ano_publicacao']) ?></td>
+                            <td class="titulo-livro"><?= h($r['titulo']) ?></td>
+                            <td><?= h($r['isbn']) ?></td>
+                            <td><?= h($r['autor']) ?></td>
+                            <td><?= h($r['categoria']) ?></td>
+                            <td><?= h($r['ano_publicacao']) ?></td>
 
                             <td>
                                 <span class="status <?= $classe ?>">
-                                    ● <?= htmlspecialchars($r['status']) ?>
+                                    ● <?= h($r['status']) ?>
                                 </span>
                             </td>
 
@@ -461,7 +232,7 @@ $anos = mysqli_query($conexao, "
                 <?php else: ?>
 
                     <tr>
-                        <td colspan="8" style="text-align:center;padding:40px;color:#718096">
+                        <td colspan="8" class="livros-sem-registros">
                             <i class="fas fa-book fa-2x"></i><br><br>
                             Nenhum livro encontrado.
                         </td>

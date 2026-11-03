@@ -1,0 +1,11 @@
+CORREÇÕES APLICADAS
+
+1. Padronizada a codificação de saída das listagens e telas de edição para UTF-8, com escape HTML seguro.
+2. Adicionada correção de textos legados com mojibake comum (ex.: JoÃ£o -> João; EdiÃ§Ã£o -> Edição).
+3. Ajustados filtros de revistas, livros e concursos para tolerar espaços extras e diferenças de maiúsculas/minúsculas/acentos nos campos de status; filtros de ano com comparação textual normalizada.
+4. Padronizada a busca textual com comparação UTF-8 e collation sem distinção de acentos nas páginas alteradas.
+5. Mantido o layout existente.
+
+IMPORTANTE: O charset da conexão já estava em utf8mb4 e foi mantido. Se algum dado estiver gravado fisicamente com bytes incorretos no banco, a exibição tenta corrigir os casos comuns; faça backup do banco antes de qualquer conversão em massa.
+
+Arquivos alterados: config/seguranca.php, lista_*.php e editar_*.php nas duas cópias do painel (painel/ e painel/tcc/painel/).
