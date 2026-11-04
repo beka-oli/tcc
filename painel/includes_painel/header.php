@@ -39,6 +39,7 @@
                         <div class="categoria-links" hidden>
                             <a href="form_livros.php"><i class="fas fa-book"></i>Livros</a>
                             <a href="form_artigo.php"><i class="fas fa-file-lines"></i>Artigos</a>
+                            <a href="form_TA.php"><i class="fas fa-user-graduate"></i>Trabalhos Acadêmicos</a>
                             <a href="form_autores.php"><i class="fas fa-users"></i> Autores</a>
                         </div>
                     </section>
@@ -50,7 +51,9 @@
                             <i class="fas fa-chevron-right categoria-seta"></i>
                         </button>
                         <div class="categoria-links" hidden>
-                            <a href="form_TA.php"><i class="fas fa-user-graduate"></i>Trabalhos Acadêmicos</a>
+                            <a href="form_cursos.php"><i class="fas fa-user-graduate"></i>Cursos</a>
+                            <a href="form_palestras.php"><i class="fas fa-chalkboard-teacher"></i>Palestras</a>
+                            <a href="form_eventos.php"><i class="fas fa-file-pdf"></i>Eventos</a>
                         </div>
                     </section>
 
