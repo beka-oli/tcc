@@ -9,8 +9,18 @@
     $busca = trim((string)($_GET['busca'] ?? ''));
     $b = mysqli_real_escape_string($conexao, $busca);
 
+    // A busca por autor usa EXISTS para não "cortar" a lista de autores do artigo no GROUP_CONCAT.
     $where = $busca
-        ? "WHERE CONVERT(a.titulo USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%' OR CONVERT(r.nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%' OR CONVERT(au.nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'"
+        ? "WHERE (
+                CONVERT(a.titulo USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+             OR CONVERT(r.nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+             OR EXISTS (
+                    SELECT 1 FROM artigo_autor aa2
+                    INNER JOIN autores au2 ON au2.id_autor = aa2.id_autor
+                    WHERE aa2.id_artigo = a.id_artigo
+                      AND CONVERT(au2.nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+                )
+           )"
         : '';
 
     $resultado = mysqli_query($conexao, "

@@ -9,11 +9,12 @@
     $b = mysqli_real_escape_string($conexao, $busca);
 
     $where = $busca
-        ? "WHERE
+        ? "WHERE (
             CONVERT(nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
             OR CONVERT(email USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
             OR CONVERT(instituicao USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
-            OR CONVERT(especialidade USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'"
+            OR CONVERT(especialidade USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+          )"
         : '';
 
     $resultado = mysqli_query(
