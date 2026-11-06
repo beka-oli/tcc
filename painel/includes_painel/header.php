@@ -26,7 +26,6 @@
                         </button>
                         <div class="categoria-links" hidden>
                             <a href="form_revista.php"><i class="fas fa-book-open"></i>Revistas</a>
-                            <a href="form_edicao.php"><i class="fas fa-layer-group"></i> Edições</a>
                         </div>
                     </section>
 

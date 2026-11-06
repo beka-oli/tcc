@@ -1,8 +1,9 @@
 -- Corrige textos gravados com acentuação dupla-codificada (ex.: "DisponÃ­vel" -> "Disponível").
 -- Só altera linhas que contêm o padrão corrompido "Ã" (bytes C3 83); textos corretos não são tocados.
 -- FAÇA BACKUP (Exportar no phpMyAdmin) antes de rodar.
+-- No phpMyAdmin, selecione o banco do projeto na lateral (ex.: medeia local ou u948351601_medeia
+-- na Hostinger) e só então use "Importar" ou "SQL". O script roda no banco selecionado.
 
-USE medeia;
 SET NAMES utf8mb4;
 
 -- Macro usada em cada linha:

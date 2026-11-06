@@ -1,4 +1,3 @@
-
 <?php
 include('verifica_login.php');
 include('conexao.php');
@@ -55,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if (mysqli_stmt_execute($stmt)) {
-        echo "<script>alert('Evento cadastrado com sucesso!');location='lista_eventos.php';</script>";
+        echo "<script>alert('Evento cadastrado com sucesso!');location='form_eventos.php';</script>";
         exit;
     }
 
@@ -75,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include 'includes_painel/header.php'; ?>
 
-<form action="cadastro_eventos.php" method="POST">
+<form method="POST">
 <input type="hidden" name="csrf_token"
 value="<?= htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8') ?>">
 
