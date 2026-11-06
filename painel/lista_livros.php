@@ -1,4 +1,3 @@
-
 <?php
 include 'verifica_login.php';
 include 'conexao.php';
@@ -20,7 +19,8 @@ if ($busca) {
 
 if ($categoria) {
     $c = mysqli_real_escape_string($conexao, $categoria);
-    $where .= " AND CONVERT(TRIM(categoria) USING utf8mb4) COLLATE utf8mb4_unicode_ci = CONVERT('$c' USING utf8mb4) COLLATE utf8mb4_unicode_ci";
+    // Categoria é um campo de texto livre: busca parcial em vez de igualdade exata.
+    $where .= " AND CONVERT(categoria USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$c%'";
 }
 
 if ($ano) {

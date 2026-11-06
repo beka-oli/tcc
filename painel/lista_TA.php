@@ -1,4 +1,3 @@
-
 <?php
 include 'verifica_login.php';
 include 'conexao.php';
@@ -11,13 +10,13 @@ $where = '';
 
 if ($busca !== '') {
     $b = mysqli_real_escape_string($conexao, $busca);
-    $where = "WHERE CONVERT(titulo USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+    $where = "WHERE (CONVERT(titulo USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
         OR CONVERT(tipo USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
         OR CONVERT(autor USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
         OR CONVERT(curso USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
         OR CONVERT(instituicao USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
         OR CONVERT(orientador USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
-        OR CONVERT(palavras_chave USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'";
+        OR CONVERT(palavras_chave USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%')";
 }
 
 $resultado = mysqli_query($conexao, "

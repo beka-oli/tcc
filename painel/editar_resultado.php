@@ -39,7 +39,6 @@
         <title>Editar Resultado</title>
 
         <?php include 'includes_painel/head.php'; ?>
-        <?php include '_form_style.php'; ?>
     </head>
     <body>
         <?php include 'includes_painel/header.php'; ?>

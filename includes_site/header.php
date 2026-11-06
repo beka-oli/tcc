@@ -2,14 +2,16 @@
 <?php
 $paginaAtual = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '');
 
-$paginaInicial = in_array($paginaAtual, ['', 'tcc', 'index.php'], true);
+// Página inicial = index.php ou a pasta do site (ex.: "/" na Hostinger, "/tcc_medeia/" no XAMPP).
+$paginaInicial = $paginaAtual === 'index.php' || substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '', -1) === '/';
 
+// Caminhos relativos: funcionam em qualquer pasta (XAMPP) ou na raiz do domínio (Hostinger).
 $menu = [
-    ['texto' => 'Início', 'icone' => 'fa-house', 'url' => '/tcc/', 'inicio' => true],
-    ['texto' => 'Sobre', 'icone' => 'fa-circle-info', 'url' => '/tcc/sobre.php'],
-    ['texto' => 'Serviços', 'icone' => 'fa-layer-group', 'url' => '/tcc/servicos.php'],
-    ['texto' => 'Publicações', 'icone' => 'fa-book-open', 'url' => '/tcc/publicacoes.php'],
-    ['texto' => 'Contato', 'icone' => 'fa-envelope', 'url' => '/tcc/contato.php']
+    ['texto' => 'Início', 'icone' => 'fa-house', 'url' => 'index.php', 'inicio' => true],
+    ['texto' => 'Sobre', 'icone' => 'fa-circle-info', 'url' => 'sobre.php'],
+    ['texto' => 'Serviços', 'icone' => 'fa-layer-group', 'url' => 'servicos.php'],
+    ['texto' => 'Publicações', 'icone' => 'fa-book-open', 'url' => 'publicacoes.php'],
+    ['texto' => 'Contato', 'icone' => 'fa-envelope', 'url' => 'contato.php']
 ];
 ?>
 
@@ -21,9 +23,9 @@ $menu = [
 <header class="medeia-header">
     <div class="mh-inner">
 
-        <a href="/tcc/" class="mh-brand" aria-label="Medeia - Página inicial">
+        <a href="index.php" class="mh-brand" aria-label="Medeia - Página inicial">
             <img
-                src="/tcc/midias/img/logo.png"
+                src="midias/img/logo.png"
                 alt="Logo Medeia"
                 class="mh-logo"
             >
@@ -50,7 +52,7 @@ $menu = [
                 </a>
             <?php endforeach; ?>
 
-            <a href="/tcc/login/" class="mh-link mh-admin">
+            <a href="login/index.php" class="mh-link mh-admin">
                 <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
                 <span>Admin</span>
             </a>

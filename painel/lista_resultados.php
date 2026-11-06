@@ -1,4 +1,3 @@
-
 <?php
 include 'verifica_login.php';
 include 'conexao.php';
@@ -11,9 +10,11 @@ $where = '';
 
 if ($busca !== '') {
     $b = mysqli_real_escape_string($conexao, $busca);
-    $where = "WHERE i.CONVERT(nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+    $where = "WHERE (
+                 CONVERT(i.nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
               OR CONVERT(i.cpf USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
-              OR c.CONVERT(nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'";
+              OR CONVERT(c.nome USING utf8mb4) COLLATE utf8mb4_unicode_ci LIKE '%$b%'
+              )";
 }
 
 $sql = "SELECT r.*, i.nome AS candidato, i.cpf, c.nome AS concurso
