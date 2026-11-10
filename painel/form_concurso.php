@@ -16,6 +16,11 @@
         $status = $status ?: 'Aberto';
         $destaque = $destaque ?: '0';
 
+        // Datas vazias viram NULL (evita erro no MySQL)
+        foreach (['data_inscricao_inicio','data_inscricao_fim','data_prova'] as $d) {
+            if ($$d === '') $$d = null;
+        }
+
         if (!$nome || !$orgao || !$cargo || !$escolaridade || !$ano) {
             echo "<script>alert('Preencha todos os campos obrigatórios!');history.back();</script>";
             exit;
@@ -37,13 +42,17 @@
             exit;
         }
 
+        $di = $data_inscricao_inicio === null ? 'NULL' : "'$data_inscricao_inicio'";
+        $df = $data_inscricao_fim === null ? 'NULL' : "'$data_inscricao_fim'";
+        $dp = $data_prova === null ? 'NULL' : "'$data_prova'";
+
         $sql = "INSERT INTO concursos
         (nome,orgao,cargo,escolaridade,edital,ano,
         data_inscricao_inicio,data_inscricao_fim,data_prova,
         descricao,status,destaque,dt_cad_concurso)
         VALUES
         ('$nome','$orgao','$cargo','$escolaridade','$edital','$ano',
-        '$data_inscricao_inicio','$data_inscricao_fim','$data_prova',
+        $di,$df,$dp,
         '$descricao','$status','$destaque',NOW())";
 
         if (mysqli_query($conexao, $sql)) {
@@ -54,7 +63,8 @@
             exit;
         }
 
-        echo "<script>alert('Erro ao cadastrar o concurso!');history.back();</script>";
+        $erro = addslashes(mysqli_error($conexao));
+        echo "<script>alert('Erro ao cadastrar o concurso: $erro');history.back();</script>";
     }
 ?>
 
@@ -68,7 +78,7 @@
     </head>
     <body>
         <?php include 'includes_painel/header.php'; ?>
-        <form action="lista_concursos.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
+        <form action="form_concurso.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
             <!-- DADOS DO CONCURSO -->
             <div class="card">
                 <div class="card-header">

@@ -50,7 +50,8 @@
             exit;
         }
 
-        echo "<script>alert('Erro ao cadastrar o livro!');history.back();</script>";
+        $erro = addslashes(mysqli_error($conexao));
+        echo "<script>alert('Erro ao cadastrar o livro: $erro');history.back();</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -63,7 +64,7 @@
     </head>
     <body>
     <?php include 'includes_painel/header.php'; ?>
-    <form action="lista_livros.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
+    <form action="form_livros.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
         <div class="card">
             <div class="card-header">
                 <i class="fas fa-book"></i> Dados do Livro

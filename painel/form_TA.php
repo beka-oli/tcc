@@ -91,7 +91,7 @@
     </head>
     <body>
         <?php include 'includes_painel/header.php'; ?>
-        <form action="lista_TA.php" method="POST" enctype="multipart/form-data"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
+        <form action="form_TA.php" method="POST" enctype="multipart/form-data"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
             <!-- DADOS DO TRABALHO -->
             <div class="card">
                 <div class="card-header">

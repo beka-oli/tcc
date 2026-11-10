@@ -60,8 +60,9 @@
             exit;
         }
 
+        $erro = addslashes(mysqli_error($conexao));
         echo "<script>
-            alert('Erro ao cadastrar o artigo!');
+            alert('Erro ao cadastrar o artigo: $erro');
             history.back();
         </script>";
     }
@@ -76,7 +77,7 @@
     </head>
     <body>
         <?php include 'includes_painel/header.php'; ?>
-        <form action="lista_artigos.php" method="POST">
+        <form action="form_artigo.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
             <div class="card">
                 <div class="card-header">

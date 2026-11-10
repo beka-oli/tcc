@@ -26,14 +26,18 @@
         SELECT a.*, r.nome AS revista,
             GROUP_CONCAT(au.nome SEPARATOR ', ') AS autores
         FROM artigos a
-        INNER JOIN edicoes e ON e.id_edicao = a.id_edicao
-        INNER JOIN revistas r ON r.id_revista = e.id_revista
+        LEFT JOIN edicoes e ON e.id_edicao = a.id_edicao
+        LEFT JOIN revistas r ON r.id_revista = e.id_revista
         LEFT JOIN artigo_autor aa ON aa.id_artigo = a.id_artigo
         LEFT JOIN autores au ON au.id_autor = aa.id_autor
         $where
         GROUP BY a.id_artigo
         ORDER BY a.id_artigo DESC
     ");
+
+    if (!$resultado) {
+        die('Erro na consulta de artigos: ' . htmlspecialchars(mysqli_error($conexao)));
+    }
 
     $total = mysqli_num_rows($resultado);
 

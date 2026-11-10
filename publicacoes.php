@@ -71,6 +71,20 @@
                             </div>
                         </article>
                     </div>
+                    <!-- CONTEÚDO TEÓRICO TCC -->
+                    <div class="col-lg-4 col-md-6">
+                        <article class="publication-card">
+                            <div class="publication-image">
+                                <img src="https://images.unsplash.com/photo-1456513080880-7d93aaa5bbad?auto=format&fit=crop&w=900&q=85" alt="Livros e materiais de estudo acadêmico" loading="lazy">
+                            </div>
+                            <div class="publication-content">
+                                <span class="tag">TCC</span>
+                                <h3>Conteúdo Teórico</h3>
+                                <p>Fundamentação teórica do desenvolvimento do Website Medeia, com base em HTML, CSS, PHP e usabilidade.</p>
+                                <a href="conteudo-teorico.php" class="publication-link">Ler conteúdo teórico <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>

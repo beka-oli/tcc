@@ -112,7 +112,7 @@
     </head>
     <body>
         <?php include 'includes_painel/header.php'; ?>
-        <form action="lista_inscricoes.php" method="POST">
+        <form action="form_inscricoes.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?= h(csrf_token()) ?>">
             <div class="card">
                 <div class="card-header">

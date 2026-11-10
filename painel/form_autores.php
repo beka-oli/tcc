@@ -4,17 +4,13 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $campos = [
-            'nome','email','instituicao','orcid',
-            'curriculo','area_atuacao','status'
-        ];
+        $nome         = mysqli_real_escape_string($conexao, trim($_POST['nome'] ?? ''));
+        $email        = mysqli_real_escape_string($conexao, trim($_POST['email'] ?? ''));
+        $instituicao  = mysqli_real_escape_string($conexao, trim($_POST['instituicao'] ?? ''));
+        $especialidade = mysqli_real_escape_string($conexao, trim($_POST['area_atuacao'] ?? ''));
+        $biografia    = mysqli_real_escape_string($conexao, trim($_POST['curriculo'] ?? ''));
 
-        foreach ($campos as $c)
-            $$c = mysqli_real_escape_string($conexao, $_POST[$c] ?? '');
-
-        $status = $status ?: 'Ativo';
-
-        if (!$nome) {
+        if ($nome === '') {
             echo "<script>alert('Informe o nome do autor!');history.back();</script>";
             exit;
         }
@@ -24,16 +20,17 @@
             "SELECT id_autor FROM autores WHERE nome='$nome' LIMIT 1"
         );
 
-        if (mysqli_num_rows($check)) {
+        if ($check && mysqli_num_rows($check)) {
             echo "<script>alert('Este autor já está cadastrado!');history.back();</script>";
             exit;
         }
 
+        // Colunas reais da tabela autores:
+        // id_autor, nome, biografia, foto, email, instituicao, especialidade, criado_em
         $sql = "INSERT INTO autores
-        (nome,email,instituicao,orcid,curriculo,area_atuacao,status,dt_cad_autor)
+        (nome, biografia, email, instituicao, especialidade)
         VALUES
-        ('$nome','$email','$instituicao','$orcid','$curriculo',
-        '$area_atuacao','$status',NOW())";
+        ('$nome', '$biografia', '$email', '$instituicao', '$especialidade')";
 
         if (mysqli_query($conexao, $sql)) {
             echo "<script>
@@ -43,8 +40,9 @@
             exit;
         }
 
+        $erro = mysqli_error($conexao);
         echo "<script>
-            alert('Erro ao cadastrar o autor!');
+            alert('Erro ao cadastrar o autor: " . addslashes($erro) . "');
             history.back();
         </script>";
     }
@@ -60,7 +58,8 @@
     </head>
     <body>
         <?php include 'includes_painel/header.php'; ?>
-        <form action="lista_autores.php" method="POST"><input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
+        <form action="form_autores.php" method="POST">
+            <input type="hidden" name="csrf_token" value="<?=h(csrf_token())?>">
             <div class="card">
                 <div class="card-header">
                     <i class="fas fa-user-pen"></i> Dados do Autor
@@ -68,30 +67,19 @@
                 <div class="card-body row">
                     <div class="col-md-8">
                         <label>Nome Completo</label>
-                        <input type="text"class="form-control"name="nome" placeholder="Digite o nome completo" maxlength="255" required>
+                        <input type="text" class="form-control" name="nome" placeholder="Digite o nome completo" maxlength="150" required>
                     </div>
                     <div class="col-md-4">
                         <label>E-mail</label>
-                        <input type="email"class="form-control"name="email" placeholder="autor@email.com">
+                        <input type="email" class="form-control" name="email" placeholder="autor@email.com">
                     </div>
                     <div class="col-md-6">
                         <label>Instituição</label>
-                        <input type="text"class="form-control" name="instituicao"placeholder="Nome da instituição"maxlength="255">
+                        <input type="text" class="form-control" name="instituicao" placeholder="Nome da instituição" maxlength="255">
                     </div>
                     <div class="col-md-6">
-                        <label>ORCID</label>
-                        <input type="text"class="form-control"name="orcid" placeholder="Ex.: 0000-0000-0000-0000"maxlength="50">
-                    </div>
-                    <div class="col-md-6">
-                        <label>Área de Atuação</label>
-                        <input type="text" class="form-control"name="area_atuacao" placeholder="Ex.: Ciência da Computação" maxlength="255">
-                    </div>
-                    <div class="col-md-6">
-                        <label>Status</label>
-                        <select class="form-select" name="status">
-                            <option>Ativo</option>
-                            <option>Inativo</option>
-                        </select>
+                        <label>Área de Atuação / Especialidade</label>
+                        <input type="text" class="form-control" name="area_atuacao" placeholder="Ex.: Ciência da Computação" maxlength="255">
                     </div>
                     <div class="col-md-12">
                         <label>Currículo / Biografia</label>
