@@ -212,7 +212,7 @@ $cards = [
                                     class="editar"
                                     title="Editar"
                                 >
-                                    <i class="fas fa-pen-to-square"></i>
+                                    <i class="fas fa-pen-to-square"></i> Alterar
                                 </a>
 
                                 <a
@@ -221,7 +221,7 @@ $cards = [
                                     title="Excluir"
                                     onclick="return confirm('Deseja excluir este trabalho acadêmico?')"
                                 >
-                                    <i class="fas fa-trash"></i>
+                                    <i class="fas fa-trash"></i> Excluir
                                 </a>
 
                             </td>

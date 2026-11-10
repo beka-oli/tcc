@@ -23,7 +23,8 @@
         
         if(!$r||mysqli_num_rows($r)!==1)erro('Artigo não encontrado.');
         $row=mysqli_fetch_assoc($r);
-        $ed=mysqli_query($conexao,"SELECT e.id_edicao, e.numero, e.volume, r.nome FROM edicoes e INNER JOIN revistas r ON r.id_revista=e.id_revista ORDER BY r.nome,e.id_edicao DESC");
+        $ed=mysqli_query($conexao,"SELECT e.id_edicao, e.numero, e.volume, COALESCE(e.titulo_edicao, CONCAT('Ed. ', COALESCE(e.numero,e.id_edicao))) AS nome FROM edicoes e ORDER BY e.id_edicao DESC");
+        if(!$ed){ $ed=mysqli_query($conexao,"SELECT id_edicao, numero, volume, CONCAT('Edição ', id_edicao) AS nome FROM edicoes ORDER BY id_edicao DESC"); }
         $au=mysqli_query($conexao,"SELECT id_autor,nome FROM autores ORDER BY nome");
         $sel=[];$sr=mysqli_query($conexao,"SELECT id_autor FROM artigo_autor WHERE id_artigo=$id");
         

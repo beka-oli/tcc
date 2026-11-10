@@ -25,9 +25,10 @@
                             <i class="fas fa-chevron-right categoria-seta"></i>
                         </button>
                         <div class="categoria-links" hidden>
-                            <a href="form_revista.php"><i class="fas fa-book-open"></i>Revistas</a>
+                            <a href="form_edicoes.php"><i class="fas fa-book-open"></i>Edições</a>
                         </div>
                     </section>
+
 
                     <!-- EDITORA -->
                     <section class="categoria-menu">
@@ -52,7 +53,7 @@
                         <div class="categoria-links" hidden>
                             <a href="form_cursos.php"><i class="fas fa-user-graduate"></i>Cursos</a>
                             <a href="form_palestras.php"><i class="fas fa-chalkboard-teacher"></i>Palestras</a>
-                            <a href="form_eventos.php"><i class="fas fa-file-pdf"></i>Eventos</a>
+                            <a href="form_eventos.php"><i class="fas fa-file-alt"></i>Eventos</a>
                         </div>
                     </section>
 
@@ -80,47 +81,50 @@
                     
                     <!-- REVISTA -->
                     <section class="categoria-menu">
-                        <button class="categoria-titulo"type="button"aria-expanded="false">
-                            <span><i class="fas fa-newspaper"></i> REVISTA </span>
+                        <button class="categoria-titulo" type="button" aria-expanded="false">
+                            <span><i class="fas fa-newspaper"></i> REVISTA</span>
                             <i class="fas fa-chevron-right categoria-seta"></i>
                         </button>
                         <div class="categoria-links" hidden>
-                            <a href="lista_revistas.php"><i class="fas fa-book-open"></i> Revistas</a>
+                            <a href="lista_edicoes.php"><i class="fas fa-book-open"></i> Edições</a>
                         </div>
                     </section>
 
                     <!-- EDITORA -->
                     <section class="categoria-menu">
-                        <button class="categoria-titulo"type="button" aria-expanded="false">
-                            <span> <i class="fas fa-book"></i> EDITORA</span>
+                        <button class="categoria-titulo" type="button" aria-expanded="false">
+                            <span><i class="fas fa-book"></i> EDITORA</span>
                             <i class="fas fa-chevron-right categoria-seta"></i>
                         </button>
                         <div class="categoria-links" hidden>
                             <a href="lista_livros.php"><i class="fas fa-book"></i> Livros</a>
-                            <a href="lista_artigos.php"><i class="fas fa-file-lines"></i>Artigos</a>
+                            <a href="lista_artigos.php"><i class="fas fa-file-lines"></i> Artigos</a>
+                            <a href="lista_TA.php"><i class="fas fa-user-graduate"></i> Trabalhos Acadêmicos</a>
                             <a href="lista_autores.php"><i class="fas fa-users"></i> Autores</a>
                         </div>
                     </section>
 
                     <!-- ASSESSORIA PEDAGÓGICA -->
                     <section class="categoria-menu">
-                        <button class="categoria-titulo"type="button"aria-expanded="false">
+                        <button class="categoria-titulo" type="button" aria-expanded="false">
                             <span><i class="fas fa-graduation-cap"></i> ASSESSORIA PEDAGÓGICA</span>
                             <i class="fas fa-chevron-right categoria-seta"></i>
                         </button>
                         <div class="categoria-links" hidden>
-                            <a href="lista_TA.php"><i class="fas fa-user-graduate"></i>Trabalhos Acadêmicos</a>
+                            <a href="lista_cursos.php"><i class="fas fa-user-graduate"></i> Cursos</a>
+                            <a href="lista_palestras.php"><i class="fas fa-chalkboard-teacher"></i> Palestras</a>
+                            <a href="lista_eventos.php"><i class="fas fa-file-alt"></i> Eventos</a>
                         </div>
                     </section>
 
                     <!-- CONCURSOS -->
                     <section class="categoria-menu">
-                        <button class="categoria-titulo"type="button"aria-expanded="false">
-                            <span><i class="fas fa-briefcase"></i>CONCURSOS </span>
+                        <button class="categoria-titulo" type="button" aria-expanded="false">
+                            <span><i class="fas fa-briefcase"></i> CONCURSOS</span>
                             <i class="fas fa-chevron-right categoria-seta"></i>
                         </button>
                         <div class="categoria-links" hidden>
-                            <a href="lista_concursos.php"><i class="fas fa-file-signature"></i>Concursos</a>
+                            <a href="lista_concursos.php"><i class="fas fa-file-signature"></i> Concursos</a>
                             <a href="lista_inscricoes.php"><i class="fas fa-clipboard-check"></i> Inscrições</a>
                             <a href="lista_resultados.php"><i class="fas fa-square-poll-vertical"></i> Resultados</a>
                         </div>
@@ -130,27 +134,40 @@
         </div>
 
         <!-- ======================================USUÁRIO======================================= -->
-        <?php if (eh_admin()): ?>
-            <div class="dropdown usuario-menu">
-                <button class="item usuario-botao dropdown-btn"type="button"aria-expanded="false"aria-controls="menu-usuario">
-                    <span class="usuario-icone"><i class="fas fa-user-shield"></i></span>
-                    <span class="usuario-info">
-                        <strong><?= h(nome_usuario()) ?></strong>
-                        <small><?= h(strtoupper(str_replace('_', ' ', perfil_usuario()))) ?></small>
+        <?php
+            $rotulos_perfil = [
+                'ultra_master' => 'Ultra Master',
+                'master'       => 'Master',
+                'operador'     => 'Operador',
+            ];
+            $perfil_atual = perfil_usuario();
+            $rotulo_perfil = $rotulos_perfil[$perfil_atual] ?? ucfirst(str_replace('_', ' ', $perfil_atual));
+        ?>
+        <div class="dropdown usuario-menu">
+            <button class="item usuario-botao dropdown-btn" type="button" aria-expanded="false" aria-controls="menu-usuario">
+                <span class="usuario-icone"><i class="fas fa-user-shield"></i></span>
+                <span class="usuario-info">
+                    <strong><?= h(nome_usuario()) ?></strong>
+                    <small><?= h($rotulo_perfil) ?></small>
+                </span>
+                <i class="fas fa-chevron-down seta"></i>
+            </button>
+            <div class="dropdown-box usuario-box" id="menu-usuario">
+                <?php if (eh_admin()): ?>
+                    <div class="dropdown-title"><i class="fas fa-shield-halved"></i> Administração</div>
+                    <a href="lista_operadores.php"><i class="fas fa-users-gear"></i> Usuários</a>
+                    <a href="form_operador.php"><i class="fas fa-user-plus"></i> Novo usuário</a>
+                <?php else: ?>
+                    <div class="dropdown-title"><i class="fas fa-user"></i> Minha conta</div>
+                    <span class="dropdown-info" style="display:block;padding:8px 12px;color:#786978;font-size:13px;">
+                        Perfil: <?= h($rotulo_perfil) ?>
                     </span>
-                    <i class="fas fa-chevron-down seta"></i>
-                </button>
-                <div class="dropdown-box usuario-box" id="menu-usuario">
-                    <div class="dropdown-title"><i class="fas fa-shield-halved"></i>Administração</div>
-                    <a href="lista_operadores.php"><i class="fas fa-users-gear"></i>Usuários</a>
-                    <?php if (eh_ultra_master()): ?>
-                        <a href="form_operador.php"><i class="fas fa-user-plus"></i>Novo usuário</a>
-                    <?php endif; ?>
-                </div>
+                <?php endif; ?>
+                <a href="logout.php"><i class="fas fa-right-from-bracket"></i> Sair</a>
             </div>
-        <?php endif; ?>
+        </div>
 
-        <!-- SAIR -->
+        <!-- SAIR (sempre à direita, mesmo lugar para todos os perfis) -->
         <a href="logout.php" class="sair"><i class="fas fa-right-from-bracket"></i>
             <span>Sair</span>
         </a>

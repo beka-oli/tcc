@@ -3,7 +3,7 @@ include 'verifica_login.php';
 
 if (!validar_csrf($_GET['csrf_token'] ?? null)) {
     http_response_code(403);
-    exit('Solicitação inválida.');
+    exit('Solicitação inválida. Atualize a página (F5) e tente excluir novamente.');
 }
 
 include 'conexao.php';

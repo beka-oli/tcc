@@ -1,0 +1,168 @@
+/*
+ * Anúncios "Em breve" — Assessoria Pedagógica e Revista Eletrônica
+ * Arquivo: assets/css/anuncios.css
+ * Estilos isolados para não alterar as demais páginas do site.
+ */
+
+body[data-page="assessoria"],
+body[data-page="revista"] {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: #35152f;
+    background: #f8f2f9;
+    overflow-x: hidden;
+}
+
+body[data-page="assessoria"] .announcement-hero,
+body[data-page="revista"] .announcement-hero {
+    width: 100%;
+    min-height: calc(100vh - 84px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 70px 0;
+    background:
+        radial-gradient(circle at 10% 35%, rgba(123, 31, 162, .08), transparent 25%),
+        linear-gradient(120deg, #faf6fb, #eadcf1, #f7e8f0);
+}
+
+body[data-page="assessoria"] .announcement-hero::before,
+body[data-page="assessoria"] .announcement-hero::after,
+body[data-page="revista"] .announcement-hero::before,
+body[data-page="revista"] .announcement-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+body[data-page="assessoria"] .announcement-hero::before,
+body[data-page="revista"] .announcement-hero::before {
+    width: 220px;
+    height: 220px;
+    top: -100px;
+    right: 15%;
+    background: rgba(192, 74, 145, .07);
+}
+
+body[data-page="assessoria"] .announcement-hero::after,
+body[data-page="revista"] .announcement-hero::after {
+    width: 150px;
+    height: 150px;
+    bottom: -70px;
+    left: 5%;
+    background: rgba(123, 31, 162, .07);
+}
+
+body[data-page="assessoria"] .announcement-container,
+body[data-page="revista"] .announcement-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 70px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+body[data-page="assessoria"] .announcement-content,
+body[data-page="revista"] .announcement-content {
+    max-width: 680px;
+}
+
+body[data-page="assessoria"] .announcement-tag,
+body[data-page="revista"] .announcement-tag {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 11px 20px;
+    border-radius: 30px;
+    background: #ead8ef;
+    color: #7b2468;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+body[data-page="assessoria"] .announcement-content h1,
+body[data-page="revista"] .announcement-content h1 {
+    margin: 0 0 25px;
+    color: #42162f;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+body[data-page="assessoria"] .announcement-subtitle,
+body[data-page="revista"] .announcement-subtitle {
+    margin: 0 0 18px;
+    color: #7b2468;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+body[data-page="assessoria"] .announcement-description,
+body[data-page="revista"] .announcement-description {
+    max-width: 650px;
+    margin: 0;
+    color: #706375;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media (max-width: 900px) {
+    body[data-page="assessoria"] .announcement-container,
+    body[data-page="revista"] .announcement-container {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    body[data-page="assessoria"] .announcement-hero,
+    body[data-page="revista"] .announcement-hero {
+        min-height: calc(100vh - 120px);
+        padding: 42px 0;
+    }
+
+    body[data-page="assessoria"] .announcement-container,
+    body[data-page="revista"] .announcement-container {
+        padding: 35px 24px;
+    }
+
+    body[data-page="assessoria"] .announcement-tag,
+    body[data-page="revista"] .announcement-tag {
+        margin-bottom: 20px;
+        padding: 9px 15px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    body[data-page="assessoria"] .announcement-content h1,
+    body[data-page="revista"] .announcement-content h1 {
+        font-size: clamp(40px, 10vw, 52px);
+    }
+
+    body[data-page="assessoria"] .announcement-subtitle,
+    body[data-page="revista"] .announcement-subtitle {
+        font-size: 17px;
+    }
+
+    body[data-page="assessoria"] .announcement-description,
+    body[data-page="revista"] .announcement-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body[data-page="assessoria"] *,
+    body[data-page="revista"] * {
+        transition: none !important;
+        animation: none !important;
+    }
+}

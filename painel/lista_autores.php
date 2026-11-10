@@ -136,7 +136,7 @@
                                         </td>
                                         <!-- AÇÕES -->
                                         <td class="acoes">
-                                            <a href="editar_autor.php?id=<?= $r['id_autor'] ?>" class="editar"title="Editar autor">
+                                            <a href="editar_autor.php?id=<?= $r['id_autor'] ?>" class="editar" title="Editar autor">
                                                 <i class="fas fa-pen-to-square"></i>
                                                 Alterar
                                             </a>

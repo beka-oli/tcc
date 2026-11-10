@@ -72,10 +72,8 @@
                         <div class="campo">
                             <label>Status</label>
                             <select name="status">
-                                <?php foreach (['Disponível', 'Em Revisão', 'Arquivado'] as $op): ?>
-                                    <option <?= ($row['status'] ?? '') === $op ? 'selected' : '' ?>>
-                                        <?= h($op) ?>
-                                    </option>
+                                <?php foreach (['Disponível', 'Indisponível', 'Em Empréstimo', 'Arquivado'] as $op): ?>
+                                    <option value="<?= h($op) ?>" <?= ($row['status'] ?? '') === $op ? 'selected' : '' ?>><?= h($op) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
