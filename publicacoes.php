@@ -75,7 +75,7 @@
                     <div class="col-lg-4 col-md-6">
                         <article class="publication-card">
                             <div class="publication-image">
-                                <img src="https://images.unsplash.com/photo-1456513080880-7d93aaa5bbad?auto=format&fit=crop&w=900&q=85" alt="Livros e materiais de estudo acadêmico" loading="lazy">
+                                <img src="midias\img\logo.png" alt="Livros e materiais de estudo acadêmico" loading="lazy">
                             </div>
                             <div class="publication-content">
                                 <span class="tag">TCC</span>
